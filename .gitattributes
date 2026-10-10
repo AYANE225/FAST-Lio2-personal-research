@@ -1,2 +1,4 @@
 figures/*.svg linguist-generated=true -whitespace
 patches/*.patch -whitespace
+# Preserve upstream vendor files, including their original whitespace.
+docs/viewer/vendor/* -whitespace

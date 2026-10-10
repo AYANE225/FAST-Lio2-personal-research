@@ -1,0 +1,51 @@
+{
+  "map_processing": {
+    "roi_xyz_m": [
+      [
+        10,
+        30
+      ],
+      [
+        -12,
+        8
+      ],
+      [
+        -2,
+        10
+      ]
+    ],
+    "azimuth_degrees": -50,
+    "elevation_degrees": 35,
+    "height_color_range_m": [
+      -2,
+      10
+    ],
+    "point_size_pt2": 0.65,
+    "all_local_points_drawn": true,
+    "projection_displacement_p95_mm": 14.747407719192868,
+    "projection_displacement_max_mm": 29.998863311566364,
+    "stages": {
+      "raw": 632509,
+      "voxel": 173330,
+      "sor": 171796,
+      "plane": 171796
+    }
+  },
+  "inputs_sha256": {
+    "data/map_processing/local_comparison.npz": "88fd471b3e2ab004c0c9997c60f7e4718ad0b5652fdf7675ec34b348fb651023",
+    "docs/viewer/data/processing_report.json": "4bc62d40857b7d6ddfc1b8a64383bae921983bd1e0ff35b58ce85e9bffd46142",
+    "data/outdoor01/tcp/metrics.json": "9e181b2b8c2a30909e5ade970fb46ab7f475c3e3b5748ae56e168e12234907eb",
+    "data/outdoor01/tcp/resources.jsonl": "eff2dbc7d157cb52186358b2dd4078cc2dcd0221a6c6bc43557061a4399393fd",
+    "data/outdoor01/tcp/position_comparison.npz": "b66a2c1fa9dba423abf4312e454121e39ab5ec730d0a47fb5b6875e41e1870aa",
+    "data/outdoor01/tcp/algorithm_logs/fast_lio_time_log.csv": "e1d3815124c2d936218d6e9472da62f1ff49c6eb7d8c530cc77a308a29eed4ec",
+    "data/outdoor01/recording/metrics.json": "84447429b7de17621ec9a1e43e6dd00129f20e6656ecf6f484e6271a79cfc026",
+    "data/outdoor01/recording/resources.jsonl": "a93748883a98e7c207b3fbcd89dc00b8a4319d89283eee7cf6bf5ae3aaf8019a",
+    "data/outdoor01/recording/position_comparison.npz": "6b7438e6b31d495c5e99884b206dfb00c062f3bbe365c0cbcdc700f068e8846e",
+    "data/outdoor01/recording/algorithm_logs/fast_lio_time_log.csv": "fa922ce06aca0daa6482274d4d3ae7f93a258be6d10c122a79f60d596358ba32",
+    "data/outdoor01/surf03/metrics.json": "591c2e015e95ea2e190b5dc9a8e68ec1d773abd41251215793597b3cf3efe120",
+    "data/outdoor01/surf03/resources.jsonl": "a3f287886dfd4185d01b97d62f486bf9a7a3622b5f012d266ef395222862fcab",
+    "data/outdoor01/surf03/position_comparison.npz": "3d39714e10f9c6ed6feb4712c08a8db1b9b855ea9b4d393b8df6e9f1c485e85c",
+    "data/outdoor01/surf03/algorithm_logs/fast_lio_time_log.csv": "e36ad59e6685da61d4bcd051566fa88589d580ec51a5a66c1722b18ce8407178"
+  },
+  "scope": "Saved single-run measurements and real point coordinates; no generated geometry or trajectory smoothing."
+}

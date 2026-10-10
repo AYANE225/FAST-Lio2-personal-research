@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#080d15">
+  <meta name="description" content="基于 M3DGR Outdoor01 公开 MID-360 数据与 FAST-LIO2 构建的三维点云地图，可交互浏览高度、反射强度与估计轨迹。">
+  <title>Outdoor01 · FAST-LIO2 三维地图</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <svg class="icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="icon-map" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5M3 16l9 5 9-5"/></symbol>
+    <symbol id="icon-settings" viewBox="0 0 24 24"><path d="M4 7h6m4 0h6M4 17h10m4 0h2"/><circle cx="12" cy="7" r="2"/><circle cx="16" cy="17" r="2"/></symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></symbol>
+    <symbol id="icon-camera" viewBox="0 0 24 24"><path d="M4 6h4l2-2h4l2 2h4v14H4V6Z"/><circle cx="12" cy="12" r="4"/></symbol>
+    <symbol id="icon-reset" viewBox="0 0 24 24"><path d="M4 10a8 8 0 1 1 1 8M4 4v6h6"/></symbol>
+    <symbol id="icon-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7V5Z"/></symbol>
+    <symbol id="icon-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></symbol>
+    <symbol id="icon-top" viewBox="0 0 24 24"><path d="M5 5h14v14H5zM5 12h14M12 5v14"/></symbol>
+    <symbol id="icon-detail" viewBox="0 0 24 24"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6M7 10h6M10 7v6"/></symbol>
+    <symbol id="icon-full" viewBox="0 0 24 24"><path d="M4 9V4h5m6 0h5v5M4 15v5h5m6 0h5v-5"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="icon-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7v.1"/></symbol>
+  </svg>
+
+  <div class="app" id="app" data-panel-open="false">
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="FAST-LIO2 Outdoor01 地图首页">
+        <span class="brand-mark"><svg><use href="#icon-map"/></svg></span>
+        <span class="brand-text"><strong>FAST-LIO2<span class="brand-divider"> / </span><span class="brand-section">三维地图</span></strong><span class="brand-caption">MID-360 · M3DGR</span></span>
+      </a>
+      <div class="topbar-right">
+        <span class="dataset-badge"><span></span>OUTDOOR 01</span>
+        <a class="project-link" id="project-link" href="https://github.com/AYANE225/FAST-Lio2-personal-research" target="_blank" rel="noopener noreferrer">项目说明<svg><use href="#icon-arrow"/></svg></a>
+        <button class="icon-button mobile-controls" id="open-controls" type="button" aria-label="显示地图设置" aria-controls="sidebar" aria-expanded="false"><svg><use href="#icon-settings"/></svg></button>
+      </div>
+    </header>
+
+    <main class="stage" id="stage" aria-label="Outdoor01 三维点云查看器">
+      <div class="viewport" id="viewport"></div>
+      <div class="stage-vignette" aria-hidden="true"></div>
+
+      <aside class="sidebar" id="sidebar" aria-label="地图设置">
+        <div class="panel-heading"><span>显示设置</span><span class="panel-heading-right"><svg><use href="#icon-settings"/></svg><button class="icon-button close-controls" id="close-controls" type="button" aria-label="关闭地图设置"><svg><use href="#icon-close"/></svg></button></span></div>
+        <div class="panel-content">
+          <section class="control-section">
+            <label class="field-label" for="variant-select">地图版本</label>
+            <div class="select-wrap"><select id="variant-select" disabled><option>正在读取…</option></select></div>
+            <p class="field-description" id="variant-description">加载真实扫描数据。</p>
+            <div class="dataset-count"><span>版本点数</span><span id="variant-point-count">—</span></div>
+          </section>
+
+          <section class="control-section">
+            <span class="field-label" id="color-label">颜色</span>
+            <div class="segmented-control" id="color-controls" role="group" aria-labelledby="color-label">
+              <button type="button" data-color="height" class="active" aria-pressed="true">高度</button>
+              <button type="button" data-color="intensity" aria-pressed="false">强度</button>
+              <button type="button" data-color="monochrome" aria-pressed="false">单色</button>
+            </div>
+            <div class="range-label"><label class="field-label" for="point-size">点大小</label><output id="point-size-value" for="point-size">2.0</output></div>
+            <input id="point-size" type="range" min="1" max="5" step="0.1" value="2" aria-label="点大小">
+            <label class="field-label budget-label" for="point-budget">显示点数上限</label>
+            <div class="select-wrap"><select id="point-budget"><option value="200000">20 万 · 轻量</option><option value="500000" selected>50 万 · 均衡</option><option value="1000000">100 万 · 精细</option><option value="2000000">200 万 · 高密度</option></select></div>
+            <p class="field-description compact">靠近地图，查看更多局部细节。</p>
+          </section>
+
+          <section class="control-section toggle-section">
+            <label class="toggle-row" for="edl-toggle"><span>深度着色 <span class="term">EDL</span></span><span class="switch"><input id="edl-toggle" type="checkbox" checked><span class="switch-track"></span></span></label>
+            <div class="edl-strength-control">
+              <div class="range-label"><label class="field-label" for="edl-strength">着色强度</label><output id="edl-strength-value" for="edl-strength">0.40</output></div>
+              <input id="edl-strength" type="range" min="0" max="1" step="0.05" value="0.4" style="--range-progress: 40%" aria-label="EDL 着色强度">
+            </div>
+            <label class="toggle-row" for="trajectory-toggle" title="FAST-LIO2 原始估计轨迹，使用与地图相同的坐标变换。"><span>估计轨迹 <span class="trajectory-swatch"></span></span><span class="switch"><input id="trajectory-toggle" type="checkbox" checked><span class="switch-track"></span></span></label>
+            <label class="toggle-row" for="grid-toggle"><span>参考网格 <span class="term">10 m</span></span><span class="switch"><input id="grid-toggle" type="checkbox"><span class="switch-track"></span></span></label>
+          </section>
+
+          <div class="data-note"><svg><use href="#icon-info"/></svg><p>M3DGR Outdoor01 实验地图。颜色和深度着色仅改变显示效果。</p></div>
+        </div>
+        <div class="panel-footer"><span class="sensor-dot"></span>Livox MID-360<span class="footer-separator">·</span>LiDAR + IMU</div>
+      </aside>
+
+      <div class="scene-heading"><div class="eyebrow"><span class="eyebrow-line"></span>OUTDOOR 01</div><h1>三维点云地图<span>OUTDOOR MAPPING</span></h1><p>建筑 · 道路 · 植被</p></div>
+
+      <div class="scene-actions" aria-label="视图操作">
+        <button class="icon-button" id="reset-view" type="button" aria-label="重置视角" title="重置视角 · R"><svg><use href="#icon-reset"/></svg></button>
+        <button class="icon-button" id="spin-toggle" type="button" aria-label="自动旋转" aria-pressed="false" title="自动旋转"><svg><use id="spin-icon" href="#icon-play"/></svg></button>
+        <span class="action-divider" aria-hidden="true"></span>
+        <button class="export-button" id="screenshot-button" type="button" disabled aria-label="导出图片" title="导出当前地图图片 · S"><svg><use href="#icon-camera"/></svg><span>导出图片</span></button>
+      </div>
+
+      <div class="legend" id="legend" aria-label="固定颜色范围">
+        <div class="legend-heading"><strong id="legend-title">高度</strong><span id="legend-unit">m</span></div>
+        <div class="legend-scale" id="legend-scale"><div class="legend-gradient" id="legend-gradient"></div><div class="legend-ticks" id="legend-ticks"></div></div>
+        <div class="monochrome-legend" id="monochrome-legend" hidden><span></span><p>统一颜色</p></div>
+        <span class="legend-note" id="legend-note">固定色域</span>
+      </div>
+
+      <div class="loading-state" id="loading-state" role="status" aria-live="polite">
+        <div class="loading-symbol" id="loading-symbol" aria-hidden="true"><span></span><span></span><span></span></div>
+        <strong id="loading-title">正在读取实测地图</strong><p id="loading-detail">首次载入需要片刻</p>
+        <button class="retry-button" id="retry-load" type="button" hidden>重新加载</button>
+      </div>
+
+      <div class="notice" id="notice" role="status" hidden><span id="notice-message"></span><button id="retry-tiles" type="button">重试</button></div>
+      <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+      <div class="scene-footer">
+        <div class="load-info"><div class="load-status"><span id="status-dot" class="status-dot"></span><span id="status-text">准备载入</span></div><div class="point-count"><strong id="loaded-point-count">—</strong><span>点已载入</span></div><div class="load-progress" id="load-progress" role="progressbar" aria-label="当前视野加载进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="load-progress-fill"></span></div></div>
+        <div class="navigation-hint"><span class="desktop-hint">拖动旋转<span>·</span>滚轮缩放<span>·</span>右键平移</span><span class="touch-hint">单指旋转<span>·</span>双指缩放与平移</span></div>
+        <div class="orientation"><svg id="axes" viewBox="0 0 80 74" aria-label="坐标轴方向，Z 轴向上"><g id="axis-x"><line/><text>X</text></g><g id="axis-y"><line/><text>Y</text></g><g id="axis-z"><line/><text>Z</text></g><circle cx="38" cy="39" r="2"/></svg><span>坐标单位 / m</span></div>
+      </div>
+
+      <nav class="view-presets" aria-label="预设视角">
+        <button type="button" data-view="oblique" class="active" aria-pressed="true"><svg><use href="#icon-map"/></svg><span>斜视</span></button>
+        <button type="button" data-view="top" aria-pressed="false"><svg><use href="#icon-top"/></svg><span>俯视</span></button>
+        <button type="button" data-view="detail" aria-pressed="false"><svg><use href="#icon-detail"/></svg><span>街区细节</span></button>
+        <button type="button" data-view="full" aria-pressed="false"><svg><use href="#icon-full"/></svg><span>全图</span></button>
+      </nav>
+      <span class="view-caption" id="view-caption">斜视</span>
+    </main>
+  </div>
+  <noscript><div class="noscript-message">此三维地图需要启用 JavaScript。请使用支持 WebGL 的现代浏览器访问。</div></noscript>
+  <script type="module" src="./app.mjs"></script>
+</body>
+</html>

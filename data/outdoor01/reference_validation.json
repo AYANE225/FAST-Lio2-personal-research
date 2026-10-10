@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "validated_utc": "2026-10-10T16:56:56.127227+00:00",
+  "dataset": "M3DGR Outdoor01",
+  "ground_truth": {
+    "filename": "GTOutdoor01.txt",
+    "size_bytes": 518307,
+    "sha256": "e66e7cbb2054a6c120e10299a3cf110e2a4c69bc434e865bc8bc4ba9daac42aa",
+    "rows": 6174,
+    "unique_timestamps": 2861,
+    "published_here": false
+  },
+  "method": "Read official GTOutdoor01.txt with numpy.loadtxt; np.unique on timestamp sorts timestamps and retains the first original row at each duplicate; np.interp XYZ at every published estimate timestamp.",
+  "limits": {
+    "maximum_interpolation_interval_s": 0.25,
+    "maximum_nearest_reference_time_difference_s": 0.11,
+    "extrapolation_allowed": false
+  },
+  "scope": "Verifies saved interpolated reference XYZ only; no time-offset fit, scale fit, lever-arm compensation or orientation evaluation.",
+  "numpy_version": "1.26.4",
+  "results": {
+    "recording": {
+      "comparison_file": "data/outdoor01/recording/position_comparison.npz",
+      "comparison_sha256": "6b7438e6b31d495c5e99884b206dfb00c062f3bbe365c0cbcdc700f068e8846e",
+      "matched_positions": 4107,
+      "maximum_absolute_reference_coordinate_difference_m": 0.0,
+      "maximum_interpolation_interval_s": 0.20432615280151367,
+      "maximum_nearest_reference_time_difference_s": 0.08279156684875488,
+      "extrapolated_positions": 0
+    },
+    "surf03": {
+      "comparison_file": "data/outdoor01/surf03/position_comparison.npz",
+      "comparison_sha256": "3d39714e10f9c6ed6feb4712c08a8db1b9b855ea9b4d393b8df6e9f1c485e85c",
+      "matched_positions": 4107,
+      "maximum_absolute_reference_coordinate_difference_m": 0.0,
+      "maximum_interpolation_interval_s": 0.20432615280151367,
+      "maximum_nearest_reference_time_difference_s": 0.08279156684875488,
+      "extrapolated_positions": 0
+    }
+  }
+}

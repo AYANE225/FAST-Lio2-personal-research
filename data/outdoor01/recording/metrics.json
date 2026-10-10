@@ -1,0 +1,141 @@
+{
+  "coverage": {
+    "input_lidar_frames": 4116,
+    "processed_frames": 4109,
+    "leading_frames_without_odometry": 7,
+    "missing_frames_after_initialization": 0,
+    "maximum_input_stamp_match_difference_s": 2.384185791015625e-07
+  },
+  "core_processing_time_ms": {
+    "count": 4109,
+    "mean": 5.101935940618156,
+    "median": 4.13724,
+    "p95": 11.454423999999998,
+    "p99": 14.6652156,
+    "maximum": 37.923770000000005,
+    "minimum": 1.95302
+  },
+  "core_processing_frames_over_100ms": 0,
+  "timing_scope": "IMU processing through map insertion; excludes input preprocessing, publication and recording.",
+  "preprocess_column_used": false,
+  "resources": {
+    "mapping": {
+      "samples": 407,
+      "rss_mib": {
+        "count": 407,
+        "mean": 172.29112599815724,
+        "median": 176.6484375,
+        "p95": 193.00390625,
+        "p99": 210.48828125,
+        "maximum": 210.50390625,
+        "minimum": 134.4375
+      },
+      "cpu_percent": {
+        "count": 407,
+        "mean": 6.842260442260443,
+        "median": 6.7,
+        "p95": 10.0,
+        "p99": 10.6,
+        "maximum": 11.5,
+        "minimum": 0.0
+      }
+    },
+    "recorder": {
+      "samples": 411,
+      "rss_mib": {
+        "count": 411,
+        "mean": 61.28194381082725,
+        "median": 62.2578125,
+        "p95": 62.4375,
+        "p99": 62.4921875,
+        "maximum": 62.59375,
+        "minimum": 54.27734375
+      },
+      "cpu_percent": {
+        "count": 411,
+        "mean": 0.7377128953771289,
+        "median": 1.0,
+        "p95": 1.9,
+        "p99": 2.0,
+        "maximum": 2.0,
+        "minimum": 0.0
+      }
+    },
+    "combined": {
+      "samples": 411,
+      "rss_mib": {
+        "count": 411,
+        "mean": 231.89627052919707,
+        "median": 238.9296875,
+        "p95": 255.44140625,
+        "p99": 272.92578125,
+        "maximum": 272.95703125,
+        "minimum": 62.453125
+      },
+      "cpu_percent": {
+        "count": 411,
+        "mean": 7.51338199513382,
+        "median": 7.0,
+        "p95": 11.0,
+        "p99": 12.0,
+        "maximum": 12.5,
+        "minimum": 0.0
+      }
+    },
+    "scope": "About 1 Hz samples through playback and controlled shutdown; may miss subsecond peaks.",
+    "cpu_convention": "100 percent is one logical CPU; combined sums mapping and recorder."
+  },
+  "position_reference_comparison": {
+    "matched_poses": 4107,
+    "unmatched_poses": 2,
+    "scale": 1.0,
+    "fitted_time_offset_s": 0.0,
+    "reference_source": "data/outdoor01/tcp/position_comparison.npz",
+    "reference_sha256": "b66a2c1fa9dba423abf4312e454121e39ab5ec730d0a47fb5b6875e41e1870aa",
+    "pairing_tolerance_s": 1e-06,
+    "rmse_m": 0.22451737554309667,
+    "error_m": {
+      "count": 4107,
+      "mean": 0.21254162543895871,
+      "median": 0.22147082193993153,
+      "p95": 0.33128468044943277,
+      "p99": 0.3694177645015036,
+      "maximum": 0.38762116833931226,
+      "minimum": 0.03437401852339591
+    },
+    "alignment": "One whole-trajectory SE(3), no scale or time-offset fit.",
+    "limitations": [
+      "The same previously interpolated RTK positions at all 4107 timestamps are reused.",
+      "RTK antenna lever arm is uncorrected; GT orientations are placeholders.",
+      "One run per configuration on one sequence; no significance claim."
+    ]
+  },
+  "recording": {
+    "frames": 4109,
+    "points": 8909069,
+    "frame_point_counts_equal_mapping_log": true,
+    "stamps_equal_odometry": true,
+    "quaternion_max_norm_error": 7.603965235247756e-10,
+    "committed_blocks": 140,
+    "dropped_frames": 0,
+    "failed_frames": 0,
+    "queue_high_water": 16,
+    "write_seconds": 127.33994692307897,
+    "pending_frames": 0,
+    "nonfinite_points": 0,
+    "settings": {
+      "chunk_frames": 256,
+      "chunk_points": 250000,
+      "expected_frame_id": "camera_init",
+      "flush_interval": 2.0,
+      "fsync": true,
+      "max_frame_bytes": 16777216,
+      "max_frame_points": 250000,
+      "missing_intensity": "zero",
+      "nonfinite": "error",
+      "overflow": "fail",
+      "queue_capacity": 32,
+      "status_interval": 1.0
+    }
+  }
+}

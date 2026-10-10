@@ -1,70 +1,74 @@
 # FAST-Lio2-个人研究版
 
-围绕 **FAST-LIO2 / MID-360** 开展的个人研究与工程验证。目前基于 ROS 2 Humble 和 M3DGR Outdoor01 建立了可复现的定位建图基线。重点展示传感器数据接入、DDS 传输问题排查、逐帧完整性检查、性能分析和可复现评估。
+围绕 **FAST-LIO2 / MID-360 移动机器人**开展的工程研究：ROS 2 数据接入与传输诊断、地图分块记录、资源与位置误差评估、真实点云的交互展示。实验使用 **M3DGR Outdoor01 公开序列**，当前成果是桌面完整回放与自动化验证。
 
-Reproducible MID-360 LiDAR–inertial odometry evaluation with ROS 2 transport diagnostics and measured runtime results.
+**[打开三维地图](https://AYANE225.github.io/FAST-Lio2-personal-research/viewer/)** · [工程实验结果](docs/engineering_results.md) · [复现说明](docs/reproduction.md) · [方法与官方资料](docs/engineering_references.md)
 
-![工程验证概览](figures/portfolio_overview.png)
+[![Outdoor01 三维点云查看器：高度着色、EDL 和原始估计轨迹](figures/viewer_preview.png)](https://AYANE225.github.io/FAST-Lio2-personal-research/viewer/)
 
-## 实测结果
+## 已验证的改进与取舍
 
-同一数据、同一算法及 QoS 参数，分别使用默认 DDS UDP 和本机 DDS TCP 完整回放一次。
+关闭上游历史地图、路径及内部 PCD 累积，改用独立进程分块记录完整已配准扫描。在这次 Outdoor01 回放中，**mapping + recorder 的同时采样峰值 RSS 从 679.0 MiB 降至 273.0 MiB，约下降 60%**；4,109 帧、8,909,069 点全部落盘。收益来自缓存与记录方式调整，核心处理耗时有所增加。
 
-| 指标 | 默认 DDS UDP | 本机 DDS TCP |
-|---|---:|---:|
-| 序列时长 | 411.57 s | 411.57 s |
-| 输入点云 / IMU | 4,116 / 82,312 | 4,116 / 82,312 |
-| 输出位姿数 | 3,780 | **4,109** |
-| 初始化后缺帧数 | 329 | **0** |
-| 核心处理耗时 p95 | 6.81 ms | **6.60 ms** |
-| 核心处理耗时 p99 | 7.68 ms | 11.40 ms |
-| mapping 采样峰值 RSS | 652.1 MiB | 679.0 MiB |
+| 指标 | 原 TCP 基线 | 分块记录 · 0.5 m | 分块记录 · 0.3 m |
+|---|---:|---:|---:|
+| 初始化后输出 / 应输出帧 | 4,109 / 4,109 | 4,109 / 4,109 | 4,109 / 4,109 |
+| mapping 采样峰值 RSS | 679.0 MiB | 210.5 MiB | 200.4 MiB |
+| mapping + recorder 同时采样峰值 RSS | 679.0 MiB¹ | **273.0 MiB** | 263.1 MiB |
+| 核心处理耗时 p95 | 6.60 ms | 11.45 ms | 13.97 ms |
+| 位置参考 RMSE | 0.223 m | 0.225 m | 0.229 m |
 
-测试平台为 Intel Core Ultra 9 285K，Release 构建。前 7 帧属于初始化阶段；核心耗时不等于端到端延迟，RSS 采样未覆盖退出保存地图。每种传输仅一轮，耗时差异不构成算法提速结论。
+¹ 原基线没有独立 recorder。0.5 / 0.3 m 指估计器的扫描体素，地图体素均为 0.5 m；网页显示体素另行配置。测试平台为 Intel Core Ultra 9 285K、ROS 2 Humble、Release 构建，各配置一轮完整 1× 回放。RSS 约 1 Hz 采样；旧基线未覆盖退出保存，新记录覆盖受控退出。核心计时不含输入预处理、发布与写盘。
 
-## 工程问题与证据
+**保留 0.5 m 工程配置。** 0.3 m 在本轮更慢，也没有显示位置精度收益。位置参考采用全程一次固定尺度 SE(3) 对齐，未拟合时间偏移、未补偿 RTK 杆臂，GT 姿态为占位值。这些结果不支持跨场景精度提升或实机硬实时结论。
 
-第一轮算法缺少 329 帧处理记录。运行期间，mapping 的 UDP 接收套接字记录了 6,336 个丢弃数据报。保持算法、滤波参数和订阅队列深度不变，切换本机 DDS TCP 后，初始化后的 4,109 帧全部产生处理记录。
+![内存、核心耗时与位置误差的完整对照](figures/engineering_comparison.png)
 
-![逐帧处理覆盖率](figures/processing_coverage.png)
+## 工程能力与证据
 
-完整证据见 [实验报告](docs/report.md)、[UDP 套接字记录](data/outdoor01/udp/network_diagnostics.json)、[TCP 指标](data/outdoor01/tcp/metrics.json) 和 [UDP 指标](data/outdoor01/udp/metrics.json)。数据报数与点云帧数不是同一个量；该结果验证的是本机 ROS 2 进程间传输。
+| 工作 | 实现与可检查证据 |
+|---|---|
+| 传感器与 ROS 2 集成 | Livox CustomMsg / IMU 时间字段校验、MID-360 配置、独立 domain 与进程管理；[回放工具](scripts/replay_outdoor01.py) |
+| 传输问题定位 | 原 UDP 回放初始化后缺少 329 帧，套接字记录 6,336 个丢弃数据报；只切换本机 DDS TCP 后缺帧为 0；[原始报告](docs/report.md) |
+| 地图记录与故障处理 | 有界回调队列、后台解析写盘、完整帧分块、原子索引、文件和目录同步、错误计数、中断恢复；[记录器说明](docs/map_recording.md) |
+| 性能与精度分析 | 输入台账、算法计时、位姿和记录帧逐项核对；同时统计 mapping 与 recorder；[结果与边界](docs/engineering_results.md) |
+| 点云处理与前端展示 | 体素质心、SOR、受约束局部平面投影、空间分块 LOD、点数预算、深度纹理 EDL、PNG 导出；[处理工具](scripts/process_map.py) / [查看器](docs/viewer) |
+| 测试与复现 | 队列过载、写入失败、异常终止恢复、浮点位移上限、浏览器上下文恢复、发布数据 SHA256；[测试](tests) / [CI](.github/workflows/verify.yml) |
 
-## 图表与复现
+## 地图外观处理
 
-[耗时、CPU、RSS](figures/runtime.png) · [位置误差参考评估](figures/accuracy.png) · [完整地图投影](figures/map_projection.png) · [SVG 原图](figures)
+全图保留 0.50 / 0.20 / 0.10 m 三档体素；网页默认显示 0.20 m + SOR，并可切回未做 SOR 的体素版本。支持高度、强度、单色、EDL 深度着色、估计轨迹和预设视角。桌面默认最多显示 50 万点，手机 20 万点，按空间块和视角选择分辨率。
 
-Python 3.11，Ubuntu 22.04 或更新版本：
+下图使用同一个局部区域、相机、点大小和色标，比较原始点、0.05 m 体素、SOR、局部平面投影。局部投影的位移 p95 为 14.75 mm，最大 30.00 mm；这是受约束的单次投影，未实现完整 MLS。**这些显示处理不参与定位估计，也不能作为定位精度提高的证据。**
 
-    sudo apt-get install fonts-noto-cjk
-    python3.11 -m venv .venv
-    .venv/bin/pip install -r requirements.txt
-    .venv/bin/python scripts/plot_evaluation.py --output-dir output/figures
+![真实点云的固定视角处理对照与位移统计](figures/map_processing.png)
 
-该命令校验输入 SHA256，核对逐帧覆盖率与耗时，生成全部五张 PNG / SVG 图和新的校验清单。使用仓库内已保存的地图网格，不需要 ROS、原始 bag 或完整 PCD。详见 [数据与复现说明](docs/reproduction.md)。
+## 快速复现
 
-## 评估范围
+Python 3.11；以下命令只使用仓库内公开结果，无需 ROS、原始 bag 或完整 PCD：
 
-- 基于 FAST-LIO2 的集成验证；本仓库不提出新的 SLAM 算法。测试时已有的 C++17 构建及地图保存补丁保存在 [patches](patches/fast-lio2-local.patch)。
-- 位置参考评估为 4,107 个匹配位姿，经一次固定尺度 SE(3) 对齐后 RMSE 为 0.223 m。未拟合时间偏移，未补偿 RTK 杆臂；GT 姿态为占位值，因此不评估姿态误差。
-- RSS 随累积地图增长；下一步需要验证地图保存与历史缓存策略，以及目标机器人上的长期运行。
-- 当前为桌面离线回放；机器人实机部署、室内退化场景和多轮稳定性测试尚待补充。
+```bash
+sudo apt-get install fonts-noto-cjk
+python3.11 -m venv .venv
+.venv/bin/pip install -r requirements.txt
+.venv/bin/python scripts/verify_artifacts.py
+.venv/bin/python scripts/plot_engineering.py --output-dir output/figures
+.venv/bin/python scripts/plot_evaluation.py --output-dir output/baseline-figures
+```
 
-## 后续研究：效率和精度
+本地打开三维地图：
 
-以下为待开展的研究，不代表已取得改进结果。保留当前回放作为基线，每次只改变一个因素，再比较完整处理率、误差、耗时与资源消耗。
+```bash
+python3 -m http.server 8767 --bind 127.0.0.1 --directory docs
+# 浏览器访问 http://127.0.0.1:8767/viewer/
+```
 
-| 方向 | 优先工作 | 评价方式 |
-|---|---|---|
-| 运行效率 | 分开测量预处理、IMU 去畸变、滤波更新、地图插入和发布；检查点云与轨迹历史缓存 | 端到端延迟及各阶段 p50 / p95 / p99、CPU、RSS、缺帧率 |
-| 长期运行 | 比较地图分段保存与缓存上限，在目标机器人计算机上进行 30–60 分钟测试 | 内存增长趋势、采样峰值、输出连续性、重启恢复 |
-| 定位精度 | 确认时间同步、外参及 RTK 天线杆臂，再评估滤波噪声、点云过滤与体素尺寸 | 固定评估协议下的位置 APE / RPE，连同失败率与耗时报告 |
-| 场景覆盖 | 补充室内走廊、动态行人、室内外切换；对候选改动做多轮复测 | 同一硬件与配置下比较多个序列，保留逐轮结果 |
+完整回放、离线点云处理、ROS 测试和浏览器验收命令见 [复现说明](docs/reproduction.md)。原始 bag、完整 PCD、完整分块记录留在本地；仓库提供轻量派生点云、逐帧结果、图表及校验清单。
 
-先完善计时与精度评估依据，再开展参数和代码优化。不能仅凭单次耗时降低或地图外观变化判断改进有效。
+## 下一步
 
-## 来源
+优先补齐时间同步、外参及 RTK 杆臂，完善端到端延迟测量；在目标机器人计算机上做 30–60 分钟运行与重启测试，并加入室内走廊、动态行人和室内外切换序列。随后以多轮结果评估滤波参数、地图范围和回环约束。当前 ikd-tree 仍随有效地图变化，分块记录不等于整个 SLAM 系统无限时长恒定内存。
 
-算法：[hku-mars/FAST_LIO](https://github.com/hku-mars/FAST_LIO)，[实验源码版本](data/outdoor01/source_version.json)。
+## 来源与许可
 
-数据：[M3DGR](https://github.com/sjtuyinjie/M3DGR) / [项目主页](https://sjtuyinjie.github.io/M3DGR-website/)。完整数据集从官方来源获取，本仓库保存本次实验的派生结果。上游代码及补丁的许可说明见 [NOTICE.md](NOTICE.md)。
+算法来自 [hku-mars/FAST_LIO](https://github.com/hku-mars/FAST_LIO)，数据来自 [sjtuyinjie/M3DGR](https://github.com/sjtuyinjie/M3DGR)，三维渲染使用 [Three.js](https://threejs.org/)。本仓库贡献为集成、工程工具、实验诊断和展示；未提出新的 FAST-LIO2 算法。原创独立工具采用 MIT，既有上游补丁保留 GPL-2.0，数据出处与第三方许可见 [NOTICE](NOTICE.md)。

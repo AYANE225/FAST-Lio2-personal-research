@@ -1,0 +1,141 @@
+{
+  "source": {
+    "points": 8909069,
+    "fields": [
+      "x",
+      "y",
+      "z",
+      "normal_x",
+      "normal_y",
+      "normal_z",
+      "intensity",
+      "curvature"
+    ],
+    "encoding": "binary",
+    "stride_bytes": 32,
+    "size_bytes": 285090461,
+    "sha256": "a1647137abfbc2e47f209a88c42900b1d856013373dbb5550da5cfab410ae557"
+  },
+  "display_transform": "Rotate initial estimated gravity to -Z; no GT fit; no translation.",
+  "gravity_rotation": [
+    [
+      0.8907053811751648,
+      -0.00719409386323614,
+      0.45452411262670245
+    ],
+    [
+      -0.00719409386323614,
+      0.999526463543498,
+      0.029918116413226288
+    ],
+    [
+      -0.45452411262670245,
+      -0.029918116413226288,
+      0.8902318447186628
+    ]
+  ],
+  "workers": 2,
+  "python_version": "3.11.16",
+  "numpy_version": "1.26.4",
+  "input_read_rotate_seconds": 1.7973376659210771,
+  "voxel_origin_m": [
+    0,
+    0,
+    0
+  ],
+  "tile_size_m": 24,
+  "voxel_levels": [
+    {
+      "id": "coarse",
+      "voxel_size_m": 0.5,
+      "input_points": 8909069,
+      "retained_points": 138599,
+      "reduction_percent": 98.44429311300654,
+      "voxel_seconds": 2.3849231761414558,
+      "summed_occupancy": 8909069,
+      "tile_bytes": 1882415
+    },
+    {
+      "id": "medium",
+      "voxel_size_m": 0.2,
+      "input_points": 8909069,
+      "retained_points": 642203,
+      "reduction_percent": 92.79158125276614,
+      "voxel_seconds": 2.1726214750669897,
+      "summed_occupancy": 8909069,
+      "tile_bytes": 8255019
+    },
+    {
+      "id": "fine",
+      "voxel_size_m": 0.1,
+      "input_points": 8909069,
+      "retained_points": 1852691,
+      "reduction_percent": 79.20443763540275,
+      "voxel_seconds": 2.2497282112017274,
+      "summed_occupancy": 8909069,
+      "tile_bytes": 22829303
+    }
+  ],
+  "transform_dtype": "float64",
+  "tile_dtype": "little-endian float32",
+  "statistical_filter": {
+    "neighbors": 24,
+    "std_ratio": 2.0,
+    "std_ddof": 1,
+    "mean_neighbor_distance_m": 0.48214813211227714,
+    "std_neighbor_distance_m": 0.9425434163297401,
+    "threshold_m": 2.3672349647717574,
+    "input_points": 642203,
+    "retained_points": 632521,
+    "removed_points": 9682,
+    "seconds": 0.8723823218606412
+  },
+  "local_comparison": {
+    "roi_xyz_m": [
+      [
+        10,
+        30
+      ],
+      [
+        -12,
+        8
+      ],
+      [
+        -2,
+        10
+      ]
+    ],
+    "voxel_size_m": 0.05,
+    "raw_points": 632509,
+    "voxel_points": 173330,
+    "statistical_filter": {
+      "neighbors": 24,
+      "std_ratio": 2,
+      "std_ddof": 1,
+      "mean_neighbor_distance_m": 0.09699288256583086,
+      "std_neighbor_distance_m": 0.05861483634246867,
+      "threshold_m": 0.2142225552507682,
+      "input_points": 173330,
+      "retained_points": 171796,
+      "removed_points": 1534
+    },
+    "plane_projection": {
+      "method": "bounded weighted local plane projection; one pass",
+      "radius_m": 0.3,
+      "neighbors": 32,
+      "min_neighbors": 10,
+      "max_displacement_m": 0.03,
+      "max_surface_variation": 0.02,
+      "min_spread_ratio": 0.15,
+      "input_points": 171796,
+      "retained_points": 171796,
+      "eligible_points": 120267,
+      "moved_points": 120251,
+      "displacement_p50_m": 0.0027495861727910905,
+      "displacement_p95_m": 0.014747407719192867,
+      "displacement_max_m": 0.029998863311566364
+    }
+  },
+  "total_processing_seconds": 16.91217266698368,
+  "scope": "Offline display processing only. Point reduction, smoothing and render time do not measure localisation accuracy or online mapping speed."
+}

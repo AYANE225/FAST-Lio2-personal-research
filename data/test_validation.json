@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "validated_utc": "2026-10-10T16:57:41.366186+00:00",
+  "scope": "Local tests on the release source; ROS smoke enabled for Python. Does not represent long-duration or target-robot validation.",
+  "python": {
+    "version": "3.11.16",
+    "pytest": "9.1.1",
+    "command": "RUN_ROS_TESTS=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python -m pytest -q",
+    "passed": 59,
+    "output": "...........................................................              [100%]\n59 passed in 2.09s\n",
+    "log_sha256": "2bfdb5523a7e686be895ed0ff348a67e4803e53378e89e61c6c3315d87ce9683"
+  },
+  "node": {
+    "version": "v24.15.0",
+    "command": "node --test docs/viewer/tests/*.test.mjs",
+    "passed": 13,
+    "failed": 0,
+    "output": "✔ LOD selection replaces a spatial cell without exceeding its point budget (1.324084ms)\n✔ hidden cells are excluded and a cell larger than the budget is not partially counted (0.194107ms)\n✔ zooming out retains coarse coverage when its projected spacing is small (3.69311ms)\n✔ manifest rejects false point totals, duplicate spatial cells, and invalid fixed ranges (0.349641ms)\n✔ asset URLs stay within the manifest directory (0.113552ms)\n✔ gzip tile decoding preserves interleaved XYZI values (7.472514ms)\n✔ truncated, overlong, and non-finite point tiles fail before rendering (0.189564ms)\n✔ points outside declared spatial bounds are rejected (0.072699ms)\n✔ decompression is bounded by the declared number of points (2.521413ms)\n✔ real gzip loads stay within budget and replaced resources are released (29.625937ms)\n✔ moving away cancels the HTTP request and prevents stale point creation (13.894537ms)\n✔ a failed tile is reported and may be retried without exceeding the budget (11.996689ms)\n✔ an oversized plan or duplicate cell is rejected before creating resources (0.314997ms)\nℹ tests 13\nℹ suites 0\nℹ pass 13\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 1089.988814\n",
+    "log_sha256": "bbc85b538469eb27231c7b153b0c74e36225b209282a0bd474505c19736e7513"
+  },
+  "tested_python_source_sha256": {
+    "scripts/evaluate_engineering.py": "34fcdab4cc7fd74b87993844248d991ebae05f89b122998af45c164622bca813",
+    "scripts/map_recorder.py": "b370c849fa7b47e62fbedd073dfd2e7f8585488b0a64839e61a93abcc08a0b43",
+    "scripts/map_writer.py": "51863d708fa5157239736d6edb823d70babbcb1cc7435a5a556cf1bc8d9b885d",
+    "scripts/plot_engineering.py": "8e9ec52ddb0f1de29cfbe186211c4eabafdc732e9a3d868726f03b7aa51b1bb6",
+    "scripts/plot_evaluation.py": "43bd5eab39e24f1d96842224322fc43eb389d66c2681eb8a6b667ea5fc10c1b0",
+    "scripts/process_map.py": "c979c1b9a9e7f276f6fb4077e8914b10d4d3c7c86134f09791dbecc55ce8e157",
+    "scripts/replay_outdoor01.py": "42219f2239377291b167effad1f9e2ff6275fafe4369e9748ddb7284f1c3e8c6",
+    "scripts/verify_artifacts.py": "800842575c3e90c4fbf607264d9c3d32bdbe17126e715a653969cf164f0733d0",
+    "tests/test_evaluate_engineering.py": "e9986f890f06240ebacc8c885fa1212d4f25221e1e096052d24f09a4434914ef",
+    "tests/test_map_recorder.py": "110083f691ca00e5876a96f2349356700d3698f56bba7f9f35db8871ed6240b5",
+    "tests/test_map_writer.py": "a5ebdfb2e2973fcd5a83be235b4a09ce01c38c1c03f87b16677600e804158fef",
+    "tests/test_process_map.py": "43ba3d25903320e06c0f164deddeacbf7557a29209c7259ebdd3a75f5ba886e6",
+    "tests/test_replay_outdoor01.py": "a1b63cb612c98cf99edb9cb4ca05019ae791d157c48d49f16b6c6d3244391001",
+    "tests/test_ros_recorder_smoke.py": "106be8d9fa0711528d6d569b8db77854d86314dcc0af1d3f11b63f06dac114e0"
+  },
+  "viewer_source_hashes": "data/viewer_validation.json"
+}

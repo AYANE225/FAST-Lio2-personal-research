@@ -1,0 +1,141 @@
+{
+  "coverage": {
+    "input_lidar_frames": 4116,
+    "processed_frames": 4109,
+    "leading_frames_without_odometry": 7,
+    "missing_frames_after_initialization": 0,
+    "maximum_input_stamp_match_difference_s": 2.384185791015625e-07
+  },
+  "core_processing_time_ms": {
+    "count": 4109,
+    "mean": 6.3086108201508875,
+    "median": 5.18394,
+    "p95": 13.970539999999998,
+    "p99": 18.135690400000005,
+    "maximum": 21.879450000000002,
+    "minimum": 2.6470399999999996
+  },
+  "core_processing_frames_over_100ms": 0,
+  "timing_scope": "IMU processing through map insertion; excludes input preprocessing, publication and recording.",
+  "preprocess_column_used": false,
+  "resources": {
+    "mapping": {
+      "samples": 407,
+      "rss_mib": {
+        "count": 407,
+        "mean": 174.45299063267814,
+        "median": 175.62109375,
+        "p95": 198.5546875,
+        "p99": 200.42578125,
+        "maximum": 200.42578125,
+        "minimum": 134.49609375
+      },
+      "cpu_percent": {
+        "count": 407,
+        "mean": 7.667813267813268,
+        "median": 7.0,
+        "p95": 11.5,
+        "p99": 12.494,
+        "maximum": 14.0,
+        "minimum": 1.0
+      }
+    },
+    "recorder": {
+      "samples": 410,
+      "rss_mib": {
+        "count": 410,
+        "mean": 61.437185594512194,
+        "median": 61.736328125,
+        "p95": 62.65625,
+        "p99": 62.65625,
+        "maximum": 62.66015625,
+        "minimum": 54.24609375
+      },
+      "cpu_percent": {
+        "count": 410,
+        "mean": 0.7714634146341464,
+        "median": 1.0,
+        "p95": 1.9,
+        "p99": 2.0,
+        "maximum": 2.8,
+        "minimum": 0.0
+      }
+    },
+    "combined": {
+      "samples": 410,
+      "rss_mib": {
+        "count": 410,
+        "mean": 234.61369092987806,
+        "median": 236.619140625,
+        "p95": 261.2109375,
+        "p99": 263.078125,
+        "maximum": 263.078125,
+        "minimum": 62.66015625
+      },
+      "cpu_percent": {
+        "count": 410,
+        "mean": 8.383170731707317,
+        "median": 8.0,
+        "p95": 12.219999999999983,
+        "p99": 13.4,
+        "maximum": 15.0,
+        "minimum": 0.0
+      }
+    },
+    "scope": "About 1 Hz samples through playback and controlled shutdown; may miss subsecond peaks.",
+    "cpu_convention": "100 percent is one logical CPU; combined sums mapping and recorder."
+  },
+  "position_reference_comparison": {
+    "matched_poses": 4107,
+    "unmatched_poses": 2,
+    "scale": 1.0,
+    "fitted_time_offset_s": 0.0,
+    "reference_source": "data/outdoor01/tcp/position_comparison.npz",
+    "reference_sha256": "b66a2c1fa9dba423abf4312e454121e39ab5ec730d0a47fb5b6875e41e1870aa",
+    "pairing_tolerance_s": 1e-06,
+    "rmse_m": 0.22858803714107934,
+    "error_m": {
+      "count": 4107,
+      "mean": 0.21750043973530744,
+      "median": 0.22580476243910722,
+      "p95": 0.33856797885450135,
+      "p99": 0.37614919205716923,
+      "maximum": 0.392994477544271,
+      "minimum": 0.038965586475545044
+    },
+    "alignment": "One whole-trajectory SE(3), no scale or time-offset fit.",
+    "limitations": [
+      "The same previously interpolated RTK positions at all 4107 timestamps are reused.",
+      "RTK antenna lever arm is uncorrected; GT orientations are placeholders.",
+      "One run per configuration on one sequence; no significance claim."
+    ]
+  },
+  "recording": {
+    "frames": 4109,
+    "points": 8909069,
+    "frame_point_counts_equal_mapping_log": true,
+    "stamps_equal_odometry": true,
+    "quaternion_max_norm_error": 7.453919703692691e-10,
+    "committed_blocks": 154,
+    "dropped_frames": 0,
+    "failed_frames": 0,
+    "queue_high_water": 11,
+    "write_seconds": 96.8017613128759,
+    "pending_frames": 0,
+    "nonfinite_points": 0,
+    "settings": {
+      "chunk_frames": 256,
+      "chunk_points": 250000,
+      "expected_frame_id": "camera_init",
+      "flush_interval": 2.0,
+      "fsync": true,
+      "max_frame_bytes": 16777216,
+      "max_frame_points": 250000,
+      "missing_intensity": "zero",
+      "nonfinite": "error",
+      "overflow": "fail",
+      "queue_capacity": 32,
+      "status_interval": 1.0
+    }
+  }
+}

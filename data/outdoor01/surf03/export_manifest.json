@@ -1,0 +1,14 @@
+{
+  "source_files": {
+    "run_summary.json": "beec6b9927490d372d68eabec93ee0124dc05dd1523befc9f7a35922f991f664",
+    "config.yaml": "bbb2285312667526835aee3df86fc938e4c52bba4a855d2af71874da9519c81d",
+    "trajectory_tum.txt": "1a09f5faf5bfb8c1c31e7755f6a02ca79891f210badc28183546ce28599d484d",
+    "resources.jsonl": "a3f287886dfd4185d01b97d62f486bf9a7a3622b5f012d266ef395222862fcab",
+    "algorithm_logs/fast_lio_time_log.csv": "e36ad59e6685da61d4bcd051566fa88589d580ec51a5a66c1722b18ce8407178",
+    "recording/manifest.json": "f5c367e32847041f4343b992d3dddbf9ad41e247adf25815396b2cb15de68da1",
+    "recording/index.json": "04e2775e361fb56af1d66eceb00b7ec4093349ff63e454c6f88fa51a14fed0f2",
+    "recording/settings.json": "7d9a759fcf6f09a4d735357aa3a7014ba9707214537789223080a195ebc3303b"
+  },
+  "export_note": "Machine paths/commands/PIDs omitted from public run summary. Full point blocks remain local.",
+  "recorded_frames_columns": "stamp_ns, input_points, point_count, block_id, sequence, point_offset; all int64"
+}

@@ -1,0 +1,14 @@
+Three.js 0.160.1 (r160), MIT License
+Copyright © 2010–2023 Three.js authors
+Full license: THREE-LICENSE.txt
+
+Pinned upstream files, retrieved 2026-10-10:
+https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.module.min.js
+https://cdn.jsdelivr.net/npm/three@0.160.1/examples/jsm/controls/OrbitControls.js
+https://cdn.jsdelivr.net/npm/three@0.160.1/LICENSE
+
+Modification: OrbitControls.js imports ./three.module.min.js instead of the
+bare package name 'three'. The runtime has no CDN or other third-party requests.
+
+The viewer's depth-based Eye-Dome Lighting pass is implemented locally in
+point-cloud-renderer.mjs. It is not part of Three.js or a copied Potree shader.

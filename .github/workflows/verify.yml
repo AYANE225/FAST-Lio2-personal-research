@@ -1,0 +1,23 @@
+name: Verify engineering tools
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: 'requirements*.txt'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: python -m pip install -r requirements-dev.txt
+      - run: python -m pytest -q
+        env:
+          PYTEST_DISABLE_PLUGIN_AUTOLOAD: '1'
+      - run: node --test docs/viewer/tests/*.test.mjs
+      - run: python scripts/verify_artifacts.py

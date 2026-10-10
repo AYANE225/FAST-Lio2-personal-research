@@ -8,3 +8,4 @@ output/
 *.mcap
 *.pcd
 .DS_Store
+.worktrees/

@@ -1,0 +1,56 @@
+{
+  "started_utc": "2026-10-10T09:29:47.151663+00:00",
+  "ros_domain_id": "189",
+  "playback_rate": 1.0,
+  "bag_duration_s": 411.566921377,
+  "dds_transport": "TCP",
+  "timing_note": "FAST-LIO total time covers IMU processing through map insertion; it excludes input preprocessing and subsequent point-cloud publication.",
+  "playback_wall_s": 417.9445982459001,
+  "playback_exit_code": 0,
+  "mapping_exit_code": 0,
+  "map": {
+    "points": 8909069,
+    "size_bytes": 285090461,
+    "encoding": "binary",
+    "fields": [
+      "x",
+      "y",
+      "z",
+      "normal_x",
+      "normal_y",
+      "normal_z",
+      "intensity",
+      "curvature"
+    ],
+    "binary_size_matches_header": true
+  },
+  "odometry": {
+    "count": 4109,
+    "all_finite": true,
+    "first_timestamp": 1735888008.8182952,
+    "last_timestamp": 1735888419.619805,
+    "duration_s": 410.80150985717773,
+    "nonincreasing_timestamps": 0,
+    "maximum_gap_s": 0.13994956016540527,
+    "median_gap_s": 0.09990310668945312,
+    "estimated_distance_m": 347.4521093083918,
+    "quaternion_max_norm_error": 1.5842882561400984e-13,
+    "frames": [
+      [
+        "camera_init",
+        "body"
+      ]
+    ]
+  },
+  "resources": {
+    "samples": 398,
+    "sample_interval_s": 1,
+    "cpu_percent_mean": 6.669597989949748,
+    "cpu_percent_p95": 10.0,
+    "cpu_percent_max": 17.3,
+    "observed_peak_rss_mib": 679.03515625,
+    "cpu_percent_convention": "100 percent equals one logical CPU; mapping process only"
+  },
+  "elapsed_wall_s": 426.8443971090019,
+  "finished_utc": "2026-10-10T09:36:53.996077+00:00"
+}

@@ -1,0 +1,34 @@
+{
+  "sqlite_quick_check": "ok",
+  "topic_counts": [
+    [
+      "/livox/mid360/imu",
+      82312
+    ],
+    [
+      "/livox/mid360/lidar",
+      4116
+    ]
+  ],
+  "ros2_native_deserialization": [
+    {
+      "frame_index": 0,
+      "points": 19968,
+      "all_point_fields_equal": true,
+      "timestamp_equal": true
+    },
+    {
+      "frame_index": 2000,
+      "points": 19968,
+      "all_point_fields_equal": true,
+      "timestamp_equal": true
+    },
+    {
+      "frame_index": 4115,
+      "points": 19968,
+      "all_point_fields_equal": true,
+      "timestamp_equal": true
+    }
+  ],
+  "metadata_version": 8
+}

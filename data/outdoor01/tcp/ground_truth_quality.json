@@ -1,0 +1,11 @@
+{
+  "rows": 6174,
+  "unique_timestamps": 2861,
+  "adjacent_duplicate_timestamps": 3313,
+  "backward_steps": 135,
+  "maximum_backward_s": 1.9073486328125e-05,
+  "maximum_position_difference_within_duplicate_timestamp_m": 0.0,
+  "quaternions_are_identity": true,
+  "raw_gt_preserved": true,
+  "calibration_limitation": "No RTK-antenna to MID-360-IMU lever arm is supplied in the downloaded calibration document."
+}

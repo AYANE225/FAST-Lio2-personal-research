@@ -1,0 +1,2 @@
+figures/*.svg linguist-generated=true -whitespace
+patches/*.patch -whitespace

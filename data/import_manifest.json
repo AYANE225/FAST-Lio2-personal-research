@@ -1,0 +1,130 @@
+{
+  "figures/accuracy.png": {
+    "sha256": "83507e5f9d76f5885fff259dc6bbf2dbbe1eb777fe6dd60f076a744443963a58",
+    "source_file": "results/outdoor01_20261010_083344_tcp/figures/accuracy.png"
+  },
+  "figures/accuracy.svg": {
+    "sha256": "87e895b0f26e7fff02dcc922c2dcb99be3165421e28c735a14a187d2aaa0784e",
+    "source_file": "results/outdoor01_20261010_083344_tcp/figures/accuracy.svg"
+  },
+  "figures/map_projection.png": {
+    "sha256": "89f52bedaad05919a645f471bdd637a0bbf13ec34cefbc6a15282c3fa40ebfcc",
+    "source_file": "results/outdoor01_20261010_083344_tcp/figures/map_projection.png"
+  },
+  "figures/map_projection.svg": {
+    "sha256": "85ba13045017bacdeed79d6df9cabe6d7568705ed839c0fc3049b09875b81618",
+    "source_file": "results/outdoor01_20261010_083344_tcp/figures/map_projection.svg"
+  },
+  "figures/portfolio_overview.png": {
+    "sha256": "fb85bdb9b90468131f6fdbad14e4890551978f92a7494fd10debb70d52d4f16b",
+    "source_file": "results/outdoor01_20261010_083344_tcp/figures/portfolio_overview.png"
+  },
+  "figures/portfolio_overview.svg": {
+    "sha256": "e6d61ac4727bb267eb5b306bd5a7b062c861256020edf237ff3a93c902dbfe20",
+    "source_file": "results/outdoor01_20261010_083344_tcp/figures/portfolio_overview.svg"
+  },
+  "figures/processing_coverage.png": {
+    "sha256": "84371c38ca8fbbc76b09c1cbc733b88a28845c42b1a8e716df5112c410f5baed",
+    "source_file": "results/outdoor01_20261010_083344_tcp/figures/processing_coverage.png"
+  },
+  "figures/processing_coverage.svg": {
+    "sha256": "ca6c4c9c889a1958b6d7f670f296261c9407184546241d55df4e96671f4765ff",
+    "source_file": "results/outdoor01_20261010_083344_tcp/figures/processing_coverage.svg"
+  },
+  "figures/runtime.png": {
+    "sha256": "655c98e4fea7bb51c8cb52109b3123ea09bdb3ee0b915821e4fab45806ea4a50",
+    "source_file": "results/outdoor01_20261010_083344_tcp/figures/runtime.png"
+  },
+  "figures/runtime.svg": {
+    "sha256": "fe638b35457f941fcb3d499b1b494fef454414d0c218ab8e2b07c124b60a1b0f",
+    "source_file": "results/outdoor01_20261010_083344_tcp/figures/runtime.svg"
+  },
+  "data/outdoor01/tcp/metrics.json": {
+    "sha256": "9e181b2b8c2a30909e5ade970fb46ab7f475c3e3b5748ae56e168e12234907eb",
+    "source_file": "results/outdoor01_20261010_083344_tcp/metrics.json"
+  },
+  "data/outdoor01/tcp/resources.jsonl": {
+    "sha256": "eff2dbc7d157cb52186358b2dd4078cc2dcd0221a6c6bc43557061a4399393fd",
+    "source_file": "results/outdoor01_20261010_083344_tcp/resources.jsonl"
+  },
+  "data/outdoor01/tcp/trajectory_tum.txt": {
+    "sha256": "a65162c2b08e62009e319c43c72559c6b43695c4507c03f0c6bd09efd72981cb",
+    "source_file": "results/outdoor01_20261010_083344_tcp/trajectory_tum.txt"
+  },
+  "data/outdoor01/tcp/algorithm_logs/fast_lio_time_log.csv": {
+    "sha256": "e1d3815124c2d936218d6e9472da62f1ff49c6eb7d8c530cc77a308a29eed4ec",
+    "source_file": "results/outdoor01_20261010_083344_tcp/algorithm_logs/fast_lio_time_log.csv"
+  },
+  "data/outdoor01/udp/metrics.json": {
+    "sha256": "5bbf99cc86be3ae36a7229fa9db9ca6705e3102ae91840423686a4ad7186abf9",
+    "source_file": "results/outdoor01_20261010_083344/metrics.json"
+  },
+  "data/outdoor01/udp/resources.jsonl": {
+    "sha256": "b687ffc373807fcd596fe1ad575628d603bd9eb6a770d81c9586cb4253c54086",
+    "source_file": "results/outdoor01_20261010_083344/resources.jsonl"
+  },
+  "data/outdoor01/udp/trajectory_tum.txt": {
+    "sha256": "3d8abba64e0173aa94c419143ba5f495ce4c193484ab87d3dbc580d6821917c9",
+    "source_file": "results/outdoor01_20261010_083344/trajectory_tum.txt"
+  },
+  "data/outdoor01/udp/algorithm_logs/fast_lio_time_log.csv": {
+    "sha256": "80cca4fa04ec3ef21d2d1c09810bf6d40139112363f24659e043017187f09c68",
+    "source_file": "results/outdoor01_20261010_083344/algorithm_logs/fast_lio_time_log.csv"
+  },
+  "data/outdoor01/tcp/input_timestamps.npz": {
+    "sha256": "8f016f871e3ed564e06838caba25124f372c057157d0dedef662b8c6fa6f621f",
+    "source_file": "results/outdoor01_20261010_083344_tcp/input_timestamps.npz"
+  },
+  "data/outdoor01/tcp/position_comparison.npz": {
+    "sha256": "b66a2c1fa9dba423abf4312e454121e39ab5ec730d0a47fb5b6875e41e1870aa",
+    "source_file": "results/outdoor01_20261010_083344_tcp/position_comparison.npz"
+  },
+  "data/outdoor01/tcp/conversion_validation.json": {
+    "sha256": "37cb2741222e3016cde28cb24b505c6aea580bc633be0238da2d19535e077cbc",
+    "source_file": "results/outdoor01_20261010_083344_tcp/conversion_validation.json"
+  },
+  "data/outdoor01/tcp/input_quality.json": {
+    "sha256": "16c1a2edcb5eca12dcf4b0809d04e74621880a5b9b42d54ed81204088f40cc7c",
+    "source_file": "results/outdoor01_20261010_083344_tcp/input_quality.json"
+  },
+  "data/outdoor01/tcp/ground_truth_quality.json": {
+    "sha256": "0086bc52bbe85caa2d178fd14712bd5fc3db12f1408bd7867a03eb45bc524c71",
+    "source_file": "results/outdoor01_20261010_083344_tcp/ground_truth_quality.json"
+  },
+  "data/outdoor01/tcp/environment.json": {
+    "sha256": "bbdee546840d13cf76a2645b154007d186593af80e1c436b4a3ecd507ea06d32",
+    "source_file": "results/outdoor01_20261010_083344_tcp/environment.json"
+  },
+  "data/outdoor01/udp/network_diagnostics.json": {
+    "sha256": "45846c4383605359d3060533ece18c842ca00f75ca36eec13837facd2f50fd6c",
+    "source_file": "results/outdoor01_20261010_083344/network_diagnostics.json"
+  },
+  "data/outdoor01/tcp/map_density.npz": {
+    "sha256": "2193ef6d4bcb824c1521b5efffecd4825b44e70ddc9403250e9046bbd2933af8",
+    "source_file": "results/outdoor01_20261010_083344_tcp/figures/map_density.npz"
+  },
+  "scripts/plot_evaluation.py": {
+    "sha256": "3cf43fd7a88073a66a1e74b518ca57505d1c2f6ec0f39c906ec1bd0af01fdbfc",
+    "source_file": "results/outdoor01_20261010_083344_tcp/plot_evaluation.py"
+  },
+  "patches/fast-lio2-local.patch": {
+    "sha256": "70894855b42b1209158750525221fc6881cbe77f178b7afcb00579b9ce321f41",
+    "source_file": "results/outdoor01_20261010_083344_tcp/source.diff"
+  },
+  "licenses/FAST_LIO_GPL-2.0.txt": {
+    "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
+    "source_file": "ws/src/FAST_LIO/LICENSE"
+  },
+  "configs/cyclonedds_mapping.xml": {
+    "sha256": "caee1eb76f6335acb49e97b4cf3a18f3f083b93416b88f65e3827870c61e84fe",
+    "source_file": "results/outdoor01_20261010_083344_tcp/cyclonedds_mapping.xml"
+  },
+  "configs/cyclonedds_playback.xml": {
+    "sha256": "88cc46e8457286e9c7b10eae1d1000c5a57298bbe4c5f4c221b9ebd138c33963",
+    "source_file": "results/outdoor01_20261010_083344_tcp/cyclonedds_playback.xml"
+  },
+  "configs/cyclonedds_observer.xml": {
+    "sha256": "b93384b08c60a5d00f5a5db4f8708d6b8cb54d61620d21f79567802099b4b44a",
+    "source_file": "results/outdoor01_20261010_083344_tcp/cyclonedds_observer.xml"
+  }
+}

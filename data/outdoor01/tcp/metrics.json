@@ -1,0 +1,141 @@
+{
+  "coverage": {
+    "input_lidar_frames": 4116,
+    "processed_frames": 4109,
+    "first_processed_input_index": 7,
+    "last_processed_input_index": 4115,
+    "leading_frames_without_odometry": 7,
+    "missing_frames_after_initialization": 0,
+    "missing_input_index_ranges": [],
+    "trailing_frames_without_odometry": 0,
+    "processed_fraction_after_initialization": 1.0,
+    "maximum_input_stamp_match_difference_s": 2.384185791015625e-07,
+    "output_matches_algorithm_row_count": true,
+    "trajectory_quaternion_max_norm_error": 7.715651451078998e-10,
+    "timing_rows": 4109
+  },
+  "core_processing_time_ms": {
+    "count": 4109,
+    "mean": 4.140682908250183,
+    "median": 3.63217,
+    "p95": 6.5953599999999994,
+    "p99": 11.398090400000001,
+    "maximum": 25.77599,
+    "minimum": 1.86259
+  },
+  "core_processing_frames_over_100ms": 0,
+  "timing_scope": "FAST-LIO total time covers IMU processing through map insertion; it excludes input preprocessing and subsequent point-cloud publication.",
+  "preprocess_column_used": false,
+  "preprocess_column_reason": "Indexed by input callback count, while CSV rows use processed-frame count; the columns are not frame aligned.",
+  "resources": {
+    "samples": 398,
+    "sample_interval_s": 1,
+    "cpu_percent_mean": 6.669597989949748,
+    "cpu_percent_p95": 10.0,
+    "cpu_percent_max": 17.3,
+    "observed_peak_rss_mib": 679.03515625,
+    "cpu_percent_convention": "100 percent equals one logical CPU; mapping process only"
+  },
+  "odometry": {
+    "count": 4109,
+    "all_finite": true,
+    "first_timestamp": 1735888008.8182952,
+    "last_timestamp": 1735888419.619805,
+    "duration_s": 410.80150985717773,
+    "nonincreasing_timestamps": 0,
+    "maximum_gap_s": 0.13994956016540527,
+    "median_gap_s": 0.09990310668945312,
+    "estimated_distance_m": 347.4521093083918,
+    "quaternion_max_norm_error": 1.5842882561400984e-13,
+    "frames": [
+      [
+        "camera_init",
+        "body"
+      ]
+    ]
+  },
+  "position_reference_comparison": {
+    "evaluation": "translation APE after one SE(3) alignment, reference only",
+    "matched_poses": 4107,
+    "unmatched_poses": 2,
+    "scale": 1.0,
+    "fitted_time_offset_s": 0.0,
+    "time_protocol": "Sort and deduplicate GT; linear XYZ interpolation at odometry timestamps; no extrapolation.",
+    "maximum_nearest_time_difference_s": 0.11,
+    "maximum_interpolation_bracket_s": 0.25,
+    "observed_maximum_nearest_time_difference_s": 0.08279156684875488,
+    "observed_maximum_interpolation_bracket_s": 0.20432615280151367,
+    "error_m": {
+      "count": 4107,
+      "mean": 0.21190590971097886,
+      "median": 0.22028939383776136,
+      "p95": 0.3176780425382186,
+      "p99": 0.3836411854480992,
+      "maximum": 0.4074627366035781,
+      "minimum": 0.04873149672279807
+    },
+    "rmse_m": 0.222644067329117,
+    "rmse_horizontal_m": 0.22088690419240453,
+    "rmse_vertical_m": 0.027916953149437602,
+    "rotation": [
+      [
+        -0.8800427779810084,
+        -0.0961608368934258,
+        -0.46505677327765665
+      ],
+      [
+        0.09703002380042001,
+        -0.9950353399994335,
+        0.0221324791540017
+      ],
+      [
+        -0.4648762022353476,
+        -0.025646941341383143,
+        0.8850041530948162
+      ]
+    ],
+    "translation_m": [
+      0.11084096014162981,
+      0.019208297606893687,
+      0.023803407686229905
+    ],
+    "singular_values": [
+      7738494.538524938,
+      514265.98635010136,
+      45.64555798482968
+    ],
+    "scipy_rotation_max_difference": 6.935424456955275e-15,
+    "limitations": [
+      "GT quaternions are identity placeholders: no orientation error evaluation.",
+      "No lever-arm correction: the documented GNSS antenna is not confirmed as the separate RTK ground-truth antenna.",
+      "One sequence and one run per transport; no confidence intervals or deployment certification."
+    ]
+  },
+  "map_validation": {
+    "points": 8909069,
+    "size_bytes": 285090461,
+    "all_xyz_finite": true,
+    "minimum_xyz_m": [
+      -88.71575164794922,
+      -101.62811279296875,
+      -30.962499618530273
+    ],
+    "maximum_xyz_m": [
+      182.24571228027344,
+      127.13871765136719,
+      152.76683044433594
+    ],
+    "frame": "camera_init",
+    "preview_points": 342657,
+    "preview_transform": "Same SE(3) fit used for the trajectory; original PCD is unchanged.",
+    "map_type": "Accumulated transformed, prefiltered scans; not the voxel-downsampled ikd-Tree."
+  },
+  "mapping_log": {
+    "warnings": 5,
+    "errors": 0,
+    "no_point_warnings": 5,
+    "timestamp_loopbacks": 0,
+    "imu_lidar_sync_warnings": 0
+  },
+  "resource_sampling_note": "Approximately once per second during playback; the peak excludes shutdown map writing and may miss subsecond peaks."
+}

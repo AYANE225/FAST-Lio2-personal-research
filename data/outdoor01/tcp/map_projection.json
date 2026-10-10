@@ -1,0 +1,56 @@
+{
+  "points": 8909069,
+  "cell_size_m": 0.1,
+  "sum_of_grid_counts": 8909069,
+  "gravity_m_s2": [
+    4.45843,
+    0.293467,
+    -8.73229
+  ],
+  "gravity_rotation": [
+    [
+      0.8907053811751648,
+      -0.00719409386323614,
+      0.45452411262670245
+    ],
+    [
+      -0.00719409386323614,
+      0.999526463543498,
+      0.029918116413226288
+    ],
+    [
+      -0.45452411262670245,
+      -0.029918116413226288,
+      0.8902318447186628
+    ]
+  ],
+  "full_extent_xy_m": [
+    -83.2,
+    209.5,
+    -101.2,
+    127.60000000000001
+  ],
+  "minimum_xyz_m": [
+    -83.12134274745405,
+    -101.17124002849955,
+    -4.605846451171399
+  ],
+  "maximum_xyz_m": [
+    209.42810174031013,
+    127.5689893813961,
+    97.8801128041707
+  ],
+  "portfolio_view_xy_m": [
+    -36.3398547551685,
+    177.0255571498554,
+    -48.483345965849146,
+    70.77703204618814
+  ],
+  "portfolio_view_grid_count": 8867151,
+  "portfolio_view_grid_count_percent": 99.52949067966586,
+  "map_type": "Accumulated transformed prefiltered scans, not a deduplicated map.",
+  "display_transform": "Rotate initial estimated gravity to -Z; no GT fit; no translation.",
+  "height_filter": null,
+  "point_subsampling": null,
+  "color_value": "Number of points per 0.1 m x 0.1 m XY cell, logarithmic color scale."
+}

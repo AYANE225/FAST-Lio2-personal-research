@@ -1,0 +1,24 @@
+{
+  "cpu_model": "Intel(R) Core(TM) Ultra 9 285K",
+  "logical_cpus": 24,
+  "total_memory_bytes": 66648965120,
+  "kernel": "6.8.0-139-generic",
+  "python": "3.11.16",
+  "omp_num_threads": 3,
+  "packages": {
+    "rosbags": "0.10.11",
+    "numpy": "1.26.4",
+    "scipy": "1.17.1",
+    "matplotlib": "3.10.9",
+    "psutil": "7.2.2",
+    "PyYAML": "6.0.3"
+  },
+  "build_type": "Release",
+  "compile_definitions": {
+    "MP_PROC_NUM": 1,
+    "MP_EN": false
+  },
+  "rmw_implementation": "rmw_cyclonedds_cpp",
+  "cyclonedds_version": "0.10.5",
+  "rmw_cyclonedds_cpp_version": "1.3.4"
+}

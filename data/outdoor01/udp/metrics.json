@@ -1,0 +1,386 @@
+{
+  "coverage": {
+    "input_lidar_frames": 4116,
+    "processed_frames": 3780,
+    "first_processed_input_index": 7,
+    "last_processed_input_index": 4115,
+    "leading_frames_without_odometry": 7,
+    "missing_frames_after_initialization": 329,
+    "missing_input_index_ranges": [
+      [
+        59,
+        63
+      ],
+      [
+        156,
+        156
+      ],
+      [
+        188,
+        195
+      ],
+      [
+        206,
+        214
+      ],
+      [
+        1067,
+        1072
+      ],
+      [
+        1232,
+        1237
+      ],
+      [
+        1248,
+        1254
+      ],
+      [
+        1259,
+        1264
+      ],
+      [
+        1266,
+        1268
+      ],
+      [
+        1278,
+        1278
+      ],
+      [
+        1280,
+        1286
+      ],
+      [
+        1296,
+        1296
+      ],
+      [
+        1298,
+        1300
+      ],
+      [
+        1434,
+        1437
+      ],
+      [
+        1456,
+        1459
+      ],
+      [
+        1486,
+        1493
+      ],
+      [
+        1570,
+        1577
+      ],
+      [
+        1586,
+        1590
+      ],
+      [
+        1694,
+        1698
+      ],
+      [
+        1700,
+        1701
+      ],
+      [
+        1711,
+        1711
+      ],
+      [
+        1713,
+        1718
+      ],
+      [
+        1730,
+        1737
+      ],
+      [
+        1747,
+        1754
+      ],
+      [
+        1764,
+        1771
+      ],
+      [
+        1780,
+        1780
+      ],
+      [
+        1782,
+        1788
+      ],
+      [
+        1901,
+        1908
+      ],
+      [
+        1917,
+        1923
+      ],
+      [
+        1933,
+        1933
+      ],
+      [
+        1935,
+        1941
+      ],
+      [
+        1950,
+        1957
+      ],
+      [
+        2423,
+        2425
+      ],
+      [
+        2602,
+        2607
+      ],
+      [
+        2742,
+        2748
+      ],
+      [
+        2817,
+        2819
+      ],
+      [
+        2845,
+        2845
+      ],
+      [
+        2865,
+        2866
+      ],
+      [
+        3014,
+        3020
+      ],
+      [
+        3114,
+        3117
+      ],
+      [
+        3141,
+        3145
+      ],
+      [
+        3236,
+        3238
+      ],
+      [
+        3252,
+        3258
+      ],
+      [
+        3310,
+        3311
+      ],
+      [
+        3359,
+        3366
+      ],
+      [
+        3441,
+        3448
+      ],
+      [
+        3457,
+        3464
+      ],
+      [
+        3496,
+        3511
+      ],
+      [
+        3549,
+        3549
+      ],
+      [
+        3560,
+        3565
+      ],
+      [
+        3589,
+        3593
+      ],
+      [
+        3619,
+        3626
+      ],
+      [
+        3645,
+        3652
+      ],
+      [
+        3697,
+        3700
+      ],
+      [
+        3754,
+        3761
+      ],
+      [
+        3992,
+        3993
+      ],
+      [
+        4006,
+        4008
+      ],
+      [
+        4019,
+        4025
+      ],
+      [
+        4057,
+        4064
+      ],
+      [
+        4088,
+        4095
+      ],
+      [
+        4104,
+        4105
+      ]
+    ],
+    "trailing_frames_without_odometry": 0,
+    "processed_fraction_after_initialization": 0.919931856899489,
+    "maximum_input_stamp_match_difference_s": 2.384185791015625e-07,
+    "output_matches_algorithm_row_count": true,
+    "trajectory_quaternion_max_norm_error": 7.820059044760796e-10,
+    "timing_rows": 3780
+  },
+  "core_processing_time_ms": {
+    "count": 3780,
+    "mean": 4.106045444444445,
+    "median": 3.652445,
+    "p95": 6.805121499999999,
+    "p99": 7.684484100000001,
+    "maximum": 15.74902,
+    "minimum": 1.90388
+  },
+  "core_processing_frames_over_100ms": 0,
+  "timing_scope": "FAST-LIO total time covers IMU processing through map insertion; it excludes input preprocessing and subsequent point-cloud publication.",
+  "preprocess_column_used": false,
+  "preprocess_column_reason": "Indexed by input callback count, while CSV rows use processed-frame count; the columns are not frame aligned.",
+  "resources": {
+    "samples": 400,
+    "sample_interval_s": 1,
+    "cpu_percent_mean": 5.901500000000001,
+    "cpu_percent_p95": 9.304999999999996,
+    "cpu_percent_max": 16.6,
+    "observed_peak_rss_mib": 652.1015625,
+    "cpu_percent_convention": "100 percent equals one logical CPU; mapping process only"
+  },
+  "odometry": {
+    "count": 3780,
+    "all_finite": true,
+    "first_timestamp": 1735888008.8182952,
+    "last_timestamp": 1735888419.619805,
+    "duration_s": 410.80150985717773,
+    "nonincreasing_timestamps": 0,
+    "maximum_gap_s": 1.6881561279296875,
+    "median_gap_s": 0.09991192817687988,
+    "estimated_distance_m": 347.0479926028818,
+    "quaternion_max_norm_error": 1.6442402994698568e-13,
+    "frames": [
+      [
+        "camera_init",
+        "body"
+      ]
+    ]
+  },
+  "position_reference_comparison": {
+    "evaluation": "translation APE after one SE(3) alignment, reference only",
+    "matched_poses": 3778,
+    "unmatched_poses": 2,
+    "scale": 1.0,
+    "fitted_time_offset_s": 0.0,
+    "time_protocol": "Sort and deduplicate GT; linear XYZ interpolation at odometry timestamps; no extrapolation.",
+    "maximum_nearest_time_difference_s": 0.11,
+    "maximum_interpolation_bracket_s": 0.25,
+    "observed_maximum_nearest_time_difference_s": 0.08279156684875488,
+    "observed_maximum_interpolation_bracket_s": 0.20432615280151367,
+    "error_m": {
+      "count": 3778,
+      "mean": 0.21128327407493133,
+      "median": 0.21693296872941892,
+      "p95": 0.33321806562641176,
+      "p99": 0.3596350026932778,
+      "maximum": 0.3733788673713706,
+      "minimum": 0.016339296945400022
+    },
+    "rmse_m": 0.22284077279551798,
+    "rmse_horizontal_m": 0.2214271699936217,
+    "rmse_vertical_m": 0.025060295463530228,
+    "rotation": [
+      [
+        -0.880403504509519,
+        -0.09403868350880952,
+        -0.46480791220813844
+      ],
+      [
+        0.09524006804933394,
+        -0.9952337171106453,
+        0.020956568518875743
+      ],
+      [
+        -0.4645632343237214,
+        -0.025818100822059882,
+        0.885163502966896
+      ]
+    ],
+    "translation_m": [
+      0.09434825269596558,
+      0.04052820502371901,
+      0.014070476863863757
+    ],
+    "singular_values": [
+      7193770.083132427,
+      494906.4803580431,
+      41.420382345491745
+    ],
+    "scipy_rotation_max_difference": 5.974387651264124e-15,
+    "limitations": [
+      "GT quaternions are identity placeholders: no orientation error evaluation.",
+      "No lever-arm correction: the documented GNSS antenna is not confirmed as the separate RTK ground-truth antenna.",
+      "One sequence and one run per transport; no confidence intervals or deployment certification."
+    ]
+  },
+  "map_validation": {
+    "points": 8204485,
+    "size_bytes": 262543773,
+    "all_xyz_finite": true,
+    "minimum_xyz_m": [
+      -88.73216247558594,
+      -101.636962890625,
+      -31.08788299560547
+    ],
+    "maximum_xyz_m": [
+      182.34129333496094,
+      127.04570770263672,
+      152.70436096191406
+    ],
+    "frame": "camera_init",
+    "preview_points": 341854,
+    "preview_transform": "Same SE(3) fit used for the trajectory; original PCD is unchanged.",
+    "map_type": "Accumulated transformed, prefiltered scans; not the voxel-downsampled ikd-Tree."
+  },
+  "mapping_log": {
+    "warnings": 5,
+    "errors": 0,
+    "no_point_warnings": 5,
+    "timestamp_loopbacks": 0,
+    "imu_lidar_sync_warnings": 0
+  },
+  "resource_sampling_note": "Approximately once per second during playback; the peak excludes shutdown map writing and may miss subsecond peaks."
+}

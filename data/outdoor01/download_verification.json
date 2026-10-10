@@ -1,0 +1,17 @@
+{
+  "size_bytes": 6553326739,
+  "sha256": "62f0d0b3f5098b5920d3c4125313daa031b176813b472b1e685b2f98c311de77",
+  "repository_reference_sha256": "00a270807bca336bc5191320b9d453cefef76507850286e91063bc726c3775c8",
+  "matches_repository_reference": false,
+  "matches_onedrive_sha256": true,
+  "onedrive_hashes": {
+    "quickXorHash": "wzNpQyzJZN6nCPWSRsDVUqC5qYY=",
+    "sha1Hash": "5C6807B14EBB27FFC582A04ED8B705C906971985",
+    "sha256Hash": "62F0D0B3F5098B5920D3C4125313DAA031B176813B472B1E685B2F98C311DE77"
+  },
+  "onedrive_etag": "\"{DF421186-FC0E-204B-802B-2D1000000000},5\"",
+  "onedrive_last_modified": "2025-07-18T02:50:28Z",
+  "official_share_url": "https://1drv.ms/u/c/2b4bfc0edf421186/EYYRQt8O_EsggCstEAAAAAABZ7QHYpH3MyAxb6aOaAbdcQ?e=qNkjBh",
+  "completed_utc": "2026-10-10T09:02:25.125494+00:00",
+  "note": "Current OneDrive file and repository checksum list differ; local bytes match the hash supplied by OneDrive."
+}

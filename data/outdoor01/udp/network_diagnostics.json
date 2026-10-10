@@ -1,0 +1,27 @@
+{
+  "timestamp": 1791624316.3928156,
+  "mapping_pid": 3317659,
+  "udp_sockets": [
+    {
+      "table": "udp",
+      "local_address": "00000000:D48C",
+      "queues_hex": "00000000:00000000",
+      "inode": "90274212",
+      "drops": 0
+    },
+    {
+      "table": "udp",
+      "local_address": "00000000:D48D",
+      "queues_hex": "00000000:00000000",
+      "inode": "90274213",
+      "drops": 6336
+    },
+    {
+      "table": "udp",
+      "local_address": "0100007F:A886",
+      "queues_hex": "00000000:00000000",
+      "inode": "90274214",
+      "drops": 0
+    }
+  ]
+}

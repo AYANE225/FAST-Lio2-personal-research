@@ -1,0 +1,112 @@
+{
+  "lidar": {
+    "frames": 4116,
+    "total_points": 82318080,
+    "points_per_frame_min_median_max": [
+      19776.0,
+      19968.0,
+      20256.0
+    ],
+    "nonfinite_xyz_points": 0,
+    "zero_xyz_points": 52436180,
+    "point_offset_ns_min_max": [
+      0,
+      101932929
+    ],
+    "frames_with_unordered_offsets": 4116,
+    "timebase_minus_header_ns_min_max": [
+      -243,
+      243
+    ],
+    "line_counts": {
+      "0": 20579520,
+      "1": 20579520,
+      "2": 20579520,
+      "3": 20579520
+    },
+    "tag_counts": {
+      "0": 73828066,
+      "1": 91741,
+      "2": 35778,
+      "4": 86538,
+      "5": 775,
+      "6": 399,
+      "8": 3660,
+      "9": 17,
+      "10": 15,
+      "16": 746601,
+      "17": 2,
+      "18": 1,
+      "32": 2164760,
+      "34": 2,
+      "64": 3469,
+      "65": 13,
+      "66": 7,
+      "68": 5,
+      "72": 66,
+      "128": 3640814,
+      "192": 1715351
+    },
+    "first_timestamp_ns": 1735888008019938469,
+    "last_timestamp_ns": 1735888419520437479,
+    "duration_s": 411.50049901,
+    "nonincreasing_steps": 0,
+    "gap_s_min_median_p95_max": [
+      0.098166943,
+      0.099977493,
+      0.1007056949,
+      0.101733208
+    ],
+    "record_minus_header_ms_min_median_p95_max": [
+      99.030636,
+      100.52374,
+      101.02861275000001,
+      111.844736
+    ]
+  },
+  "imu": {
+    "messages": 82312,
+    "all_values_finite": true,
+    "initial_2s_mean_angular_velocity": [
+      0.01294630154632868,
+      -0.0011418582337381238,
+      -0.0006094341563464995
+    ],
+    "initial_2s_mean_acceleration": [
+      -0.45385197414424355,
+      -0.030068565150746088,
+      0.8882595859560883
+    ],
+    "initial_2s_mean_acceleration_norm": 0.9979768792326618,
+    "first_timestamp_ns": 1735888008064248085,
+    "last_timestamp_ns": 1735888419631167889,
+    "duration_s": 411.566919804,
+    "nonincreasing_steps": 0,
+    "gap_s_min_median_p95_max": [
+      0.003331184,
+      0.004969597,
+      0.005991459,
+      0.006711721
+    ],
+    "record_minus_header_ms_min_median_p95_max": [
+      0.030346,
+      0.0756705,
+      0.19506169999999975,
+      14.43513
+    ]
+  },
+  "imu_start_minus_first_scan_s": 0.044309616,
+  "imu_end_minus_last_scan_end_s": 0.011298506,
+  "frames": [
+    [
+      "/livox/mid360/imu",
+      "livox_frame"
+    ],
+    [
+      "/livox/mid360/lidar",
+      "livox_frame"
+    ]
+  ],
+  "raw_layout_checked_against_rosbags_deserializer": true,
+  "inspection_elapsed_s": 9.039071443956345
+}

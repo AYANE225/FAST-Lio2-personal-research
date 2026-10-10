@@ -1,0 +1,22 @@
+{
+  "sequence": "Outdoor01",
+  "source_commit": "a4743b095409588842a5b30ddfa27e29d2f99164",
+  "source_status": " M CMakeLists.txt\n M src/laserMapping.cpp\n",
+  "source_sha256": {
+    "src/laserMapping.cpp": "789d49b8f0418559e3f2ff07e5eee50df5c30120dcc53d7ecfe5c938d8f79d41",
+    "src/preprocess.cpp": "65354415440c45d1c8c185a27b60b8078c91ac8609a1a3d43cb5d1050b0adf53",
+    "src/preprocess.h": "ccb4f18adf86cadff22b4b74a677edf1eb7b88511863e82ec4c4b015900fb157",
+    "include/use-ikfom.hpp": "1ee2c078ee757ff2dffedf48da764daec152baa79876a70785d010cc2e6165ab",
+    "CMakeLists.txt": "1d45a97d467df726124ae5330e51dcf66a8baadb4944a9a0e41ba9f89e5b65c0",
+    "config/mid360.yaml": "0fba8e5d317235b964b84813c9f6019dabd4267f29bedfa03595f29c0cf80aa1"
+  },
+  "config_changes_from_mid360": [
+    "MID-360 topics from M3DGR",
+    "runtime_pos_log_enable=true for timing output",
+    "map_file_path points to the run directory"
+  ],
+  "transport": "Cyclone DDS TCP on localhost",
+  "transport_reason": "Baseline mapping UDP socket accumulated 6336 drops at 310 s; repeating with TCP transport only, unchanged algorithm and QoS.",
+  "source_repository": "https://github.com/hku-mars/FAST_LIO",
+  "patch": "patches/fast-lio2-local.patch"
+}

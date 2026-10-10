@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CycloneDDS xmlns="https://cdds.io/config">
+  <Domain Id="any">
+    <General><Transport>tcp</Transport><AllowMulticast>false</AllowMulticast></General>
+    <Discovery><Peers><Peer Address="127.0.0.1:55782"/><Peer Address="127.0.0.1:55783"/></Peers></Discovery>
+    <TCP><Port>55781</Port></TCP>
+  </Domain>
+</CycloneDDS>

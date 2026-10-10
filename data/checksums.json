@@ -1,0 +1,110 @@
+{
+  "data/import_manifest.json": {
+    "size_bytes": 6675,
+    "sha256": "d007139b6374b2c731303db5f6c84224539a5d51a00fadb3536bbdc1af7e1c8b"
+  },
+  "data/outdoor01/download_verification.json": {
+    "size_bytes": 928,
+    "sha256": "291879420d1d3555ceedfee4bdddaf27cfedfdda3bda7aef1880e36a52930745"
+  },
+  "data/outdoor01/source_version.json": {
+    "size_bytes": 1225,
+    "sha256": "54ef8418a5c656517f12704fdd44e2b70bac85c9f55c2b760809ca7c924fd2a8"
+  },
+  "data/outdoor01/tcp/algorithm_logs/fast_lio_time_log.csv": {
+    "size_bytes": 404104,
+    "sha256": "e1d3815124c2d936218d6e9472da62f1ff49c6eb7d8c530cc77a308a29eed4ec"
+  },
+  "data/outdoor01/tcp/algorithm_logs/mat_out.txt": {
+    "size_bytes": 1123305,
+    "sha256": "05a81702fc7360d3202c674f7147bdc0a6f0d58feb7e5f74660b994d7f86aacd"
+  },
+  "data/outdoor01/tcp/conversion_validation.json": {
+    "size_bytes": 616,
+    "sha256": "37cb2741222e3016cde28cb24b505c6aea580bc633be0238da2d19535e077cbc"
+  },
+  "data/outdoor01/tcp/environment.json": {
+    "size_bytes": 578,
+    "sha256": "bbdee546840d13cf76a2645b154007d186593af80e1c436b4a3ecd507ea06d32"
+  },
+  "data/outdoor01/tcp/ground_truth_quality.json": {
+    "size_bytes": 413,
+    "sha256": "0086bc52bbe85caa2d178fd14712bd5fc3db12f1408bd7867a03eb45bc524c71"
+  },
+  "data/outdoor01/tcp/input_quality.json": {
+    "size_bytes": 2450,
+    "sha256": "16c1a2edcb5eca12dcf4b0809d04e74621880a5b9b42d54ed81204088f40cc7c"
+  },
+  "data/outdoor01/tcp/input_timestamps.npz": {
+    "size_bytes": 958049,
+    "sha256": "8f016f871e3ed564e06838caba25124f372c057157d0dedef662b8c6fa6f621f"
+  },
+  "data/outdoor01/tcp/map_density.npz": {
+    "size_bytes": 914688,
+    "sha256": "2193ef6d4bcb824c1521b5efffecd4825b44e70ddc9403250e9046bbd2933af8"
+  },
+  "data/outdoor01/tcp/map_projection.json": {
+    "size_bytes": 1274,
+    "sha256": "3adfb52e4eef13200b7112300e79f80a8b35bad53ab24efc160b83a9c9da17e3"
+  },
+  "data/outdoor01/tcp/metrics.json": {
+    "size_bytes": 4749,
+    "sha256": "9e181b2b8c2a30909e5ade970fb46ab7f475c3e3b5748ae56e168e12234907eb"
+  },
+  "data/outdoor01/tcp/position_comparison.npz": {
+    "size_bytes": 317974,
+    "sha256": "b66a2c1fa9dba423abf4312e454121e39ab5ec730d0a47fb5b6875e41e1870aa"
+  },
+  "data/outdoor01/tcp/resources.jsonl": {
+    "size_bytes": 71681,
+    "sha256": "eff2dbc7d157cb52186358b2dd4078cc2dcd0221a6c6bc43557061a4399393fd"
+  },
+  "data/outdoor01/tcp/runtime_summary.json": {
+    "size_bytes": 1577,
+    "sha256": "19d0ce0bbb29edf52533acdea32b6ecb14cb990352369d329c4fd7a82d1a4815"
+  },
+  "data/outdoor01/tcp/trajectory_tum.txt": {
+    "size_bytes": 450221,
+    "sha256": "a65162c2b08e62009e319c43c72559c6b43695c4507c03f0c6bd09efd72981cb"
+  },
+  "data/outdoor01/udp/algorithm_logs/fast_lio_time_log.csv": {
+    "size_bytes": 371762,
+    "sha256": "80cca4fa04ec3ef21d2d1c09810bf6d40139112363f24659e043017187f09c68"
+  },
+  "data/outdoor01/udp/metrics.json": {
+    "size_bytes": 7453,
+    "sha256": "5bbf99cc86be3ae36a7229fa9db9ca6705e3102ae91840423686a4ad7186abf9"
+  },
+  "data/outdoor01/udp/network_diagnostics.json": {
+    "size_bytes": 570,
+    "sha256": "45846c4383605359d3060533ece18c842ca00f75ca36eec13837facd2f50fd6c"
+  },
+  "data/outdoor01/udp/resources.jsonl": {
+    "size_bytes": 72023,
+    "sha256": "b687ffc373807fcd596fe1ad575628d603bd9eb6a770d81c9586cb4253c54086"
+  },
+  "data/outdoor01/udp/trajectory_tum.txt": {
+    "size_bytes": 414239,
+    "sha256": "3d8abba64e0173aa94c419143ba5f495ce4c193484ab87d3dbc580d6821917c9"
+  },
+  "configs/cyclonedds_mapping.xml": {
+    "size_bytes": 360,
+    "sha256": "caee1eb76f6335acb49e97b4cf3a18f3f083b93416b88f65e3827870c61e84fe"
+  },
+  "configs/cyclonedds_observer.xml": {
+    "size_bytes": 360,
+    "sha256": "b93384b08c60a5d00f5a5db4f8708d6b8cb54d61620d21f79567802099b4b44a"
+  },
+  "configs/cyclonedds_playback.xml": {
+    "size_bytes": 360,
+    "sha256": "88cc46e8457286e9c7b10eae1d1000c5a57298bbe4c5f4c221b9ebd138c33963"
+  },
+  "configs/mid360.yaml": {
+    "size_bytes": 1112,
+    "sha256": "3b1f642e2fff62b8844057e81d58b0b30f21775a663ea4fd42e75584f0a0377c"
+  },
+  "patches/fast-lio2-local.patch": {
+    "size_bytes": 1644,
+    "sha256": "70894855b42b1209158750525221fc6881cbe77f178b7afcb00579b9ce321f41"
+  }
+}

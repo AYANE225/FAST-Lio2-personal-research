@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "scope": "Observed public-page failure and local regression validation. The repaired public deployment has not yet been validated in this record.",
+  "observed_failure": {
+    "deployment_commit": "a055fc3a83c2ed78757553b8e013b3d0307fd9a8",
+    "page_url": "https://ayane225.github.io/FAST-Lio2-personal-research/viewer/",
+    "log_modified_utc": "2026-10-10T17:14:07.605181+00:00",
+    "source_log": {
+      "filename": "browser-public-check.log",
+      "size_bytes": 599,
+      "sha256": "585b35fc405a6da1ea0f18830397c9eeafce85fbfee563d996315e69c175020b"
+    },
+    "stage": "Camera preset switching in the full browser functional check",
+    "http_status": 503,
+    "error_message": "地图文件读取失败（HTTP 503）。",
+    "failed_tile_url": null,
+    "response_server": null,
+    "source_attribution": "The test used an HTTP proxy. Response headers were not captured, so the log cannot establish whether the proxy or hosting infrastructure produced the 503.",
+    "previous_behavior": "The first non-success HTTP response was reported as a failed tile; manual retry was available.",
+    "runtime_source_sha256": "44bbc58bf1c08e1afa92ae88dc1de9b611482fd951f7f90af8720ab9ffd3d256"
+  },
+  "implemented_retry_policy": {
+    "retryable_http_statuses": [
+      408,
+      429,
+      500,
+      502,
+      503,
+      504
+    ],
+    "max_requests_per_tile_load": 3,
+    "default_retry_delays_ms": [
+      500,
+      1000
+    ],
+    "retry_after_formats": [
+      "integer seconds",
+      "HTTP date"
+    ],
+    "max_server_requested_delay_ms": 30000,
+    "long_retry_after_behavior": "Report the HTTP failure without retrying before the requested time.",
+    "error_response_body": "Cancel before waiting or reporting failure.",
+    "cancellation": "Changing the selected tiles or disposing the loader aborts pending requests and retry waits.",
+    "no_automatic_retry_for": [
+      "other HTTP statuses, including 404",
+      "point-data validation failures",
+      "general fetch network errors"
+    ]
+  },
+  "regression_validation": {
+    "red": {
+      "command": "node --test docs/viewer/tests/tile-loader.test.mjs",
+      "runtime_source_sha256": "44bbc58bf1c08e1afa92ae88dc1de9b611482fd951f7f90af8720ab9ffd3d256",
+      "tests": 11,
+      "passed": 6,
+      "failed": 5,
+      "source_log": {
+        "filename": "http-retry-red.log",
+        "size_bytes": 5581,
+        "sha256": "ed29179b666087a644f64c35fc6dc992e227e599ea858fc4e9c80255a7c4e3f6"
+      },
+      "log_modified_utc": "2026-10-10T17:18:54.667088+00:00",
+      "failed_tests": [
+        "temporary HTTP 503 is retried before reporting a tile failure",
+        "persistent temporary HTTP failures stop after three requests",
+        "Retry-After delays a repeated rate-limited request",
+        "HTTP dates in Retry-After are honoured",
+        "moving away cancels a pending retry and frees its request slot"
+      ]
+    },
+    "green": {
+      "command": "node --test docs/viewer/tests/*.test.mjs",
+      "tests": 20,
+      "passed": 20,
+      "failed": 0,
+      "source_log": {
+        "filename": "http-retry-green.log",
+        "size_bytes": 1756,
+        "sha256": "3d93f886e265429530245059591b87f0449b88d43d8396db18ebc96277e43a30"
+      },
+      "log_modified_utc": "2026-10-10T17:21:29.065595+00:00",
+      "full_output_record": "data/test_validation.json",
+      "runtime_source_sha256": "cc0fca09a5f425466faf993ded83521d0bf6082614fec66955fde3a7d672ae29",
+      "test_source_sha256": "0e86218b0251162336afb081e46318a4e36acd908bd34c25ef8cd20fd86da961"
+    },
+    "local_browser": {
+      "record": "data/viewer_validation.json",
+      "result": "passed",
+      "page_errors": [],
+      "http_errors": [],
+      "scope": "Headless Chromium with ANGLE/SwiftShader; functional validation only."
+    }
+  }
+}

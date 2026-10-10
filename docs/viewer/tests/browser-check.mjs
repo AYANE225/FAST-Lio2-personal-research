@@ -13,11 +13,18 @@ const browser = await chromium.launch({
   // Explicit ANGLE + SwiftShader avoids unstable GPU selection in headless CI.
   args: ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader'],
 });
+const httpErrors = [];
+const recordHttpError = (response) => {
+  if (response.status() >= 400) {
+    httpErrors.push({ url: response.url(), status: response.status(), server: response.headers().server ?? null });
+  }
+};
 
 try {
   const page = await browser.newPage({ viewport: { width: 1440, height: 960 } });
   const errors = [];
   page.on('pageerror', (error) => errors.push(error.message));
+  page.on('response', recordHttpError);
   const readState = () => page.evaluate(() => window.pointCloudViewer.getState());
   async function waitForMap() {
     await page.waitForFunction(() => {
@@ -142,6 +149,7 @@ try {
 
   const mobile = await browser.newPage({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true });
   mobile.on('pageerror', (error) => errors.push(error.message));
+  mobile.on('response', recordHttpError);
   await mobile.goto(url, { waitUntil: 'domcontentloaded' });
   await mobile.waitForFunction(() => {
     const state = window.pointCloudViewer?.getState();
@@ -164,7 +172,10 @@ try {
   assert.deepEqual(errors, []);
   console.log(JSON.stringify({ browserCheck: 'passed', state: summary,
     mobile: { width: 390, loadedPoints: mobileState.loadedPoints, pointBudget: mobileState.pointBudget },
-    exportedPngBytes: png.length, pageErrors: errors }, null, 2));
+    exportedPngBytes: png.length, pageErrors: errors, httpErrors }, null, 2));
+} catch (error) {
+  console.error(JSON.stringify({ browserCheck: 'failed', httpErrors }, null, 2));
+  throw error;
 } finally {
   await browser.close();
 }

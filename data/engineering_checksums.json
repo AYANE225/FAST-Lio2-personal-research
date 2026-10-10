@@ -112,12 +112,16 @@
     "sha256": "1a09f5faf5bfb8c1c31e7755f6a02ca79891f210badc28183546ce28599d484d"
   },
   "data/test_validation.json": {
-    "size_bytes": 3622,
-    "sha256": "a1e1fecfca7026abe5197657de8b8b7d13a0a8de926a21e9ef388d2f682114f8"
+    "size_bytes": 4381,
+    "sha256": "683811411d68d3a748d116db165e19d3f75979f670bf2dce54adad28905761dc"
+  },
+  "data/viewer_network_failure.json": {
+    "size_bytes": 3814,
+    "sha256": "ef7ba1942d8bcc3da2891cecb55f714b93570c1b9334f67f92394c6406dd78b3"
   },
   "data/viewer_validation.json": {
-    "size_bytes": 4947,
-    "sha256": "298fff0aeaa4d24b47d38f6da66701593dad3b06b3918ad92dd0a87e0692e274"
+    "size_bytes": 5062,
+    "sha256": "b63f96800db45f52ee56b9aaadfce82d3438a7fa2427542fc2f7b6a3e1eaaa26"
   },
   "docs/viewer/data/manifest.json": {
     "size_bytes": 724659,

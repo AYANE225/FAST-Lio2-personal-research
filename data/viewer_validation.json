@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "scope": "Local functional validation in headless Chromium with ANGLE/SwiftShader; not a target-device GPU performance measurement.",
-  "log_modified_utc": "2026-10-10T15:19:17.787016+00:00",
+  "log_modified_utc": "2026-10-10T17:26:41.369419+00:00",
   "source_log": {
-    "filename": "browser-check.log",
-    "size_bytes": 1248,
-    "sha256": "cce018c5690d33ae80b98b5ad597b9d5120f4cc354d0eb6e7ca60668f2724b4c"
+    "filename": "browser-retry-local-check.log",
+    "size_bytes": 1270,
+    "sha256": "ef7959862e15e53ef239fa5d37c3c644e9a57cd9e5b990ebae4ae2b90f86f834"
   },
   "environment": {
     "collected_utc": "2026-10-10T16:53:55.727Z",
@@ -15,7 +15,7 @@
     "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
     "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
   },
-  "command": "PLAYWRIGHT_MODULE=<playwright-1.58.2>/index.mjs VIEWER_URL=http://127.0.0.1:8767/viewer/ VIEWER_SCREENSHOT_DIR=output/browser node docs/viewer/tests/browser-check.mjs",
+  "command": "PLAYWRIGHT_MODULE=<playwright-1.58.2>/index.mjs VIEWER_URL=http://127.0.0.1:8767/viewer/ VIEWER_SCREENSHOT_DIR=output/browser-retry-local node docs/viewer/tests/browser-check.mjs",
   "checks": [
     "Voxel and SOR variants at 200000 and 1000000 point budgets",
     "Loaded/resident point counts, buffer byte counts and unique spatial blocks",
@@ -24,7 +24,8 @@
     "Actual PNG download signature, width and filename",
     "390 x 844 mobile viewport, horizontal overflow and panel accessibility state",
     "WebGL context loss, resource release and successful reload",
-    "No uncaught JavaScript page errors"
+    "No uncaught JavaScript page errors",
+    "HTTP response diagnostics; no HTTP errors in this local run"
   ],
   "manifest": {
     "path": "docs/viewer/data/manifest.json",
@@ -35,12 +36,12 @@
     "docs/viewer/app.mjs": "fbe783a69a9f8a626ab3a33d8c75f8db9219c116e29dda82d8d4f775c9bb4646",
     "docs/viewer/favicon.svg": "d1738ed23f3973f66bb565953a65c227f4eb50883ae287edd73c41b3dc124b7f",
     "docs/viewer/index.html": "afcc0ac1133045a5d2a678a790f6ad0a9052da5e1261b917bca0be2bc3ffbaf8",
-    "docs/viewer/point-cloud-data.mjs": "44bbc58bf1c08e1afa92ae88dc1de9b611482fd951f7f90af8720ab9ffd3d256",
+    "docs/viewer/point-cloud-data.mjs": "cc0fca09a5f425466faf993ded83521d0bf6082614fec66955fde3a7d672ae29",
     "docs/viewer/point-cloud-renderer.mjs": "5dd65744ef6a8cf09f356c7f2ed313578919a78da2ff9c6cf4b0c20d1705bfa6",
     "docs/viewer/styles.css": "8978c31209496655e3bb38d9d76611c20cdd958e9e419e50331f9763da3fcbc2",
-    "docs/viewer/tests/browser-check.mjs": "38258da3d2f6ca5caa29c08304f43cf2301c088426c90e87e50b720f5fe0c297",
+    "docs/viewer/tests/browser-check.mjs": "919241fb10ae9462273c1af06740aa57fac9331fe12888d7bf149c1d1aa4a19b",
     "docs/viewer/tests/point-cloud-data.test.mjs": "ea8c87c2d13a9b06dcb26cbb3a350e8f81da763d9ee3918ce3e7e917ee769b3a",
-    "docs/viewer/tests/tile-loader.test.mjs": "4497f08bf58348bd20fe2a7a425ff548c02d75bffe08aa8658a43267ed1ac276",
+    "docs/viewer/tests/tile-loader.test.mjs": "0e86218b0251162336afb081e46318a4e36acd908bd34c25ef8cd20fd86da961",
     "docs/viewer/tile-loader.mjs": "edf6d97a71b08c887589495970504c466ae6c7e2a7891be81be2591b3fc1305f",
     "docs/viewer/vendor/NOTICE.txt": "b408f7c80fcf66e608177687737892452cd53a8b6868213fe348be6591ab6748",
     "docs/viewer/vendor/OrbitControls.js": "61df642830c10a3a115387513f5a53db6ab4da9c9b15c896f42332b5ddc67450",
@@ -94,9 +95,9 @@
       "error": "",
       "camera": {
         "position": [
-          -23.0797384241107,
-          -149.9265873416274,
-          143.47451895296783
+          -23.079738424111227,
+          -149.9265873416325,
+          143.47451895297272
         ],
         "target": [
           70.34285119734345,
@@ -122,6 +123,7 @@
       "pointBudget": 200000
     },
     "exportedPngBytes": 559176,
-    "pageErrors": []
+    "pageErrors": [],
+    "httpErrors": []
   }
 }

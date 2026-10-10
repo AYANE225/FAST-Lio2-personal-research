@@ -242,9 +242,50 @@ export async function decodePointTile(input, tile, signal) {
   return values;
 }
 
+const RETRYABLE_HTTP_STATUSES = new Set([408, 429, 500, 502, 503, 504]);
+const MAX_FETCH_ATTEMPTS = 3;
+const MAX_RETRY_DELAY_MS = 30000;
+
+function getRetryDelayMs(response, attempt) {
+  const header = response.headers.get('Retry-After')?.trim();
+  const requestedDelayMs = !header ? 0 : /^\d+$/.test(header)
+    ? Number(header) * 1000 : Date.parse(header) - Date.now();
+  // Fail visibly instead of retrying before a longer server-requested delay.
+  if (requestedDelayMs > MAX_RETRY_DELAY_MS) return null;
+  return Math.max(500 * 2 ** attempt, Number.isFinite(requestedDelayMs) ? requestedDelayMs : 0);
+}
+
+function waitForRetry(delayMs, signal) {
+  checkAbort(signal);
+  return new Promise((resolve, reject) => {
+    const onAbort = () => {
+      clearTimeout(timer);
+      signal?.removeEventListener('abort', onAbort);
+      reject(signal.reason ?? new DOMException('加载已取消。', 'AbortError'));
+    };
+    const timer = setTimeout(() => {
+      signal?.removeEventListener('abort', onAbort);
+      resolve();
+    }, delayMs);
+    signal?.addEventListener('abort', onAbort, { once: true });
+  });
+}
+
 export async function fetchPointTile(tile, signal) {
-  const response = await fetch(tile.url, { signal, credentials: 'same-origin' });
-  if (!response.ok) throw new Error(`地图文件读取失败（HTTP ${response.status}）。`);
+  let response;
+  for (let attempt = 0; attempt < MAX_FETCH_ATTEMPTS; attempt += 1) {
+    checkAbort(signal);
+    response = await fetch(tile.url, { signal, credentials: 'same-origin' });
+    if (response.ok) break;
+    // Release error bodies before waiting, including non-retryable responses.
+    try { await response.body?.cancel(); } catch { /* The HTTP status remains available. */ }
+    checkAbort(signal);
+    const delayMs = getRetryDelayMs(response, attempt);
+    if (!RETRYABLE_HTTP_STATUSES.has(response.status) || attempt === MAX_FETCH_ATTEMPTS - 1 || delayMs === null) {
+      throw new Error(`地图文件读取失败（HTTP ${response.status}）。`);
+    }
+    await waitForRetry(delayMs, signal);
+  }
   const expectedBytes = tile.point_count * BYTES_PER_POINT;
   const maxBytes = Math.max(tile.byte_size ?? expectedBytes + 65536, expectedBytes);
   const headerLength = Number(response.headers.get('Content-Length'));

@@ -1,22 +1,27 @@
 {
   "schema_version": 1,
-  "validated_utc": "2026-10-10T16:57:41.366186+00:00",
+  "validated_utc": "2026-10-10T17:26:30.364183+00:00",
   "scope": "Local tests on the release source; ROS smoke enabled for Python. Does not represent long-duration or target-robot validation.",
   "python": {
     "version": "3.11.16",
     "pytest": "9.1.1",
     "command": "RUN_ROS_TESTS=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python -m pytest -q",
     "passed": 59,
-    "output": "...........................................................              [100%]\n59 passed in 2.09s\n",
-    "log_sha256": "2bfdb5523a7e686be895ed0ff348a67e4803e53378e89e61c6c3315d87ce9683"
+    "output": "...........................................................              [100%]\n59 passed in 5.67s\n",
+    "log_sha256": "2d88e9733a3d6bca0ffa4dae1215c6bcd48203bf2278e6640e29c535dbdc7c93",
+    "failed": 0,
+    "source_log": "python-tests-retry.log",
+    "log_modified_utc": "2026-10-10T17:26:30.364183+00:00"
   },
   "node": {
     "version": "v24.15.0",
     "command": "node --test docs/viewer/tests/*.test.mjs",
-    "passed": 13,
+    "passed": 20,
     "failed": 0,
-    "output": "✔ LOD selection replaces a spatial cell without exceeding its point budget (1.324084ms)\n✔ hidden cells are excluded and a cell larger than the budget is not partially counted (0.194107ms)\n✔ zooming out retains coarse coverage when its projected spacing is small (3.69311ms)\n✔ manifest rejects false point totals, duplicate spatial cells, and invalid fixed ranges (0.349641ms)\n✔ asset URLs stay within the manifest directory (0.113552ms)\n✔ gzip tile decoding preserves interleaved XYZI values (7.472514ms)\n✔ truncated, overlong, and non-finite point tiles fail before rendering (0.189564ms)\n✔ points outside declared spatial bounds are rejected (0.072699ms)\n✔ decompression is bounded by the declared number of points (2.521413ms)\n✔ real gzip loads stay within budget and replaced resources are released (29.625937ms)\n✔ moving away cancels the HTTP request and prevents stale point creation (13.894537ms)\n✔ a failed tile is reported and may be retried without exceeding the budget (11.996689ms)\n✔ an oversized plan or duplicate cell is rejected before creating resources (0.314997ms)\nℹ tests 13\nℹ suites 0\nℹ pass 13\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 1089.988814\n",
-    "log_sha256": "bbc85b538469eb27231c7b153b0c74e36225b209282a0bd474505c19736e7513"
+    "output": "✔ LOD selection replaces a spatial cell without exceeding its point budget (1.294958ms)\n✔ hidden cells are excluded and a cell larger than the budget is not partially counted (0.178036ms)\n✔ zooming out retains coarse coverage when its projected spacing is small (3.667554ms)\n✔ manifest rejects false point totals, duplicate spatial cells, and invalid fixed ranges (0.343268ms)\n✔ asset URLs stay within the manifest directory (0.104189ms)\n✔ gzip tile decoding preserves interleaved XYZI values (7.924131ms)\n✔ truncated, overlong, and non-finite point tiles fail before rendering (0.185197ms)\n✔ points outside declared spatial bounds are rejected (0.070315ms)\n✔ decompression is bounded by the declared number of points (2.651582ms)\n✔ real gzip loads stay within budget and replaced resources are released (32.740158ms)\n✔ moving away cancels the HTTP request and prevents stale point creation (11.609014ms)\n✔ a failed tile is reported and may be retried without exceeding the budget (10.90618ms)\n✔ temporary HTTP 503 is retried before reporting a tile failure (507.208625ms)\n✔ persistent temporary HTTP failures stop after three requests (1503.75594ms)\n✔ Retry-After delays a repeated rate-limited request (1003.267419ms)\n✔ a long Retry-After is reported instead of issuing an early retry (1.645ms)\n✔ HTTP dates in Retry-After are honoured (1904.57711ms)\n✔ moving away cancels a pending retry and frees its request slot (55.658106ms)\n✔ malformed point data is rejected without another HTTP request (1.393472ms)\n✔ an oversized plan or duplicate cell is rejected before creating resources (0.154318ms)\nℹ tests 20\nℹ suites 0\nℹ pass 20\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 5080.413118\n",
+    "log_sha256": "3d93f886e265429530245059591b87f0449b88d43d8396db18ebc96277e43a30",
+    "source_log": "http-retry-green.log",
+    "log_modified_utc": "2026-10-10T17:21:29.065595+00:00"
   },
   "tested_python_source_sha256": {
     "scripts/evaluate_engineering.py": "34fcdab4cc7fd74b87993844248d991ebae05f89b122998af45c164622bca813",

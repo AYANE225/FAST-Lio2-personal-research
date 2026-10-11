@@ -1,0 +1,784 @@
+{
+  "schema_version": 1,
+  "started_utc": "2026-10-11T16:25:39.407326+00:00",
+  "input": {
+    "points": 8909069,
+    "dtype": "float64 XYZI",
+    "units": "XYZ metres",
+    "source": {
+      "points": 8909069,
+      "fields": [
+        "x",
+        "y",
+        "z",
+        "normal_x",
+        "normal_y",
+        "normal_z",
+        "intensity",
+        "curvature"
+      ],
+      "encoding": "binary",
+      "stride_bytes": 32,
+      "size_bytes": 285090461,
+      "sha256": "a1647137abfbc2e47f209a88c42900b1d856013373dbb5550da5cfab410ae557"
+    },
+    "projection_sha256": "3adfb52e4eef13200b7112300e79f80a8b35bad53ab24efc160b83a9c9da17e3",
+    "gravity_rotation": [
+      [
+        0.8907053811751648,
+        -0.00719409386323614,
+        0.45452411262670245
+      ],
+      [
+        -0.00719409386323614,
+        0.999526463543498,
+        0.029918116413226288
+      ],
+      [
+        -0.45452411262670245,
+        -0.029918116413226288,
+        0.8902318447186628
+      ]
+    ],
+    "input_npy_sha256": "22977e77b022c81415ed31350a26279b94dcb6eeb1703c4e5ed68eb680fb3636"
+  },
+  "environment": {
+    "cpu_model": "Intel(R) Core(TM) Ultra 9 285K",
+    "logical_cpus": 24,
+    "cpu_affinity": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
+    "machine": "x86_64",
+    "kernel": "6.8.0-146-generic",
+    "python": "3.11.16",
+    "numpy": "1.26.4",
+    "thread_environment": {
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1"
+    },
+    "cmake_cache": [
+      "CMAKE_BUILD_TYPE:STRING=Release",
+      "CMAKE_CXX_COMPILER:FILEPATH=/usr/bin/g++",
+      "CMAKE_CXX_FLAGS:STRING=",
+      "CMAKE_CXX_FLAGS_RELEASE:STRING=-O3 -DNDEBUG",
+      "FASTLIO_ENABLE_SANITIZERS:BOOL=OFF"
+    ],
+    "compiler_path": "/usr/bin/g++",
+    "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "native_library_sha256": "597cef75f7b62f33362c5f42a5723a1b1f9f180c900a4c37d84b12953e0fc3c2"
+  },
+  "repeats": 3,
+  "trials": [
+    {
+      "repeat": 1,
+      "voxel_size_m": 0.5,
+      "backend": "numpy",
+      "input_points": 8909069,
+      "output_points": 138599,
+      "summed_occupancy": 8909069,
+      "core_seconds": 1.4689277700017556,
+      "load_seconds": 0.04158613800245803,
+      "save_seconds": 0.0013689269981114194,
+      "peak_process_rss_mib": 1384.09765625,
+      "rss_source": "/proc/self/status VmHWM (since exec)",
+      "ru_maxrss_mib": 1384.09765625,
+      "worker_pid": 914156,
+      "output_sha256": {
+        "points.npy": "5646ad04ed15120aaef5d733acc3ecedc7297eb765b82670f2aa8910e1865f9c",
+        "counts.npy": "88281f8a2311711b68fba93927fe0afc13631c01836baa69594667d9ef49a272"
+      },
+      "load_average_before": [
+        0.19091796875,
+        0.2841796875,
+        0.26708984375
+      ]
+    },
+    {
+      "repeat": 1,
+      "voxel_size_m": 0.5,
+      "backend": "cpp",
+      "input_points": 8909069,
+      "output_points": 138599,
+      "summed_occupancy": 8909069,
+      "core_seconds": 0.18121910600166302,
+      "load_seconds": 0.04420389200095087,
+      "save_seconds": 0.0007371489991783164,
+      "peak_process_rss_mib": 418.0546875,
+      "rss_source": "/proc/self/status VmHWM (since exec)",
+      "ru_maxrss_mib": 602.17578125,
+      "worker_pid": 914212,
+      "output_sha256": {
+        "points.npy": "5646ad04ed15120aaef5d733acc3ecedc7297eb765b82670f2aa8910e1865f9c",
+        "counts.npy": "88281f8a2311711b68fba93927fe0afc13631c01836baa69594667d9ef49a272"
+      },
+      "load_average_before": [
+        0.19091796875,
+        0.2841796875,
+        0.26708984375
+      ]
+    },
+    {
+      "repeat": 1,
+      "voxel_size_m": 0.2,
+      "backend": "numpy",
+      "input_points": 8909069,
+      "output_points": 642203,
+      "summed_occupancy": 8909069,
+      "core_seconds": 1.5892103260048316,
+      "load_seconds": 0.04327019100310281,
+      "save_seconds": 0.003454292003880255,
+      "peak_process_rss_mib": 1384.65625,
+      "rss_source": "/proc/self/status VmHWM (since exec)",
+      "ru_maxrss_mib": 1384.65625,
+      "worker_pid": 914227,
+      "output_sha256": {
+        "points.npy": "5a09a0f01a750effc33dcdc973555a273ff9a53841c3222681c94a6a4562d476",
+        "counts.npy": "de5621520bd7b4e920626a80a01502b8e0578de7f128ad41fe2b5f8103d11601"
+      },
+      "load_average_before": [
+        0.19091796875,
+        0.2841796875,
+        0.26708984375
+      ]
+    },
+    {
+      "repeat": 1,
+      "voxel_size_m": 0.2,
+      "backend": "cpp",
+      "input_points": 8909069,
+      "output_points": 642203,
+      "summed_occupancy": 8909069,
+      "core_seconds": 0.3603238069990766,
+      "load_seconds": 0.04238997199718142,
+      "save_seconds": 0.0035338980014785193,
+      "peak_process_rss_mib": 471.984375,
+      "rss_source": "/proc/self/status VmHWM (since exec)",
+      "ru_maxrss_mib": 602.17578125,
+      "worker_pid": 914242,
+      "output_sha256": {
+        "points.npy": "5a09a0f01a750effc33dcdc973555a273ff9a53841c3222681c94a6a4562d476",
+        "counts.npy": "de5621520bd7b4e920626a80a01502b8e0578de7f128ad41fe2b5f8103d11601"
+      },
+      "load_average_before": [
+        0.19091796875,
+        0.2841796875,
+        0.26708984375
+      ]
+    },
+    {
+      "repeat": 1,
+      "voxel_size_m": 0.1,
+      "backend": "numpy",
+      "input_points": 8909069,
+      "output_points": 1852691,
+      "summed_occupancy": 8909069,
+      "core_seconds": 1.778848365000158,
+      "load_seconds": 0.04114805300196167,
+      "save_seconds": 0.011103408003691584,
+      "peak_process_rss_mib": 1393.33203125,
+      "rss_source": "/proc/self/status VmHWM (since exec)",
+      "ru_maxrss_mib": 1393.33203125,
+      "worker_pid": 914244,
+      "output_sha256": {
+        "points.npy": "dbdc6954663b113170adf1b23249456140d1da3527d666677d527e34db291922",
+        "counts.npy": "ecec0e5182892bd4a4eededc50231c391787112a62aee467e8296bccca7e1525"
+      },
+      "load_average_before": [
+        0.255859375,
+        0.29638671875,
+        0.271484375
+      ]
+    },
+    {
+      "repeat": 1,
+      "voxel_size_m": 0.1,
+      "backend": "cpp",
+      "input_points": 8909069,
+      "output_points": 1852691,
+      "summed_occupancy": 8909069,
+      "core_seconds": 0.8028308779976214,
+      "load_seconds": 0.04247276500245789,
+      "save_seconds": 0.010220099000434857,
+      "peak_process_rss_mib": 601.1171875,
+      "rss_source": "/proc/self/status VmHWM (since exec)",
+      "ru_maxrss_mib": 602.17578125,
+      "worker_pid": 914281,
+      "output_sha256": {
+        "points.npy": "dbdc6954663b113170adf1b23249456140d1da3527d666677d527e34db291922",
+        "counts.npy": "ecec0e5182892bd4a4eededc50231c391787112a62aee467e8296bccca7e1525"
+      },
+      "load_average_before": [
+        0.255859375,
+        0.29638671875,
+        0.271484375
+      ]
+    },
+    {
+      "repeat": 2,
+      "voxel_size_m": 0.5,
+      "backend": "cpp",
+      "input_points": 8909069,
+      "output_points": 138599,
+      "summed_occupancy": 8909069,
+      "core_seconds": 0.17708790900360327,
+      "load_seconds": 0.04103266700258246,
+      "save_seconds": 0.0006912259996170178,
+      "peak_process_rss_mib": 417.95703125,
+      "rss_source": "/proc/self/status VmHWM (since exec)",
+      "ru_maxrss_mib": 602.17578125,
+      "worker_pid": 914310,
+      "output_sha256": {
+        "points.npy": "5646ad04ed15120aaef5d733acc3ecedc7297eb765b82670f2aa8910e1865f9c",
+        "counts.npy": "88281f8a2311711b68fba93927fe0afc13631c01836baa69594667d9ef49a272"
+      },
+      "load_average_before": [
+        0.255859375,
+        0.29638671875,
+        0.271484375
+      ]
+    },
+    {
+      "repeat": 2,
+      "voxel_size_m": 0.5,
+      "backend": "numpy",
+      "input_points": 8909069,
+      "output_points": 138599,
+      "summed_occupancy": 8909069,
+      "core_seconds": 1.4168260639999062,
+      "load_seconds": 0.04084171700378647,
+      "save_seconds": 0.0008704179999767803,
+      "peak_process_rss_mib": 1384.79296875,
+      "rss_source": "/proc/self/status VmHWM (since exec)",
+      "ru_maxrss_mib": 1384.79296875,
+      "worker_pid": 914324,
+      "output_sha256": {
+        "points.npy": "5646ad04ed15120aaef5d733acc3ecedc7297eb765b82670f2aa8910e1865f9c",
+        "counts.npy": "88281f8a2311711b68fba93927fe0afc13631c01836baa69594667d9ef49a272"
+      },
+      "load_average_before": [
+        0.255859375,
+        0.29638671875,
+        0.271484375
+      ]
+    },
+    {
+      "repeat": 2,
+      "voxel_size_m": 0.2,
+      "backend": "cpp",
+      "input_points": 8909069,
+      "output_points": 642203,
+      "summed_occupancy": 8909069,
+      "core_seconds": 0.36302977799641667,
+      "load_seconds": 0.04135752499860246,
+      "save_seconds": 0.003570408996893093,
+      "peak_process_rss_mib": 471.9140625,
+      "rss_source": "/proc/self/status VmHWM (since exec)",
+      "ru_maxrss_mib": 602.17578125,
+      "worker_pid": 914327,
+      "output_sha256": {
+        "points.npy": "5a09a0f01a750effc33dcdc973555a273ff9a53841c3222681c94a6a4562d476",
+        "counts.npy": "de5621520bd7b4e920626a80a01502b8e0578de7f128ad41fe2b5f8103d11601"
+      },
+      "load_average_before": [
+        0.31591796875,
+        0.30810546875,
+        0.27587890625
+      ]
+    },
+    {
+      "repeat": 2,
+      "voxel_size_m": 0.2,
+      "backend": "numpy",
+      "input_points": 8909069,
+      "output_points": 642203,
+      "summed_occupancy": 8909069,
+      "core_seconds": 1.6057969679968664,
+      "load_seconds": 0.04259060200274689,
+      "save_seconds": 0.0035945259951404296,
+      "peak_process_rss_mib": 1384.83984375,
+      "rss_source": "/proc/self/status VmHWM (since exec)",
+      "ru_maxrss_mib": 1384.83984375,
+      "worker_pid": 914329,
+      "output_sha256": {
+        "points.npy": "5a09a0f01a750effc33dcdc973555a273ff9a53841c3222681c94a6a4562d476",
+        "counts.npy": "de5621520bd7b4e920626a80a01502b8e0578de7f128ad41fe2b5f8103d11601"
+      },
+      "load_average_before": [
+        0.31591796875,
+        0.30810546875,
+        0.27587890625
+      ]
+    },
+    {
+      "repeat": 2,
+      "voxel_size_m": 0.1,
+      "backend": "cpp",
+      "input_points": 8909069,
+      "output_points": 1852691,
+      "summed_occupancy": 8909069,
+      "core_seconds": 0.797981878000428,
+      "load_seconds": 0.045722328999545425,
+      "save_seconds": 0.009844819003774319,
+      "peak_process_rss_mib": 601.1875,
+      "rss_source": "/proc/self/status VmHWM (since exec)",
+      "ru_maxrss_mib": 602.17578125,
+      "worker_pid": 914380,
+      "output_sha256": {
+        "points.npy": "dbdc6954663b113170adf1b23249456140d1da3527d666677d527e34db291922",
+        "counts.npy": "ecec0e5182892bd4a4eededc50231c391787112a62aee467e8296bccca7e1525"
+      },
+      "load_average_before": [
+        0.31591796875,
+        0.30810546875,
+        0.27587890625
+      ]
+    },
+    {
+      "repeat": 2,
+      "voxel_size_m": 0.1,
+      "backend": "numpy",
+      "input_points": 8909069,
+      "output_points": 1852691,
+      "summed_occupancy": 8909069,
+      "core_seconds": 1.7854161799987196,
+      "load_seconds": 0.04219022100005532,
+      "save_seconds": 0.01018946400290588,
+      "peak_process_rss_mib": 1393.09765625,
+      "rss_source": "/proc/self/status VmHWM (since exec)",
+      "ru_maxrss_mib": 1393.09765625,
+      "worker_pid": 914407,
+      "output_sha256": {
+        "points.npy": "dbdc6954663b113170adf1b23249456140d1da3527d666677d527e34db291922",
+        "counts.npy": "ecec0e5182892bd4a4eededc50231c391787112a62aee467e8296bccca7e1525"
+      },
+      "load_average_before": [
+        0.31591796875,
+        0.30810546875,
+        0.27587890625
+      ]
+    },
+    {
+      "repeat": 3,
+      "voxel_size_m": 0.5,
+      "backend": "numpy",
+      "input_points": 8909069,
+      "output_points": 138599,
+      "summed_occupancy": 8909069,
+      "core_seconds": 1.4490944130011485,
+      "load_seconds": 0.04320735900546424,
+      "save_seconds": 0.0008975859964266419,
+      "peak_process_rss_mib": 1384.65234375,
+      "rss_source": "/proc/self/status VmHWM (since exec)",
+      "ru_maxrss_mib": 1384.65234375,
+      "worker_pid": 914409,
+      "output_sha256": {
+        "points.npy": "5646ad04ed15120aaef5d733acc3ecedc7297eb765b82670f2aa8910e1865f9c",
+        "counts.npy": "88281f8a2311711b68fba93927fe0afc13631c01836baa69594667d9ef49a272"
+      },
+      "load_average_before": [
+        0.37109375,
+        0.31982421875,
+        0.27978515625
+      ]
+    },
+    {
+      "repeat": 3,
+      "voxel_size_m": 0.5,
+      "backend": "cpp",
+      "input_points": 8909069,
+      "output_points": 138599,
+      "summed_occupancy": 8909069,
+      "core_seconds": 0.18110189599974547,
+      "load_seconds": 0.04284224499861011,
+      "save_seconds": 0.0007123190007405356,
+      "peak_process_rss_mib": 418.1015625,
+      "rss_source": "/proc/self/status VmHWM (since exec)",
+      "ru_maxrss_mib": 602.17578125,
+      "worker_pid": 914459,
+      "output_sha256": {
+        "points.npy": "5646ad04ed15120aaef5d733acc3ecedc7297eb765b82670f2aa8910e1865f9c",
+        "counts.npy": "88281f8a2311711b68fba93927fe0afc13631c01836baa69594667d9ef49a272"
+      },
+      "load_average_before": [
+        0.37109375,
+        0.31982421875,
+        0.27978515625
+      ]
+    },
+    {
+      "repeat": 3,
+      "voxel_size_m": 0.2,
+      "backend": "numpy",
+      "input_points": 8909069,
+      "output_points": 642203,
+      "summed_occupancy": 8909069,
+      "core_seconds": 1.5866212390028522,
+      "load_seconds": 0.04208922899852041,
+      "save_seconds": 0.003508099995087832,
+      "peak_process_rss_mib": 1384.68359375,
+      "rss_source": "/proc/self/status VmHWM (since exec)",
+      "ru_maxrss_mib": 1384.68359375,
+      "worker_pid": 914461,
+      "output_sha256": {
+        "points.npy": "5a09a0f01a750effc33dcdc973555a273ff9a53841c3222681c94a6a4562d476",
+        "counts.npy": "de5621520bd7b4e920626a80a01502b8e0578de7f128ad41fe2b5f8103d11601"
+      },
+      "load_average_before": [
+        0.37109375,
+        0.31982421875,
+        0.27978515625
+      ]
+    },
+    {
+      "repeat": 3,
+      "voxel_size_m": 0.2,
+      "backend": "cpp",
+      "input_points": 8909069,
+      "output_points": 642203,
+      "summed_occupancy": 8909069,
+      "core_seconds": 0.36348646400438156,
+      "load_seconds": 0.04214371400303207,
+      "save_seconds": 0.003621263000241015,
+      "peak_process_rss_mib": 471.859375,
+      "rss_source": "/proc/self/status VmHWM (since exec)",
+      "ru_maxrss_mib": 602.17578125,
+      "worker_pid": 914487,
+      "output_sha256": {
+        "points.npy": "5a09a0f01a750effc33dcdc973555a273ff9a53841c3222681c94a6a4562d476",
+        "counts.npy": "de5621520bd7b4e920626a80a01502b8e0578de7f128ad41fe2b5f8103d11601"
+      },
+      "load_average_before": [
+        0.37109375,
+        0.31982421875,
+        0.27978515625
+      ]
+    },
+    {
+      "repeat": 3,
+      "voxel_size_m": 0.1,
+      "backend": "numpy",
+      "input_points": 8909069,
+      "output_points": 1852691,
+      "summed_occupancy": 8909069,
+      "core_seconds": 1.7669156499978271,
+      "load_seconds": 0.04259042000194313,
+      "save_seconds": 0.009761314999195747,
+      "peak_process_rss_mib": 1393.09765625,
+      "rss_source": "/proc/self/status VmHWM (since exec)",
+      "ru_maxrss_mib": 1393.09765625,
+      "worker_pid": 914492,
+      "output_sha256": {
+        "points.npy": "dbdc6954663b113170adf1b23249456140d1da3527d666677d527e34db291922",
+        "counts.npy": "ecec0e5182892bd4a4eededc50231c391787112a62aee467e8296bccca7e1525"
+      },
+      "load_average_before": [
+        0.421875,
+        0.33154296875,
+        0.28369140625
+      ]
+    },
+    {
+      "repeat": 3,
+      "voxel_size_m": 0.1,
+      "backend": "cpp",
+      "input_points": 8909069,
+      "output_points": 1852691,
+      "summed_occupancy": 8909069,
+      "core_seconds": 0.8073406009934843,
+      "load_seconds": 0.04147395899781259,
+      "save_seconds": 0.01013543400040362,
+      "peak_process_rss_mib": 600.98828125,
+      "rss_source": "/proc/self/status VmHWM (since exec)",
+      "ru_maxrss_mib": 602.17578125,
+      "worker_pid": 914520,
+      "output_sha256": {
+        "points.npy": "dbdc6954663b113170adf1b23249456140d1da3527d666677d527e34db291922",
+        "counts.npy": "ecec0e5182892bd4a4eededc50231c391787112a62aee467e8296bccca7e1525"
+      },
+      "load_average_before": [
+        0.421875,
+        0.33154296875,
+        0.28369140625
+      ]
+    }
+  ],
+  "comparisons": [
+    {
+      "repeat": 1,
+      "voxel_size_m": 0.5,
+      "counts_equal": true,
+      "summed_occupancy": 8909069,
+      "output_points": 138599,
+      "xyz_max_abs_difference_m": 0.0,
+      "intensity_max_abs_difference": 0.0,
+      "relative_tolerance": 2e-07,
+      "xyz_absolute_tolerance_m": 2e-06,
+      "intensity_absolute_tolerance": 2e-05,
+      "scope": "Ordered counts and centroids; integer binning boundaries covered by unit tests."
+    },
+    {
+      "repeat": 1,
+      "voxel_size_m": 0.2,
+      "counts_equal": true,
+      "summed_occupancy": 8909069,
+      "output_points": 642203,
+      "xyz_max_abs_difference_m": 0.0,
+      "intensity_max_abs_difference": 0.0,
+      "relative_tolerance": 2e-07,
+      "xyz_absolute_tolerance_m": 2e-06,
+      "intensity_absolute_tolerance": 2e-05,
+      "scope": "Ordered counts and centroids; integer binning boundaries covered by unit tests."
+    },
+    {
+      "repeat": 1,
+      "voxel_size_m": 0.1,
+      "counts_equal": true,
+      "summed_occupancy": 8909069,
+      "output_points": 1852691,
+      "xyz_max_abs_difference_m": 0.0,
+      "intensity_max_abs_difference": 0.0,
+      "relative_tolerance": 2e-07,
+      "xyz_absolute_tolerance_m": 2e-06,
+      "intensity_absolute_tolerance": 2e-05,
+      "scope": "Ordered counts and centroids; integer binning boundaries covered by unit tests."
+    },
+    {
+      "repeat": 2,
+      "voxel_size_m": 0.5,
+      "counts_equal": true,
+      "summed_occupancy": 8909069,
+      "output_points": 138599,
+      "xyz_max_abs_difference_m": 0.0,
+      "intensity_max_abs_difference": 0.0,
+      "relative_tolerance": 2e-07,
+      "xyz_absolute_tolerance_m": 2e-06,
+      "intensity_absolute_tolerance": 2e-05,
+      "scope": "Ordered counts and centroids; integer binning boundaries covered by unit tests."
+    },
+    {
+      "repeat": 2,
+      "voxel_size_m": 0.2,
+      "counts_equal": true,
+      "summed_occupancy": 8909069,
+      "output_points": 642203,
+      "xyz_max_abs_difference_m": 0.0,
+      "intensity_max_abs_difference": 0.0,
+      "relative_tolerance": 2e-07,
+      "xyz_absolute_tolerance_m": 2e-06,
+      "intensity_absolute_tolerance": 2e-05,
+      "scope": "Ordered counts and centroids; integer binning boundaries covered by unit tests."
+    },
+    {
+      "repeat": 2,
+      "voxel_size_m": 0.1,
+      "counts_equal": true,
+      "summed_occupancy": 8909069,
+      "output_points": 1852691,
+      "xyz_max_abs_difference_m": 0.0,
+      "intensity_max_abs_difference": 0.0,
+      "relative_tolerance": 2e-07,
+      "xyz_absolute_tolerance_m": 2e-06,
+      "intensity_absolute_tolerance": 2e-05,
+      "scope": "Ordered counts and centroids; integer binning boundaries covered by unit tests."
+    },
+    {
+      "repeat": 3,
+      "voxel_size_m": 0.5,
+      "counts_equal": true,
+      "summed_occupancy": 8909069,
+      "output_points": 138599,
+      "xyz_max_abs_difference_m": 0.0,
+      "intensity_max_abs_difference": 0.0,
+      "relative_tolerance": 2e-07,
+      "xyz_absolute_tolerance_m": 2e-06,
+      "intensity_absolute_tolerance": 2e-05,
+      "scope": "Ordered counts and centroids; integer binning boundaries covered by unit tests."
+    },
+    {
+      "repeat": 3,
+      "voxel_size_m": 0.2,
+      "counts_equal": true,
+      "summed_occupancy": 8909069,
+      "output_points": 642203,
+      "xyz_max_abs_difference_m": 0.0,
+      "intensity_max_abs_difference": 0.0,
+      "relative_tolerance": 2e-07,
+      "xyz_absolute_tolerance_m": 2e-06,
+      "intensity_absolute_tolerance": 2e-05,
+      "scope": "Ordered counts and centroids; integer binning boundaries covered by unit tests."
+    },
+    {
+      "repeat": 3,
+      "voxel_size_m": 0.1,
+      "counts_equal": true,
+      "summed_occupancy": 8909069,
+      "output_points": 1852691,
+      "xyz_max_abs_difference_m": 0.0,
+      "intensity_max_abs_difference": 0.0,
+      "relative_tolerance": 2e-07,
+      "xyz_absolute_tolerance_m": 2e-06,
+      "intensity_absolute_tolerance": 2e-05,
+      "scope": "Ordered counts and centroids; integer binning boundaries covered by unit tests."
+    }
+  ],
+  "protocol": {
+    "order": "Repeats alternate NumPy/C++ and C++/NumPy; sizes in declared order.",
+    "processes": "One fresh process per trial; sequential execution; no warmup.",
+    "timing_scope": "Public voxel call including validation and native wrapper; excludes input load/save and parent comparison.",
+    "rss_scope": "Linux /proc/self/status VmHWM / 1024, worker MiB since exec including interpreter, imports, input, processing, saving and hashing. Raw ru_maxrss separately retained; it may include parent pre-exec memory.",
+    "source_transform": "Existing gravity rotation only, no alignment to reference trajectory.",
+    "grouping": "floor(XYZ / voxel_size), zero origin, ordered integer XYZ keys.",
+    "limitations": [
+      "One map, three sizes; repeats are software timings, not independent scenes.",
+      "No CPU pinning or exclusive host; load may vary.",
+      "Offline map filtering only; not online estimator speed or position accuracy."
+    ]
+  },
+  "source_sha256": {
+    "scripts/benchmark_voxel.py": "c4e4159d887f8c9a4887d9d3b37964c701940ef845567ce95abc81679f193e41",
+    "scripts/process_map.py": "2402bd0ca0f4dbe3d6362e6f1c017808af7b8bc833f8f43a0a1e266412e98363",
+    "scripts/native_voxel.py": "5eb46ab326f460087e309fbf025462a29cc77b4aade4f92ec936ffc9ec928b45",
+    "CMakeLists.txt": "b05ad287b5dc4a484e760fbe59ab11f5c6f384c735f66e5205896fea7d5c502c",
+    "cpp/test_voxel_centroids.cpp": "46390bafebe0c311af9b20d30b9e1f2eb11a864f6ea76152c28778fa2deabebd",
+    "cpp/voxel_centroids.cpp": "a79d3bba9f306e9ccfece406a4bd8986ffc5f7d154ec08328200fdb816961846",
+    "cpp/voxel_centroids.h": "828ec9da1683c0071559b926919e2831d25613b7b5d2e87d2b89303dee1de289"
+  },
+  "summary": [
+    {
+      "voxel_size_m": 0.5,
+      "output_points": 138599,
+      "numpy": {
+        "seconds": [
+          1.4689277700017556,
+          1.4168260639999062,
+          1.4490944130011485
+        ],
+        "median_seconds": 1.4490944130011485,
+        "minimum_seconds": 1.4168260639999062,
+        "maximum_seconds": 1.4689277700017556,
+        "peak_process_rss_mib": [
+          1384.09765625,
+          1384.79296875,
+          1384.65234375
+        ],
+        "median_peak_process_rss_mib": 1384.65234375
+      },
+      "cpp": {
+        "seconds": [
+          0.18121910600166302,
+          0.17708790900360327,
+          0.18110189599974547
+        ],
+        "median_seconds": 0.18110189599974547,
+        "minimum_seconds": 0.17708790900360327,
+        "maximum_seconds": 0.18121910600166302,
+        "peak_process_rss_mib": [
+          418.0546875,
+          417.95703125,
+          418.1015625
+        ],
+        "median_peak_process_rss_mib": 418.0546875
+      },
+      "median_speedup_numpy_over_cpp": 8.001541922030375
+    },
+    {
+      "voxel_size_m": 0.2,
+      "output_points": 642203,
+      "numpy": {
+        "seconds": [
+          1.5892103260048316,
+          1.6057969679968664,
+          1.5866212390028522
+        ],
+        "median_seconds": 1.5892103260048316,
+        "minimum_seconds": 1.5866212390028522,
+        "maximum_seconds": 1.6057969679968664,
+        "peak_process_rss_mib": [
+          1384.65625,
+          1384.83984375,
+          1384.68359375
+        ],
+        "median_peak_process_rss_mib": 1384.68359375
+      },
+      "cpp": {
+        "seconds": [
+          0.3603238069990766,
+          0.36302977799641667,
+          0.36348646400438156
+        ],
+        "median_seconds": 0.36302977799641667,
+        "minimum_seconds": 0.3603238069990766,
+        "maximum_seconds": 0.36348646400438156,
+        "peak_process_rss_mib": [
+          471.984375,
+          471.9140625,
+          471.859375
+        ],
+        "median_peak_process_rss_mib": 471.9140625
+      },
+      "median_speedup_numpy_over_cpp": 4.377630768406326
+    },
+    {
+      "voxel_size_m": 0.1,
+      "output_points": 1852691,
+      "numpy": {
+        "seconds": [
+          1.778848365000158,
+          1.7854161799987196,
+          1.7669156499978271
+        ],
+        "median_seconds": 1.778848365000158,
+        "minimum_seconds": 1.7669156499978271,
+        "maximum_seconds": 1.7854161799987196,
+        "peak_process_rss_mib": [
+          1393.33203125,
+          1393.09765625,
+          1393.09765625
+        ],
+        "median_peak_process_rss_mib": 1393.09765625
+      },
+      "cpp": {
+        "seconds": [
+          0.8028308779976214,
+          0.797981878000428,
+          0.8073406009934843
+        ],
+        "median_seconds": 0.8028308779976214,
+        "minimum_seconds": 0.797981878000428,
+        "maximum_seconds": 0.8073406009934843,
+        "peak_process_rss_mib": [
+          601.1171875,
+          601.1875,
+          600.98828125
+        ],
+        "median_peak_process_rss_mib": 601.1171875
+      },
+      "median_speedup_numpy_over_cpp": 2.2157199153037914
+    }
+  ],
+  "finished_utc": "2026-10-11T16:26:02.125511+00:00"
+}

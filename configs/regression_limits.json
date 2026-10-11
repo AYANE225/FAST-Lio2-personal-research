@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "description": "Post-hoc example for the existing Outdoor01 runs: 20% core p95, 10% sampled RSS and 5% position RMSE increases. These are engineering review thresholds, not industry standards, preregistered thresholds or significance tests.",
+  "absolute": {
+    "core_p95_ms": 20.0,
+    "combined_rss_mib": 350.0,
+    "position_rmse_m": 0.3,
+    "queue_fill_ratio": 1.0
+  },
+  "relative": {
+    "core_p95_ms": 0.2,
+    "combined_rss_mib": 0.1,
+    "position_rmse_m": 0.05
+  }
+}

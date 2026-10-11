@@ -1,0 +1,66 @@
+{
+  "data/career/README.md": {
+    "size_bytes": 1088,
+    "sha256": "7ccb917c86d8e51eec342bfcadd82f85b04a5a6995e1c238f65d0f505e321874"
+  },
+  "data/career/regression_self.json": {
+    "size_bytes": 14173,
+    "sha256": "35839c985d57be2a89ad589a50b7f93db6d8bb0c6e2c38b58ae73ad7704a7b0f"
+  },
+  "data/career/regression_surf03.json": {
+    "size_bytes": 14173,
+    "sha256": "bdb4e6774a6dc2316f8699b38adf33bc521193aeb8d237bcf6eba8e364d33328"
+  },
+  "data/career/validation/ctest.txt": {
+    "size_bytes": 286,
+    "sha256": "47d72440f2b0b49c2052a03b8bbc7e7e8136f0d0e11a688c6c5e3bed66e98e48"
+  },
+  "data/career/validation/node.txt": {
+    "size_bytes": 1758,
+    "sha256": "56f29035c91c2b7182f0f98fa08e22bb2ba8f3cfff6f8ac8f235432425de1838"
+  },
+  "data/career/validation/python.txt": {
+    "size_bytes": 260,
+    "sha256": "438d8673af735a8ed461fda4846fd88ff7e3a848f981007831b141ed5c4fbd3e"
+  },
+  "data/career/validation/sanitizer.txt": {
+    "size_bytes": 285,
+    "sha256": "4d6e03bcd9f987a9dd4d0e2c55b88380982137a6638f9a2cef8143b04873c484"
+  },
+  "data/career/validation.json": {
+    "size_bytes": 6514,
+    "sha256": "4d5a4f9ab851f9aebcbcd62b7942a3a08963e01af505aef9fd745f948bc41c11"
+  },
+  "data/career/voxel_benchmark.json": {
+    "size_bytes": 25491,
+    "sha256": "f52bff11815061f935c18133e21c54a4bf45c1324da565ed3efceeeb2a24d30a"
+  },
+  "data/career/voxel_input.json": {
+    "size_bytes": 915,
+    "sha256": "359f0b12bb65cd0858edabaa284f97f019adb1c8610aece9ca7fcde8839b9994"
+  },
+  "data/recruitment_sources.json": {
+    "size_bytes": 18175,
+    "sha256": "0712be6b289c172881ed77333a52b61809a8fbb1a4a27ecfd2820863850fdf53"
+  },
+  "figures/voxel_benchmark.png": {
+    "size_bytes": 216689,
+    "sha256": "e00019ea7b1ee4a26231de6fe3f89f316c0e5e7ea768f76c714eb5e42cf740fe"
+  },
+  "figures/voxel_benchmark.svg": {
+    "size_bytes": 197836,
+    "sha256": "45cf4ae86b0e8dea0f2532c9498a0b32de1237b8f5cf3741de748fabf0de0d3b"
+  },
+  "figures/regression_check.png": {
+    "size_bytes": 191751,
+    "sha256": "52989a1cd6bc83640efd56dfc85f416edd123b7264465da7703c21f1981c4de3"
+  },
+  "figures/regression_check.svg": {
+    "size_bytes": 179046,
+    "sha256": "7b4d30a98ac7414ee74682a7d3d2ee0a07a6215fcea8ab9e0dd521a0de824eaa"
+  },
+  "data/career/validation/python_ubsan.txt": {
+    "size_bytes": 20,
+    "sha256": "9717f9c73b88e8a31aafbc17d5dcbcbf2db9ef2fe43557913caf9ee432f5977f"
+  }
+}

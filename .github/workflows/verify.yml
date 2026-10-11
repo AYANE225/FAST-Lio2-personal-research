@@ -16,8 +16,37 @@ jobs:
         with:
           node-version: '24'
       - run: python -m pip install -r requirements-dev.txt
+      - name: Build and test the native voxel library
+        run: |
+          cmake -S . -B output/native-build -DCMAKE_BUILD_TYPE=Release
+          cmake --build output/native-build --parallel 2
+          ctest --test-dir output/native-build --output-on-failure
       - run: python -m pytest -q
         env:
           PYTEST_DISABLE_PLUGIN_AUTOLOAD: '1'
       - run: node --test docs/viewer/tests/*.test.mjs
+      - name: Check C++ memory and undefined behavior
+        run: |
+          cmake -S . -B output/native-asan -DCMAKE_BUILD_TYPE=Debug -DFASTLIO_ENABLE_SANITIZERS=ON
+          cmake --build output/native-asan --parallel 2
+          ctest --test-dir output/native-asan --output-on-failure
+        env:
+          ASAN_OPTIONS: detect_leaks=1:halt_on_error=1
+          UBSAN_OPTIONS: halt_on_error=1:print_stacktrace=1
+      - name: Check Python input alignment with UBSan
+        run: |
+          cmake -S . -B output/native-python-ubsan -DCMAKE_BUILD_TYPE=Debug -DBUILD_TESTING=OFF -DCMAKE_CXX_FLAGS=-fsanitize=undefined -DCMAKE_SHARED_LINKER_FLAGS=-fsanitize=undefined
+          cmake --build output/native-python-ubsan --parallel 2
+          python -m pytest -q -s tests/test_native_voxel.py::test_unaligned_contiguous_input_is_safe_for_native_double_loads
+        env:
+          FASTLIO_TEST_VOXEL_LIBRARY: output/native-python-ubsan/libfastlio_voxel.so
+          UBSAN_OPTIONS: halt_on_error=1:print_stacktrace=1
+          PYTEST_DISABLE_PLUGIN_AUTOLOAD: '1'
+      - name: Check published baseline against example regression limits
+        run: >-
+          python scripts/check_regression.py
+          --baseline-dir data/outdoor01/recording
+          --candidate-dir data/outdoor01/recording
+          --limits configs/regression_limits.json
+          --output output/regression-self.json
       - run: python scripts/verify_artifacts.py

@@ -1,0 +1,41 @@
+{
+  "points": 8909069,
+  "dtype": "float64 XYZI",
+  "units": "XYZ metres",
+  "source": {
+    "points": 8909069,
+    "fields": [
+      "x",
+      "y",
+      "z",
+      "normal_x",
+      "normal_y",
+      "normal_z",
+      "intensity",
+      "curvature"
+    ],
+    "encoding": "binary",
+    "stride_bytes": 32,
+    "size_bytes": 285090461,
+    "sha256": "a1647137abfbc2e47f209a88c42900b1d856013373dbb5550da5cfab410ae557"
+  },
+  "projection_sha256": "3adfb52e4eef13200b7112300e79f80a8b35bad53ab24efc160b83a9c9da17e3",
+  "gravity_rotation": [
+    [
+      0.8907053811751648,
+      -0.00719409386323614,
+      0.45452411262670245
+    ],
+    [
+      -0.00719409386323614,
+      0.999526463543498,
+      0.029918116413226288
+    ],
+    [
+      -0.45452411262670245,
+      -0.029918116413226288,
+      0.8902318447186628
+    ]
+  ],
+  "input_npy_sha256": "22977e77b022c81415ed31350a26279b94dcb6eeb1703c4e5ed68eb680fb3636"
+}

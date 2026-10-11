@@ -2,9 +2,17 @@
 
 围绕 **FAST-LIO2 / MID-360 移动机器人**开展的工程研究：ROS 2 数据接入与传输诊断、地图分块记录、资源与位置误差评估、真实点云的交互展示。实验使用 **M3DGR Outdoor01 公开序列**，当前成果是桌面完整回放与自动化验证。
 
-**[打开三维地图](https://AYANE225.github.io/FAST-Lio2-personal-research/viewer/)** · [工程实验结果](docs/engineering_results.md) · [复现说明](docs/reproduction.md) · [方法与官方资料](docs/engineering_references.md)
+**[打开三维地图](https://AYANE225.github.io/FAST-Lio2-personal-research/viewer/)** · [求职展示与实测](docs/career_evidence.md) · [官方招聘样本](docs/job_requirements.md) · [工程实验结果](docs/engineering_results.md) · [复现说明](docs/reproduction.md)
 
 [![Outdoor01 三维点云查看器：高度着色、EDL 和原始估计轨迹](figures/viewer_preview.png)](https://AYANE225.github.io/FAST-Lio2-personal-research/viewer/)
+
+## 新增：C++ 性能实验与自动回归检查
+
+新增 C++17 离线体素库、ctypes 接入、Release／ASan／UBSan 验证和配置化回归检查，对应官方机器人岗位的 C++、性能测量与自动化测试要求。在同一 **890 万点全图**上，0.50／0.20／0.10 m 体素的 C++ 调用耗时中位数分别为 NumPy 实现的 **1/8.00、1/4.38、1/2.22**；每实现每档三轮，九次配对的输出计数和 float32 质心一致。收益来自具体数据结构与实现的变化，属于离线处理。
+
+![C++ 与 NumPy 的完整地图体素性能实测](figures/voxel_benchmark.png)
+
+回归工具先拒绝坏数据和不可比协议，再检查完整性、资源、耗时与位置误差。真实 0.3 m 配置因核心 p95 增加 21.97% 而超过示例 +20% 容差，保留失败结果。源码、全部计时、峰值内存口径、阈值说明及复现命令见 [本轮成果](docs/career_evidence.md)。这不代表在线 SLAM 加速、定位精度提升或已经部署到机器人。
 
 ## 已验证的改进与取舍
 
@@ -34,6 +42,8 @@
 | 性能与精度分析 | 输入台账、算法计时、位姿和记录帧逐项核对；同时统计 mapping 与 recorder；[结果与边界](docs/engineering_results.md) |
 | 点云处理与前端展示 | 体素质心、SOR、受约束局部平面投影、空间分块 LOD、点数预算、深度纹理 EDL、PNG 导出；[处理工具](scripts/process_map.py) / [查看器](docs/viewer) |
 | 测试与复现 | 队列过载、写入失败、异常终止恢复、浮点位移上限、浏览器上下文恢复、发布数据 SHA256；[测试](tests) / [CI](.github/workflows/verify.yml) |
+| C++ 与数值处理 | 标准 C++17、C ABI 所有权、RAII、哈希累加、边界与溢出检查；[原生组件](cpp/voxel_centroids.cpp) / [真实性能](data/career/voxel_benchmark.json) |
+| 自动回归检查 | 严格 JSON、协议可比性、计数一致性、绝对与相对容差、明确退出码；[检查器](scripts/check_regression.py) / [真实失败结果](data/career/regression_surf03.json) |
 
 ## 地图外观处理
 

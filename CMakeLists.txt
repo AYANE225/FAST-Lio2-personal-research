@@ -1,0 +1,32 @@
+cmake_minimum_required(VERSION 3.16)
+project(fastlio_offline_tools LANGUAGES CXX)
+
+option(FASTLIO_ENABLE_SANITIZERS "Enable AddressSanitizer and UndefinedBehaviorSanitizer" OFF)
+
+add_library(fastlio_voxel SHARED cpp/voxel_centroids.cpp)
+target_include_directories(fastlio_voxel PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/cpp")
+set(native_targets fastlio_voxel)
+
+include(CTest)
+if(BUILD_TESTING)
+    add_executable(fastlio_voxel_tests cpp/test_voxel_centroids.cpp)
+    target_link_libraries(fastlio_voxel_tests PRIVATE fastlio_voxel)
+    add_test(NAME native_voxel COMMAND fastlio_voxel_tests)
+    list(APPEND native_targets fastlio_voxel_tests)
+endif()
+
+foreach(native_target IN LISTS native_targets)
+    target_compile_features(${native_target} PRIVATE cxx_std_17)
+    set_target_properties(${native_target} PROPERTIES CXX_EXTENSIONS OFF)
+    if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+        target_compile_options(${native_target} PRIVATE -Wall -Wextra -Wpedantic)
+    endif()
+    if(FASTLIO_ENABLE_SANITIZERS)
+        if(NOT CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+            message(FATAL_ERROR "FASTLIO_ENABLE_SANITIZERS requires GCC or Clang")
+        endif()
+        target_compile_options(${native_target} PRIVATE
+            -fsanitize=address,undefined -fno-omit-frame-pointer)
+        target_link_options(${native_target} PRIVATE -fsanitize=address,undefined)
+    endif()
+endforeach()

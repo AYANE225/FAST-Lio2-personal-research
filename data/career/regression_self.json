@@ -1,0 +1,564 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "exit_code": 0,
+  "errors": [],
+  "protocol_differences": [],
+  "checks": [
+    {
+      "name": "baseline.completed",
+      "actual": true,
+      "limit": true,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "baseline.recorder_stamps_equal_odometry",
+      "actual": true,
+      "limit": true,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "baseline.mapping_exit_code",
+      "actual": 0,
+      "limit": 0,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "baseline.recorder_exit_code",
+      "actual": 0,
+      "limit": 0,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "baseline.playback_exit_code",
+      "actual": 0,
+      "limit": 0,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "baseline.recording.completed",
+      "actual": true,
+      "limit": true,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "baseline.recording.integrity_ok",
+      "actual": true,
+      "limit": true,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "baseline.recording.received_counts_verified",
+      "actual": true,
+      "limit": true,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "baseline.recording.accepting",
+      "actual": false,
+      "limit": false,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "baseline.recording.running",
+      "actual": false,
+      "limit": false,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "baseline.recording.error",
+      "actual": null,
+      "limit": null,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "baseline.recording.dropped_frames",
+      "actual": 0,
+      "limit": 0,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "baseline.recording.dropped_points",
+      "actual": 0,
+      "limit": 0,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "baseline.recording.duplicate_stamp_frames",
+      "actual": 0,
+      "limit": 0,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "baseline.recording.failed_frames",
+      "actual": 0,
+      "limit": 0,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "baseline.recording.failed_points",
+      "actual": 0,
+      "limit": 0,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "baseline.recording.missing_intensity_frames",
+      "actual": 0,
+      "limit": 0,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "baseline.recording.nonfinite_intensity_points",
+      "actual": 0,
+      "limit": 0,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "baseline.recording.nonfinite_points",
+      "actual": 0,
+      "limit": 0,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "baseline.recording.nonmonotonic_frames",
+      "actual": 0,
+      "limit": 0,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "baseline.recording.pending_frames",
+      "actual": 0,
+      "limit": 0,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "baseline.recording.pending_points",
+      "actual": 0,
+      "limit": 0,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "baseline.recording.queue_size",
+      "actual": 0,
+      "limit": 0,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "baseline.missing_frames_after_initialization",
+      "actual": 0,
+      "limit": 0,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "baseline.initialization_frames",
+      "actual": 7,
+      "limit": 7,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "baseline.processed_frames",
+      "actual": 4109,
+      "limit": 4109,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "baseline.recorded_frames",
+      "actual": 4109,
+      "limit": 4109,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "baseline.recorded_points",
+      "actual": 8909069,
+      "limit": 8909069,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "baseline.recording.frame_point_counts_equal_mapping_log",
+      "actual": true,
+      "limit": true,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "baseline.recording.stamps_equal_odometry",
+      "actual": true,
+      "limit": true,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "baseline.core_p95_ms.absolute",
+      "actual": 11.454423999999998,
+      "limit": 20.0,
+      "comparison": "<=",
+      "status": "passed"
+    },
+    {
+      "name": "baseline.combined_rss_mib.absolute",
+      "actual": 272.95703125,
+      "limit": 350.0,
+      "comparison": "<=",
+      "status": "passed"
+    },
+    {
+      "name": "baseline.position_rmse_m.absolute",
+      "actual": 0.22451737554309667,
+      "limit": 0.3,
+      "comparison": "<=",
+      "status": "passed"
+    },
+    {
+      "name": "baseline.queue_fill_ratio",
+      "actual": 0.5,
+      "limit": 1.0,
+      "comparison": "<=",
+      "status": "passed"
+    },
+    {
+      "name": "candidate.completed",
+      "actual": true,
+      "limit": true,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "candidate.recorder_stamps_equal_odometry",
+      "actual": true,
+      "limit": true,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "candidate.mapping_exit_code",
+      "actual": 0,
+      "limit": 0,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "candidate.recorder_exit_code",
+      "actual": 0,
+      "limit": 0,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "candidate.playback_exit_code",
+      "actual": 0,
+      "limit": 0,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "candidate.recording.completed",
+      "actual": true,
+      "limit": true,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "candidate.recording.integrity_ok",
+      "actual": true,
+      "limit": true,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "candidate.recording.received_counts_verified",
+      "actual": true,
+      "limit": true,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "candidate.recording.accepting",
+      "actual": false,
+      "limit": false,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "candidate.recording.running",
+      "actual": false,
+      "limit": false,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "candidate.recording.error",
+      "actual": null,
+      "limit": null,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "candidate.recording.dropped_frames",
+      "actual": 0,
+      "limit": 0,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "candidate.recording.dropped_points",
+      "actual": 0,
+      "limit": 0,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "candidate.recording.duplicate_stamp_frames",
+      "actual": 0,
+      "limit": 0,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "candidate.recording.failed_frames",
+      "actual": 0,
+      "limit": 0,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "candidate.recording.failed_points",
+      "actual": 0,
+      "limit": 0,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "candidate.recording.missing_intensity_frames",
+      "actual": 0,
+      "limit": 0,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "candidate.recording.nonfinite_intensity_points",
+      "actual": 0,
+      "limit": 0,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "candidate.recording.nonfinite_points",
+      "actual": 0,
+      "limit": 0,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "candidate.recording.nonmonotonic_frames",
+      "actual": 0,
+      "limit": 0,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "candidate.recording.pending_frames",
+      "actual": 0,
+      "limit": 0,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "candidate.recording.pending_points",
+      "actual": 0,
+      "limit": 0,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "candidate.recording.queue_size",
+      "actual": 0,
+      "limit": 0,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "candidate.missing_frames_after_initialization",
+      "actual": 0,
+      "limit": 0,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "candidate.initialization_frames",
+      "actual": 7,
+      "limit": 7,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "candidate.processed_frames",
+      "actual": 4109,
+      "limit": 4109,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "candidate.recorded_frames",
+      "actual": 4109,
+      "limit": 4109,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "candidate.recorded_points",
+      "actual": 8909069,
+      "limit": 8909069,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "candidate.recording.frame_point_counts_equal_mapping_log",
+      "actual": true,
+      "limit": true,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "candidate.recording.stamps_equal_odometry",
+      "actual": true,
+      "limit": true,
+      "comparison": "==",
+      "status": "passed"
+    },
+    {
+      "name": "candidate.core_p95_ms.absolute",
+      "actual": 11.454423999999998,
+      "limit": 20.0,
+      "comparison": "<=",
+      "status": "passed"
+    },
+    {
+      "name": "candidate.combined_rss_mib.absolute",
+      "actual": 272.95703125,
+      "limit": 350.0,
+      "comparison": "<=",
+      "status": "passed"
+    },
+    {
+      "name": "candidate.position_rmse_m.absolute",
+      "actual": 0.22451737554309667,
+      "limit": 0.3,
+      "comparison": "<=",
+      "status": "passed"
+    },
+    {
+      "name": "candidate.queue_fill_ratio",
+      "actual": 0.5,
+      "limit": 1.0,
+      "comparison": "<=",
+      "status": "passed"
+    },
+    {
+      "name": "candidate.core_p95_ms.relative",
+      "actual": 11.454423999999998,
+      "limit": 13.745308799999997,
+      "comparison": "<=",
+      "status": "passed"
+    },
+    {
+      "name": "candidate.combined_rss_mib.relative",
+      "actual": 272.95703125,
+      "limit": 300.25273437500005,
+      "comparison": "<=",
+      "status": "passed"
+    },
+    {
+      "name": "candidate.position_rmse_m.relative",
+      "actual": 0.22451737554309667,
+      "limit": 0.2357432443202515,
+      "comparison": "<=",
+      "status": "passed"
+    }
+  ],
+  "limitations": [
+    "Checks exported summaries only; does not recompute raw logs, timings or trajectories.",
+    "Protocol equality covers declared fields, not unrecorded hardware/load differences.",
+    "Example tolerances are post-hoc engineering choices, not industry standards or statistical tests.",
+    "Position RMSE uses reused RTK positions with uncorrected lever arm and one SE(3) alignment."
+  ],
+  "protocol": {
+    "sequence": "M3DGR Outdoor01",
+    "input_timestamps_sha256": "8f016f871e3ed564e06838caba25124f372c057157d0dedef662b8c6fa6f621f",
+    "playback_rate": 1.0,
+    "bag_duration_s": 411.566921377,
+    "initialization_frames": 7,
+    "expected_odometry_count": 4109,
+    "dds_transport": "Cyclone DDS TCP on localhost",
+    "measurement_scope": "Core algorithm timing excludes input preprocessing, output publication and recording. Process RSS/CPU sampled about once per second during playback and final drain.",
+    "timing_scope": "IMU processing through map insertion; excludes input preprocessing, publication and recording.",
+    "preprocess_column_used": false,
+    "resources.scope": "About 1 Hz samples through playback and controlled shutdown; may miss subsecond peaks.",
+    "resources.cpu_convention": "100 percent is one logical CPU; combined sums mapping and recorder.",
+    "reference.reference_sha256": "b66a2c1fa9dba423abf4312e454121e39ab5ec730d0a47fb5b6875e41e1870aa",
+    "reference.pairing_tolerance_s": 1e-06,
+    "reference.alignment": "One whole-trajectory SE(3), no scale or time-offset fit.",
+    "reference.scale": 1.0,
+    "reference.fitted_time_offset_s": 0.0,
+    "reference.matched_poses": 4107
+  },
+  "tolerance_description": "Post-hoc example for the existing Outdoor01 runs: 20% core p95, 10% sampled RSS and 5% position RMSE increases. These are engineering review thresholds, not industry standards, preregistered thresholds or significance tests.",
+  "inputs": {
+    "baseline": {
+      "metrics": {
+        "name": "metrics.json",
+        "size_bytes": 4091,
+        "sha256": "84447429b7de17621ec9a1e43e6dd00129f20e6656ecf6f484e6271a79cfc026"
+      },
+      "run_summary": {
+        "name": "run_summary.json",
+        "size_bytes": 3292,
+        "sha256": "88e39ca094ae6cbac1bc5e1e7b4599d8de590500aa091efa96e07fd3a2a93695"
+      }
+    },
+    "candidate": {
+      "metrics": {
+        "name": "metrics.json",
+        "size_bytes": 4091,
+        "sha256": "84447429b7de17621ec9a1e43e6dd00129f20e6656ecf6f484e6271a79cfc026"
+      },
+      "run_summary": {
+        "name": "run_summary.json",
+        "size_bytes": 3292,
+        "sha256": "88e39ca094ae6cbac1bc5e1e7b4599d8de590500aa091efa96e07fd3a2a93695"
+      }
+    },
+    "limits": {
+      "name": "regression_limits.json",
+      "size_bytes": 506,
+      "sha256": "c05ba1635ad50d22f6831b036e832e4b4e9e05b5dc5e331d8333002898109084"
+    }
+  }
+}

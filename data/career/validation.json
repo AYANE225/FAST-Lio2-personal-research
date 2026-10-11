@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "verified_at_utc": "2026-10-11T16:41:11.847556+00:00",
+  "scope": "Local validation; per-check timestamps are the completed log file modification times. source_sha256 records the publication source snapshot. Unchanged C++ and viewer sources retain their earlier checks. CI results belong to their respective commit runs.",
+  "checks": [
+    {
+      "name": "python",
+      "command": "RUN_ROS_TESTS=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python -m pytest -q",
+      "result": "199 passed in 2.50s",
+      "log": "data/career/validation/python.txt",
+      "sha256": "438d8673af735a8ed461fda4846fd88ff7e3a848f981007831b141ed5c4fbd3e",
+      "log_finished_at_utc": "2026-10-11T16:38:03.880632+00:00"
+    },
+    {
+      "name": "node",
+      "command": "node --test docs/viewer/tests/*.test.mjs",
+      "result": "20 passed, 0 failed",
+      "log": "data/career/validation/node.txt",
+      "sha256": "56f29035c91c2b7182f0f98fa08e22bb2ba8f3cfff6f8ac8f235432425de1838",
+      "log_finished_at_utc": "2026-10-11T16:02:29.066127+00:00"
+    },
+    {
+      "name": "ctest",
+      "command": "ctest --test-dir output/native-build --output-on-failure",
+      "result": "1/1 CTest, 8 behavior groups passed",
+      "log": "data/career/validation/ctest.txt",
+      "sha256": "47d72440f2b0b49c2052a03b8bbc7e7e8136f0d0e11a688c6c5e3bed66e98e48",
+      "log_finished_at_utc": "2026-10-11T16:02:24.104470+00:00"
+    },
+    {
+      "name": "sanitizer",
+      "command": "ASAN_OPTIONS=detect_leaks=1:halt_on_error=1 UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1 ctest --test-dir output/native-asan --output-on-failure",
+      "result": "1/1 CTest passed",
+      "log": "data/career/validation/sanitizer.txt",
+      "sha256": "4d6e03bcd9f987a9dd4d0e2c55b88380982137a6638f9a2cef8143b04873c484",
+      "log_finished_at_utc": "2026-10-11T16:02:24.121468+00:00"
+    },
+    {
+      "name": "python_ubsan",
+      "command": "UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1 FASTLIO_TEST_VOXEL_LIBRARY=output/native-python-ubsan/libfastlio_voxel.so PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python -m pytest -q -s tests/test_native_voxel.py::test_unaligned_contiguous_input_is_safe_for_native_double_loads",
+      "result": "1 passed in 0.04s",
+      "log": "data/career/validation/python_ubsan.txt",
+      "sha256": "9717f9c73b88e8a31aafbc17d5dcbcbf2db9ef2fe43557913caf9ee432f5977f",
+      "log_finished_at_utc": "2026-10-11T16:25:11.506587+00:00"
+    }
+  ],
+  "source_sha256": {
+    ".github/workflows/verify.yml": "108be95c7f9a2323dbf29c41253137c4a7c80449a95616e311c44d0bdd7c3b6c",
+    "CMakeLists.txt": "b05ad287b5dc4a484e760fbe59ab11f5c6f384c735f66e5205896fea7d5c502c",
+    "configs/regression_limits.json": "c05ba1635ad50d22f6831b036e832e4b4e9e05b5dc5e331d8333002898109084",
+    "cpp/test_voxel_centroids.cpp": "46390bafebe0c311af9b20d30b9e1f2eb11a864f6ea76152c28778fa2deabebd",
+    "cpp/voxel_centroids.cpp": "a79d3bba9f306e9ccfece406a4bd8986ffc5f7d154ec08328200fdb816961846",
+    "cpp/voxel_centroids.h": "828ec9da1683c0071559b926919e2831d25613b7b5d2e87d2b89303dee1de289",
+    "docs/viewer/app.mjs": "fbe783a69a9f8a626ab3a33d8c75f8db9219c116e29dda82d8d4f775c9bb4646",
+    "docs/viewer/point-cloud-data.mjs": "cc0fca09a5f425466faf993ded83521d0bf6082614fec66955fde3a7d672ae29",
+    "docs/viewer/point-cloud-renderer.mjs": "5dd65744ef6a8cf09f356c7f2ed313578919a78da2ff9c6cf4b0c20d1705bfa6",
+    "docs/viewer/tests/point-cloud-data.test.mjs": "ea8c87c2d13a9b06dcb26cbb3a350e8f81da763d9ee3918ce3e7e917ee769b3a",
+    "docs/viewer/tests/tile-loader.test.mjs": "0e86218b0251162336afb081e46318a4e36acd908bd34c25ef8cd20fd86da961",
+    "docs/viewer/tile-loader.mjs": "edf6d97a71b08c887589495970504c466ae6c7e2a7891be81be2591b3fc1305f",
+    "scripts/benchmark_voxel.py": "c4e4159d887f8c9a4887d9d3b37964c701940ef845567ce95abc81679f193e41",
+    "scripts/check_regression.py": "6ab339563a0905efc3afa52fff0408ba849fa95e7149e112f3c39810de0fb1c6",
+    "scripts/evaluate_engineering.py": "34fcdab4cc7fd74b87993844248d991ebae05f89b122998af45c164622bca813",
+    "scripts/map_recorder.py": "b370c849fa7b47e62fbedd073dfd2e7f8585488b0a64839e61a93abcc08a0b43",
+    "scripts/map_writer.py": "51863d708fa5157239736d6edb823d70babbcb1cc7435a5a556cf1bc8d9b885d",
+    "scripts/native_voxel.py": "5eb46ab326f460087e309fbf025462a29cc77b4aade4f92ec936ffc9ec928b45",
+    "scripts/plot_career_evidence.py": "624934e716638923b8956a61bd0ef6218154ea392c2cde35bff115e4dbe09b4f",
+    "scripts/plot_engineering.py": "8e9ec52ddb0f1de29cfbe186211c4eabafdc732e9a3d868726f03b7aa51b1bb6",
+    "scripts/plot_evaluation.py": "43bd5eab39e24f1d96842224322fc43eb389d66c2681eb8a6b667ea5fc10c1b0",
+    "scripts/process_map.py": "2402bd0ca0f4dbe3d6362e6f1c017808af7b8bc833f8f43a0a1e266412e98363",
+    "scripts/replay_outdoor01.py": "42219f2239377291b167effad1f9e2ff6275fafe4369e9748ddb7284f1c3e8c6",
+    "scripts/verify_artifacts.py": "7e9314a608e9652ef95708495f894f785bdafc2430af567ba63e5ba0480a3210",
+    "tests/test_check_regression.py": "80482d4c16e34433ad4a08bd62f5a1469951624537fe30ad5b2e68a96f8ba0ac",
+    "tests/test_evaluate_engineering.py": "e9986f890f06240ebacc8c885fa1212d4f25221e1e096052d24f09a4434914ef",
+    "tests/test_map_recorder.py": "110083f691ca00e5876a96f2349356700d3698f56bba7f9f35db8871ed6240b5",
+    "tests/test_map_writer.py": "a5ebdfb2e2973fcd5a83be235b4a09ce01c38c1c03f87b16677600e804158fef",
+    "tests/test_native_voxel.py": "2d18d14eb5de93e7b229bf9f4a815d2c8c830351255b3ee56359767bc24cb9f9",
+    "tests/test_process_map.py": "43ba3d25903320e06c0f164deddeacbf7557a29209c7259ebdd3a75f5ba886e6",
+    "tests/test_replay_outdoor01.py": "a1b63cb612c98cf99edb9cb4ca05019ae791d157c48d49f16b6c6d3244391001",
+    "tests/test_ros_recorder_smoke.py": "106be8d9fa0711528d6d569b8db77854d86314dcc0af1d3f11b63f06dac114e0",
+    "tests/test_voxel_benchmark.py": "c3da21259e501797ca7b367a9d579fc54cf2162a9c8552f89fdb5ba743aa05bb"
+  },
+  "benchmark": "data/career/voxel_benchmark.json",
+  "regression_results": {
+    "self": {
+      "status": "passed",
+      "exit_code": 0
+    },
+    "surf03": {
+      "status": "failed",
+      "exit_code": 1,
+      "reason": "core p95 exceeded example +20% tolerance"
+    }
+  },
+  "limitations": [
+    "Sanitizers cover executed C++ tests, not all possible memory or concurrency behavior.",
+    "One real sequence; no target-robot deployment or cross-scene accuracy claim."
+  ],
+  "python_environment": {
+    "version": "3.11.16",
+    "machine": "x86_64",
+    "kernel": "6.8.0-146-generic",
+    "ros_tests_enabled": true
+  }
+}

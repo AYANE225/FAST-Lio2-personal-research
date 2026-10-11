@@ -147,4 +147,4 @@ source /path/to/FAST_LIO2/scripts/env.sh
 RUN_ROS_TESTS=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python -m pytest -q
 ```
 
-关闭自动插件加载是为了避免该 ROS 环境 `launch_testing` 与 pytest 的插件接口冲突，这些测试不依赖其插件。本地 59 项 Python（含 ROS）与 20 项 Node 测试的输出、源文件哈希见 [test_validation.json](../data/test_validation.json)。[GitHub Actions](../.github/workflows/verify.yml) 运行无 ROS 的 Python、Node 和发布数据校验；真实 ROS 与完整浏览器验收在已记录的本地环境执行。目标机器人长期运行、掉电和网络测试仍需实机验证。
+关闭自动插件加载是为了避免该 ROS 环境 `launch_testing` 与 pytest 的插件接口冲突，这些测试不依赖其插件。前一版本的本地 59 项 Python（含 ROS）与 20 项 Node 测试输出保留在 [test_validation.json](../data/test_validation.json)。新增 C++ 组件后，运行完整 Python 套件前先构建 `output/native-build`，命令见 [C++ 实验与回归复现](career_evidence.md)；本轮记录见 [data/career](../data/career/)。[GitHub Actions](../.github/workflows/verify.yml) 运行 C++ Release、sanitizer、无 ROS Python、Node、回归检查和发布数据校验；真实 ROS 与完整浏览器验收在已记录的本地环境执行。目标机器人长期运行、掉电和网络测试仍需实机验证。

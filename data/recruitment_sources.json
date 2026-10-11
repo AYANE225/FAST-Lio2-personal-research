@@ -1,0 +1,364 @@
+{
+  "schema_version": 1,
+  "research_date_utc": "2026-10-11",
+  "purpose": "为 FAST-Lio2-个人研究版安排求职作品补强，保留可核验的招聘要求样本。",
+  "method": {
+    "selection": "目的性选取 6 个能读取具体要求的岗位，覆盖机器人 SLAM、机器人软件及测试；不是随机抽样或市场统计。",
+    "sample_limitations": [
+      "3 个中国条目来自库犸同一企业；其余来自 3 家国际机器人企业。",
+      "岗位横跨室外定位、仓储抓取、工业生产测试和人形机器人行为，职级也不同。",
+      "没有验证招聘名额、截止日期、接受申请状态或对个人的录用可能性。"
+    ],
+    "access": "实际访问官方 ATS 的单岗位 JSON 接口；以公司网站、ATS 企业字段和官方域名校验来源。",
+    "excerpt_policy": "每个岗位仅保留一段短摘录；英文不超过 60 个空格分词，中文摘录均少于 80 个字符。",
+    "interpretation": "学历和年限照原文记录；未给出不表示没有要求。职责、要求与加分项分别标注。",
+    "raw_responses_committed": false,
+    "local_cache_note": "local_cache_path 指本地 output/career-research 缓存，受仓库忽略规则排除，不随 Git 发布；网络响应变化后哈希可能不同。",
+    "contact_information_in_dataset": false,
+    "portfolio_status": "本次调研只建立要求与成果的对应关系；新增 C++ 体素实验和配置化回归工具在调研时属于实施计划，不能据此认定完成。"
+  },
+  "sources": [
+    {
+      "id": "mammotion_lidar_slam",
+      "company": "库犸科技（Mammotion）",
+      "company_name_on_portal": "深圳库犸创新科技集团有限公司",
+      "job_title": "激光slam算法专家",
+      "job_id": "7578791780699851034",
+      "job_family": "机器人定位与 SLAM",
+      "location": "中国深圳",
+      "job_url": "https://mammotion.jobs.feishu.cn/social_recruitment/position/7578791780699851034/detail",
+      "source_type": "official_ats_api",
+      "ats": "飞书招聘",
+      "excerpt": "熟悉c++开发，熟悉linux、ros系统，熟悉git、cmake等工具，熟悉pcl、ceres、opencv等常用库；",
+      "excerpt_section": "任职要求第 2 条",
+      "education_requirement": "本科及以上学历，计算机、电子等相关专业。",
+      "experience_requirement": "5 年以上相关工作经验。",
+      "minimum_experience_years": 5,
+      "other_conditions": [],
+      "required_skill_tags": [
+        "C++",
+        "Linux",
+        "ROS",
+        "Git",
+        "CMake",
+        "PCL",
+        "Ceres",
+        "OpenCV",
+        "SLAM 基础理论",
+        "LiDAR/IMU",
+        "点云处理",
+        "点云匹配",
+        "开源 SLAM 框架实现理解"
+      ],
+      "responsibility_tags": [
+        "室外移动机器人",
+        "3D 激光 SLAM",
+        "LiDAR/IMU/GNSS/轮速融合定位"
+      ],
+      "preferred_skill_tags": [],
+      "scope_note": "室外移动机器人定位算法岗位；个人离线点云工具仅能展示部分 C++ 与数据处理能力。",
+      "source_url": "https://mammotion.jobs.feishu.cn/api/v1/job/posts/7578791780699851034?portal_type=6",
+      "retrieved_at_utc": "2026-10-11T15:37:47Z",
+      "http_status": 200,
+      "response_sha256": "3d07b026e5b9baa3a91dfa8baa8d28e1b9aa812c0c559fdd22d9af3981f1f48c",
+      "response_sha256_scope": "下载的岗位 API 响应体原始字节，不含 HTTP 头。",
+      "hiring_status_verified": false,
+      "public_request_headers": {
+        "website-path": "social_recruitment"
+      },
+      "local_cache_path": "output/career-research/recruit_mammotion_lidar.response",
+      "job_location_country": "中国"
+    },
+    {
+      "id": "mammotion_visual_slam",
+      "company": "库犸科技（Mammotion）",
+      "company_name_on_portal": "深圳库犸创新科技集团有限公司",
+      "job_title": "视觉slam算法工程师",
+      "job_id": "7665909078975711526",
+      "job_family": "机器人定位与 SLAM",
+      "location": "中国深圳",
+      "job_url": "https://mammotion.jobs.feishu.cn/social_recruitment/position/7665909078975711526/detail",
+      "source_type": "official_ats_api",
+      "ats": "飞书招聘",
+      "excerpt": "精通 C++,熟悉 COLMAP、ORB-SLAM、VINS 等至少一个开源框架的内部实现；",
+      "excerpt_section": "任职要求第 5 条",
+      "education_requirement": "硕士及以上学历，计算机视觉或机器人相关专业。",
+      "experience_requirement": "3 年以上视觉 SLAM 相关经验。",
+      "minimum_experience_years": 3,
+      "other_conditions": [
+        "有模型训练、微调或推理优化实践；有模型部署经验（ONNX/TensorRT 或国产 SoC 工具链）。"
+      ],
+      "required_skill_tags": [
+        "C++",
+        "多视图几何",
+        "学习特征提取与匹配",
+        "模型部署",
+        "量化与精度耗时权衡",
+        "COLMAP/ORB-SLAM/VINS 至少一种框架的内部实现"
+      ],
+      "responsibility_tags": [
+        "户外视觉 SLAM",
+        "在线建图与定位",
+        "地图管理",
+        "地图优化",
+        "回环检测"
+      ],
+      "preferred_skill_tags": [
+        "lifelong mapping",
+        "地图更新与维护"
+      ],
+      "scope_note": "用于标出视觉 SLAM、学习特征与地图维护方面的差距；MID-360 激光回放不能替代这些经历。",
+      "source_url": "https://mammotion.jobs.feishu.cn/api/v1/job/posts/7665909078975711526?portal_type=6",
+      "retrieved_at_utc": "2026-10-11T15:37:47Z",
+      "http_status": 200,
+      "response_sha256": "03bd534aa314de431f16ccac406568d74315179edcd9a1ac189be7b8f38dfabb",
+      "response_sha256_scope": "下载的岗位 API 响应体原始字节，不含 HTTP 头。",
+      "hiring_status_verified": false,
+      "public_request_headers": {
+        "website-path": "social_recruitment"
+      },
+      "local_cache_path": "output/career-research/recruit_mammotion_vision.response",
+      "job_location_country": "中国"
+    },
+    {
+      "id": "mammotion_software_test",
+      "company": "库犸科技（Mammotion）",
+      "company_name_on_portal": "深圳库犸创新科技集团有限公司",
+      "job_title": "软件测试工程师",
+      "job_id": "7605878990653409542",
+      "job_family": "软件测试与验证",
+      "location": "中国深圳",
+      "job_url": "https://mammotion.jobs.feishu.cn/social_recruitment/position/7605878990653409542/detail",
+      "source_type": "official_ats_api",
+      "ats": "飞书招聘",
+      "excerpt": "负责软件功能测试、模块测试、接口测试、集成测试、回归测试及版本验证，确保软件功能符合需求。",
+      "excerpt_section": "职位描述第 2 条",
+      "education_requirement": "统招全日制本科及以上学历，计算机、软件工程、电子信息、自动化、通信工程等相关专业。",
+      "experience_requirement": "未给出最低工作年限；智能硬件测试经验被列为优先条件。",
+      "minimum_experience_years": null,
+      "other_conditions": [],
+      "required_skill_tags": [
+        "软件测试理论与流程",
+        "缺陷生命周期",
+        "Linux",
+        "日志分析",
+        "TCP/IP",
+        "BLE/Wi-Fi 基础",
+        "问题复现与验证"
+      ],
+      "responsibility_tags": [
+        "功能测试",
+        "模块测试",
+        "接口测试",
+        "集成测试",
+        "回归测试",
+        "版本验证",
+        "串口与抓包诊断",
+        "测试报告"
+      ],
+      "preferred_skill_tags": [
+        "智能硬件测试经验"
+      ],
+      "scope_note": "原文未要求特定自动化框架或编程语言，不能将 Python/C++ 擅自列为该岗位硬性条件。",
+      "source_url": "https://mammotion.jobs.feishu.cn/api/v1/job/posts/7605878990653409542?portal_type=6",
+      "retrieved_at_utc": "2026-10-11T15:37:47Z",
+      "http_status": 200,
+      "response_sha256": "8c4235b669bffe5093d8e7bfbb90c8204de2eda5b5e53f576af844a120b539ef",
+      "response_sha256_scope": "下载的岗位 API 响应体原始字节，不含 HTTP 头。",
+      "hiring_status_verified": false,
+      "public_request_headers": {
+        "website-path": "social_recruitment"
+      },
+      "local_cache_path": "output/career-research/recruit_mammotion_test.response",
+      "job_location_country": "中国"
+    },
+    {
+      "id": "anybotics_software_intern",
+      "company": "ANYbotics",
+      "company_name_on_portal": "ANYbotics",
+      "job_title": "Software Engineer Intern - Industrialization",
+      "job_id": "d78ed750-b7fa-41a1-8691-0091b9df4169",
+      "job_family": "机器人自动化测试",
+      "location": "瑞士 Zurich",
+      "job_url": "https://jobs.lever.co/anybotics/d78ed750-b7fa-41a1-8691-0091b9df4169",
+      "source_type": "official_ats_api",
+      "ats": "Lever",
+      "excerpt": "Develop, test, and help deploy Python-based automated test procedures for ANYmal hardware subsystems",
+      "excerpt_section": "Your Impact",
+      "education_requirement": "一般要求写相关专业 BSc 或 MSc 在读，或近期完成学位，专业包括机电、机器人、计算机、电气、系统或机械工程；附加实习资格对 EU 申请者另要求大学在读。两处条件均保留，不能仅据近期毕业表述认定具备申请资格。",
+      "experience_requirement": "未给出最低工作年限；要求硬件接口实践，大学实验、学生项目或个人制作可作为相关经历。",
+      "minimum_experience_years": null,
+      "other_conditions": [
+        "居住在或愿意搬到 Zurich，并定期在硬件和生产现场工作。",
+        "实习期限 6 个月，100% 全职、现场工作。",
+        "EU 申请者：可以是自愿实习；不要求工作许可，但要求居留许可及大学在读。",
+        "非 EU 申请者：必须居住在瑞士，持有工作许可；实习须为大学要求的必修实习，并有大学证明信。"
+      ],
+      "required_skill_tags": [
+        "Python",
+        "硬件/传感器/外部 API 项目",
+        "硬件接口实践",
+        "测量容差与重复性",
+        "技术文档"
+      ],
+      "responsibility_tags": [
+        "Python 自动化测试",
+        "硬件子系统测试",
+        "可复现代码",
+        "测试流程与文档"
+      ],
+      "preferred_skill_tags": [
+        "ROS/ROS2",
+        "OpenCV",
+        "传感器标定",
+        "Docker/devcontainer"
+      ],
+      "scope_note": "工业机器人生产测试实习；ROS/ROS2 为加分项，原文没有 C++ 要求。桌面回放不能等同于产线测试。",
+      "source_url": "https://api.lever.co/v0/postings/anybotics/d78ed750-b7fa-41a1-8691-0091b9df4169?mode=json",
+      "retrieved_at_utc": "2026-10-11T15:30:58Z",
+      "http_status": 200,
+      "response_sha256": "23873b93fe61df342c9839d6ee2d8e4581b243f9bcc23ab5086e8124b75b22aa",
+      "response_sha256_scope": "下载的岗位 API 响应体原始字节，不含 HTTP 头。",
+      "hiring_status_verified": false,
+      "local_cache_path": "output/career-research/recruit_anybotics_intern.response",
+      "job_location_country": "瑞士"
+    },
+    {
+      "id": "locus_lead_software",
+      "company": "Locus Robotics",
+      "company_name_on_portal": "Locus Robotics",
+      "job_title": "Lead, Robotics Software Engineer",
+      "job_id": "5217350007",
+      "job_family": "机器人软件与性能评估",
+      "location": "加拿大 North Vancouver, BC",
+      "job_url": "https://job-boards.greenhouse.io/locusrobotics/jobs/5217350007",
+      "source_type": "official_ats_api",
+      "ats": "Greenhouse",
+      "excerpt": "Define, track, and develop tooling to measure key performance indicators (KPIs), system performance, reliability, and failure modes across robotic systems.",
+      "excerpt_section": "Responsibilities",
+      "education_requirement": "未给出学历门槛。",
+      "experience_requirement": "5 年以上软件工程、机器人、自动化或相关领域经验；要求带团队及推动人员绩效和发展的经历。",
+      "minimum_experience_years": 5,
+      "other_conditions": [
+        "每周一至周五在 North Vancouver 办公室现场工作。",
+        "要求跨团队技术推进经历、优秀英语沟通，以及机器人抓取、工业自动化和/或生产或客户环境部署相关经验。"
+      ],
+      "required_skill_tags": [
+        "Python 和/或 C++",
+        "ROS/ROS2",
+        "实验工具与指标",
+        "性能评估",
+        "跨团队技术领导",
+        "云平台/数据库/数据处理基础"
+      ],
+      "responsibility_tags": [
+        "生产软件",
+        "KPI 测量工具",
+        "可靠性",
+        "失败模式分析",
+        "自动化与测试系统",
+        "现场部署与故障诊断"
+      ],
+      "preferred_skill_tags": [],
+      "scope_note": "仓储机器人抓取技术的 Lead 岗位，仅借鉴可测量的工程能力要求；不表示本项目满足管理、抓取或部署条件。",
+      "source_url": "https://boards-api.greenhouse.io/v1/boards/locusrobotics/jobs/5217350007",
+      "retrieved_at_utc": "2026-10-11T15:30:58Z",
+      "http_status": 200,
+      "response_sha256": "de96305cd7d79444f9bf0c157a2f097ae5d9ce0814d73010db52ddf33991b181",
+      "response_sha256_scope": "下载的岗位 API 响应体原始字节，不含 HTTP 头。",
+      "hiring_status_verified": false,
+      "local_cache_path": "output/career-research/recruit_locus_lead.response",
+      "job_location_country": "加拿大"
+    },
+    {
+      "id": "agility_robotics_software",
+      "company": "Agility Robotics",
+      "company_name_on_portal": "Agility Robotics",
+      "job_title": "Robotics Software Engineer I/II",
+      "job_id": "6211037004",
+      "job_family": "机器人软件与验证",
+      "location": "美国 Salem, OR",
+      "job_url": "https://www.agilityrobotics.com/about/job-post?gh_jid=6211037004",
+      "source_type": "official_ats_api",
+      "ats": "Greenhouse",
+      "excerpt": "Recreate corner cases from logs and failures into repeatable tests.",
+      "excerpt_section": "Testing, Validation & Deployment",
+      "education_requirement": "机器人、计算机或相关领域 B.S. 或 M.S.。",
+      "experience_requirement": "2 年以上相关经验，包含研究及行业经历；移动操作机器人方向优先。",
+      "minimum_experience_years": 2,
+      "other_conditions": [
+        "岗位位于 Salem，至少每周 4 天现场工作；偶尔出差（小于 10%）。",
+        "页面明确要求申请人当前具备美国工作授权。"
+      ],
+      "required_skill_tags": [
+        "Python",
+        "Linux",
+        "可靠性与故障分析"
+      ],
+      "responsibility_tags": [
+        "机器人行为集成",
+        "测试计划",
+        "日志失败复现",
+        "可重复测试",
+        "仿真和硬件验证",
+        "客户场景部署"
+      ],
+      "preferred_skill_tags": [
+        "状态机/行为树",
+        "运动规划与运动学",
+        "自动回归测试",
+        "CI/CD",
+        "客户环境机器人运行经历"
+      ],
+      "scope_note": "人形机器人行为与工作流岗位；可借鉴故障复现和测试要求，不能视作 MID-360 定位岗。",
+      "source_url": "https://boards-api.greenhouse.io/v1/boards/agilityrobotics/jobs/6211037004",
+      "retrieved_at_utc": "2026-10-11T15:38:19Z",
+      "http_status": 200,
+      "response_sha256": "f431bbf3385a547cb27e4ce3e6da6166c3bf939f0ca1e8536bbcabd128c28da1",
+      "response_sha256_scope": "下载的岗位 API 响应体原始字节，不含 HTTP 头。",
+      "hiring_status_verified": false,
+      "local_cache_path": "output/career-research/recruit_agility_software.response",
+      "job_location_country": "美国"
+    }
+  ],
+  "official_source_checks": [
+    {
+      "url": "https://www.agilex.ai/",
+      "effective_url": "https://www.agilex.ai/",
+      "retrieved_at_utc": "2026-10-11T15:30:57Z",
+      "response_sha256": "1817812bebf8dc023df372e1527699ed68b8e8531990216a3a0a8e75f3c9799c",
+      "note": "松灵官网的“松灵招聘”链接指向 mammotion.jobs.feishu.cn/AgileX_campus_recruitment。",
+      "local_cache_path": "output/career-research/recruit_agilex_home.response"
+    },
+    {
+      "url": "https://mammotion.jobs.feishu.cn/",
+      "effective_url": "https://mammotion.jobs.feishu.cn/",
+      "retrieved_at_utc": "2026-10-11T15:35:53Z",
+      "response_sha256": "7e86e2bed26f179e09c3696154767ae7bbd44344f880ed8f6e498fa1c0993168",
+      "note": "同一飞书域名根页面标明库犸科技社会招聘；tenant_info.tenant_name 为深圳库犸创新科技集团有限公司，website_info.id 为 7547978231250962715。",
+      "local_cache_path": "output/career-research/recruit_mammotion_root.response"
+    },
+    {
+      "url": "https://mammotion.cn/",
+      "effective_url": "https://jobs.mammotion.cn/",
+      "retrieved_at_utc": "2026-10-11T15:39:25Z",
+      "response_sha256": "cb346b53a5cedfbe27e78fc2b8d2ae0cc9ec1f8a00924c18863d82be8b01384e",
+      "note": "社会招聘站内链接 mammotion.cn，实际跳转至自有域名 jobs.mammotion.cn；该页面的企业名称及 website_info.id 与飞书站一致。",
+      "local_cache_path": "output/career-research/recruit_mammotion_cn_home.response"
+    }
+  ],
+  "excluded_source_notes": [
+    {
+      "url": "https://app.mokahr.com/social-recruitment/you/39819",
+      "observed": "2026-10-11T15:37:47Z 页面显示“当前网页已关停”，虽 HTTP 200，未纳入岗位样本。"
+    },
+    {
+      "url": "https://mammotion.jobs.feishu.cn/AgileX_campus_recruitment",
+      "observed": "官方入口已核验；当次返回的 7 个校园岗位没有定位/SLAM岗位，未用其他岗位标题替代定位要求。"
+    },
+    {
+      "url": "https://api.lever.co/v0/postings/anybotics?mode=json",
+      "observed": "检查已有当日查询返回的 22 个标题，未找到定位/SLAM岗位；只纳入随后重新单独访问的工业化软件实习条目。"
+    }
+  ]
+}

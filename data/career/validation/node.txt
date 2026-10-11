@@ -1,0 +1,28 @@
+✔ LOD selection replaces a spatial cell without exceeding its point budget (1.699667ms)
+✔ hidden cells are excluded and a cell larger than the budget is not partially counted (0.1744ms)
+✔ zooming out retains coarse coverage when its projected spacing is small (3.641756ms)
+✔ manifest rejects false point totals, duplicate spatial cells, and invalid fixed ranges (0.330871ms)
+✔ asset URLs stay within the manifest directory (0.105506ms)
+✔ gzip tile decoding preserves interleaved XYZI values (8.646701ms)
+✔ truncated, overlong, and non-finite point tiles fail before rendering (0.184029ms)
+✔ points outside declared spatial bounds are rejected (0.071476ms)
+✔ decompression is bounded by the declared number of points (2.772397ms)
+✔ real gzip loads stay within budget and replaced resources are released (30.41628ms)
+✔ moving away cancels the HTTP request and prevents stale point creation (8.816021ms)
+✔ a failed tile is reported and may be retried without exceeding the budget (10.432609ms)
+✔ temporary HTTP 503 is retried before reporting a tile failure (505.464951ms)
+✔ persistent temporary HTTP failures stop after three requests (1503.222694ms)
+✔ Retry-After delays a repeated rate-limited request (1001.896119ms)
+✔ a long Retry-After is reported instead of issuing an early retry (1.191683ms)
+✔ HTTP dates in Retry-After are honoured (1887.827703ms)
+✔ moving away cancels a pending retry and frees its request slot (56.782051ms)
+✔ malformed point data is rejected without another HTTP request (0.989556ms)
+✔ an oversized plan or duplicate cell is rejected before creating resources (0.129007ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5060.473038

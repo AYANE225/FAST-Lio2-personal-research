@@ -5,6 +5,7 @@ estimated gravity to -Z; it is not fitted to reference positions. Binary browser
 tiles contain little-endian float32 [x, y, z, intensity], gzip-compressed.
 """
 import argparse
+from functools import partial
 import gzip
 import hashlib
 import json
@@ -113,6 +114,18 @@ def voxel_centroids(points, voxel_size_m):
     counts = np.diff(np.r_[start, len(points)])
     sums = np.add.reduceat(points[order].astype(np.float64), start, axis=0)
     return (sums / counts[:, None]).astype('<f4'), counts
+
+
+def get_voxel_function(backend='numpy', library_path=None):
+    """Select an explicit implementation; never substitute a missing native library."""
+    if backend == 'numpy':
+        if library_path is not None:
+            raise ValueError('voxel-library requires voxel-backend cpp')
+        return voxel_centroids
+    if backend == 'cpp':
+        from native_voxel import voxel_centroids_native
+        return partial(voxel_centroids_native, library_path=library_path)
+    raise ValueError(f'Unknown voxel backend: {backend}')
 
 
 def statistical_filter(points, neighbors=24, std_ratio=2.0, workers=1):
@@ -245,12 +258,20 @@ def main():
     parser.add_argument('--output-dir', type=Path, default=ROOT / 'output/map_processing')
     parser.add_argument('--viewer-data', type=Path, default=ROOT / 'docs/viewer/data')
     parser.add_argument('--workers', type=int, default=2)
+    parser.add_argument('--voxel-backend', choices=('numpy', 'cpp'), default='numpy')
+    parser.add_argument('--voxel-library', type=Path)
     # An explicit fixed box, chosen for a facade/ground detail, not error minimisation.
     parser.add_argument('--roi', type=float, nargs=6, metavar=('X0', 'X1', 'Y0', 'Y1', 'Z0', 'Z1'),
                         default=[10, 30, -12, 8, -2, 10])
     args = parser.parse_args()
     if args.workers < 1:
         parser.error('--workers must be positive')
+    try:
+        voxel_function = get_voxel_function(args.voxel_backend, args.voxel_library)
+        # Resolve explicit native-library failures before reading the full map.
+        voxel_function(np.empty((0, 4)), .5)
+    except (ValueError, OSError) as error:
+        parser.error(str(error))
     roi = np.asarray(args.roi).reshape(3, 2)
     if not np.isfinite(roi).all() or np.any(roi[:, 1] <= roi[:, 0]):
         parser.error('--roi must contain finite increasing coordinate ranges')
@@ -274,6 +295,7 @@ def main():
         'positions': transformed.tolist(), 'timestamps': trajectory[:, 0].tolist(),
         'description': 'Raw estimated trajectory, gravity rotation only; no smoothing or GT fit.'}, separators=(',', ':')) + '\n')
     report = {'source': metadata, 'display_transform': projection['display_transform'],
+              'voxel_backend': args.voxel_backend,
               'gravity_rotation': rotation.tolist(), 'workers': args.workers,
               'python_version': platform.python_version(), 'numpy_version': np.__version__,
               'input_read_rotate_seconds': time.perf_counter() - started,
@@ -292,7 +314,7 @@ def main():
     medium = None
     for identity, size in (('coarse', .5), ('medium', .2), ('fine', .1)):
         then = time.perf_counter()
-        cloud, counts = voxel_centroids(points, size)
+        cloud, counts = voxel_function(points, size)
         seconds = time.perf_counter() - then
         np.savez_compressed(args.output_dir / f'voxel_{identity}.npz', points=cloud, counts=counts)
         tiles = export_tiles(cloud, args.viewer_data, f'voxel/{identity}')
@@ -316,13 +338,13 @@ def main():
     sor_variant = {'id': 'sor', 'label': '去除稀疏离群点',
                    'description': '0.20 m 体素 + SOR (24 邻点、2σ)；可能损失远处稀疏结构。',
                    'point_count': len(filtered), 'bounds': bounds(filtered), 'lods': []}
-    coarse_sor, _ = voxel_centroids(filtered, .5)
+    coarse_sor, _ = voxel_function(filtered, .5)
     for identity, size, cloud in (('coarse', .5, coarse_sor), ('medium', .2, filtered)):
         sor_variant['lods'].append({'id': identity, 'voxel_size_m': size,
             'point_count': len(cloud), 'tiles': export_tiles(cloud, args.viewer_data, f'sor/{identity}')})
     viewer['variants'].append(sor_variant)
     raw_local = points[np.all((points[:, :3] >= roi[:, 0]) & (points[:, :3] < roi[:, 1]), axis=1)]
-    local, _ = voxel_centroids(raw_local, .05)
+    local, _ = voxel_function(raw_local, .05)
     if len(local) <= 24:
         raise ValueError('ROI has too few points; select an explicit larger region')
     clean_local, _, local_filter = statistical_filter(local, neighbors=24, std_ratio=2, workers=args.workers)

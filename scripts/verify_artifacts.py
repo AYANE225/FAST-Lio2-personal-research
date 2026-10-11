@@ -1,4 +1,4 @@
-"""Check baseline, engineering and career artifact sizes and SHA256 without ROS."""
+"""Check published experiment and animation artifact sizes and SHA256 without ROS."""
 import hashlib
 import json
 from pathlib import Path
@@ -8,7 +8,8 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def main():
     count = 0
-    for name in ('data/checksums.json', 'data/engineering_checksums.json', 'data/career_checksums.json'):
+    for name in ('data/checksums.json', 'data/engineering_checksums.json',
+                 'data/career_checksums.json', 'data/animation_checksums.json'):
         entries = json.loads((ROOT / name).read_text())
         for relative, expected in entries.items():
             relative = Path(relative)

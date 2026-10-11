@@ -1,0 +1,34 @@
+{
+  "figures/outdoor01_rotation.gif": {
+    "size_bytes": 37121210,
+    "sha256": "30b592549e8fa4aad3273d0249c9bb0ebe74206868743a7994b9421cecd65f59"
+  },
+  "figures/outdoor01_rotation.mp4": {
+    "size_bytes": 11390499,
+    "sha256": "4261c42302a63e2e07fb975221aeca96676772444c24b9832d074562278e1020"
+  },
+  "figures/outdoor01_rotation.png": {
+    "size_bytes": 327696,
+    "sha256": "d1ebddd3c69868eb10d096294cdf3113032e2ca4609143bcea962d3ec662087a"
+  },
+  "figures/outdoor01_rotation_preview.gif": {
+    "size_bytes": 9905496,
+    "sha256": "f1a00147e0cdb5b1b8408dd734b6e5c07c0f86fb330205042b7965769758f5ee"
+  },
+  "data/map_rotation.json": {
+    "size_bytes": 29746,
+    "sha256": "f272f5cb760af482b3b201fd6726b00b2bbbcf03698b99e9f2c35994a45ceb3c"
+  },
+  "data/map_rotation_validation.json": {
+    "size_bytes": 3893,
+    "sha256": "568cc4df845be3f4503d9bd1a7239ccd3f7cb5a9220429498e28f5bbb101698e"
+  },
+  "scripts/prepare_map_rotation.py": {
+    "size_bytes": 4368,
+    "sha256": "37c12a8e39f58717c8df4dfbc819f3a80a568471af5353eb69ccdd589fd360b9"
+  },
+  "scripts/render_map_rotation.mjs": {
+    "size_bytes": 15141,
+    "sha256": "13f4687afc9cac51382ae2b1c7aa1bebf6a80e72e7d2d41650e3151dbd117b1b"
+  }
+}

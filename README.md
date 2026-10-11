@@ -4,7 +4,9 @@
 
 **[打开三维地图](https://AYANE225.github.io/FAST-Lio2-personal-research/viewer/)** · [求职展示与实测](docs/career_evidence.md) · [官方招聘样本](docs/job_requirements.md) · [工程实验结果](docs/engineering_results.md) · [复现说明](docs/reproduction.md)
 
-[![Outdoor01 三维点云查看器：高度着色、EDL 和原始估计轨迹](figures/viewer_preview.png)](https://AYANE225.github.io/FAST-Lio2-personal-research/viewer/)
+[![Outdoor01 高密度点云地图：183.99 万点、360° 连续旋转](figures/outdoor01_rotation_preview.gif)](figures/outdoor01_rotation.gif)
+
+**183.99 万点 · 0.10 m 体素 · 16 秒循环。** 上图为较小的首页预览，高清原件为 **1400×1050、20 fps**。使用真实 Outdoor01 地图、高度着色与 EDL；SOR 清理稀疏离群点，保留原估计轨迹。[下载高清 GIF](figures/outdoor01_rotation.gif) · [高清 MP4](figures/outdoor01_rotation.mp4) · [静态封面](figures/outdoor01_rotation.png) · [动画生成与校验](docs/map_rotation.md)
 
 ## 新增：C++ 性能实验与自动回归检查
 

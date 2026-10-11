@@ -1,0 +1,147 @@
+{
+  "gif": {
+    "size_pixels": [
+      1400,
+      1050
+    ],
+    "frames": 320,
+    "frame_duration_ms": [
+      50
+    ],
+    "total_duration_ms": 16000,
+    "loop": 0,
+    "unique_decoded_frames": 320,
+    "map_crop_mean_absolute_rgb_difference": {
+      "consecutive_min": 3.7466562620914847,
+      "consecutive_median": 3.936537694761379,
+      "consecutive_max": 4.206204052357898,
+      "last_to_first": 4.195151255626964
+    }
+  },
+  "framing": {
+    "input_points": 1839867,
+    "trajectory_positions": 4109,
+    "convex_hull_vertices": 114,
+    "frames_checked": 320,
+    "maximum_absolute_normalized_screen_coordinates": [
+      0.6472678608623297,
+      0.9399935056578901
+    ],
+    "allowed_half_extent": 0.94,
+    "minimum_camera_depth_m": 376.31197001474465,
+    "maximum_camera_depth_m": 550.8457147111985,
+    "method": "Project the convex hull of every prepared point and trajectory position at all exported camera angles; positive perspective depth preserves the hull bounds."
+  },
+  "preview": {
+    "size_pixels": [
+      840,
+      630
+    ],
+    "frames": 200,
+    "frame_duration_ms": [
+      80
+    ],
+    "total_duration_ms": 16000,
+    "loop": 0,
+    "unique_decoded_frames": 200,
+    "commands": [
+      [
+        "ffmpeg",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-n",
+        "-framerate",
+        "20",
+        "-i",
+        "output/rotation-final/frame-%04d.png",
+        "-vf",
+        "fps=25/2,scale=840:630:flags=lanczos,palettegen=max_colors=128:reserve_transparent=1",
+        "-frames:v",
+        "1",
+        "output/rotation-preview-small/preview-palette.png"
+      ],
+      [
+        "ffmpeg",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-n",
+        "-framerate",
+        "20",
+        "-i",
+        "output/rotation-final/frame-%04d.png",
+        "-i",
+        "output/rotation-preview-small/preview-palette.png",
+        "-lavfi",
+        "[0:v]fps=25/2,scale=840:630:flags=lanczos[scaled];[scaled][1:v]paletteuse=dither=none:diff_mode=rectangle",
+        "-loop",
+        "0",
+        "output/rotation-preview-small/outdoor01_rotation_preview.gif"
+      ]
+    ],
+    "size_bytes": 9905496,
+    "sha256": "f1a00147e0cdb5b1b8408dd734b6e5c07c0f86fb330205042b7965769758f5ee",
+    "source_rendering_sha256": "f272f5cb760af482b3b201fd6726b00b2bbbcf03698b99e9f2c35994a45ceb3c"
+  },
+  "mp4": {
+    "command": [
+      "ffprobe",
+      "-v",
+      "error",
+      "-count_frames",
+      "-select_streams",
+      "v:0",
+      "-show_entries",
+      "stream=codec_name,width,height,r_frame_rate,nb_read_frames:format=duration",
+      "-of",
+      "json",
+      "output/rotation-final/outdoor01_rotation.mp4"
+    ],
+    "result": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1400,
+          "height": 1050,
+          "r_frame_rate": "20/1",
+          "nb_read_frames": "320"
+        }
+      ],
+      "format": {
+        "duration": "16.000000"
+      }
+    }
+  },
+  "validated_utc": "2026-10-11T17:55:04.791298+00:00",
+  "environment": {
+    "numpy": "1.26.4",
+    "scipy": "1.17.1",
+    "pillow": "12.3.0"
+  },
+  "rendering_record_sha256": "f272f5cb760af482b3b201fd6726b00b2bbbcf03698b99e9f2c35994a45ceb3c",
+  "source_checks": {
+    "render_and_preparation_code_sha256": "matched",
+    "source_manifest_sha256": "matched",
+    "prepared_points_sha256": "matched",
+    "trajectory_sha256": "matched",
+    "frame_png_sha256_count": 320
+  },
+  "visual_review": {
+    "gif_frames": [
+      0,
+      40,
+      80,
+      120,
+      160,
+      200,
+      240,
+      280,
+      319
+    ],
+    "observations": "Reviewed full-orbit contact sheet: map remains in frame, labels are readable, fixed height palette is consistent."
+  },
+  "scope": "Offline animation checks only; no SLAM accuracy or runtime performance claim."
+}

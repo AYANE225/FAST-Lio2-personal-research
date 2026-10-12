@@ -10,7 +10,7 @@ def main():
     count = 0
     for name in ('data/checksums.json', 'data/engineering_checksums.json',
                  'data/career_checksums.json', 'data/animation_checksums.json',
-                 'data/readme_checksums.json'):
+                 'data/readme_checksums.json', 'data/gallery_checksums.json'):
         entries = json.loads((ROOT / name).read_text())
         for relative, expected in entries.items():
             relative = Path(relative)

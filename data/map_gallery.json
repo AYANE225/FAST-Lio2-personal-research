@@ -1,0 +1,497 @@
+{
+  "schema_version": 1,
+  "scope": "Presentation of existing Outdoor01 point cloud and poses; no new SLAM run or accuracy claim.",
+  "preparation": {
+    "schema_version": 1,
+    "source": {
+      "points": 8909069,
+      "fields": [
+        "x",
+        "y",
+        "z",
+        "normal_x",
+        "normal_y",
+        "normal_z",
+        "intensity",
+        "curvature"
+      ],
+      "encoding": "binary",
+      "stride_bytes": 32,
+      "size_bytes": 285090461,
+      "sha256": "a1647137abfbc2e47f209a88c42900b1d856013373dbb5550da5cfab410ae557",
+      "sequence": "M3DGR Outdoor01",
+      "display_transform": "Rotate initial estimated gravity to -Z; no GT fit; no translation.",
+      "gravity_rotation": [
+        [
+          0.8907053811751648,
+          -0.00719409386323614,
+          0.45452411262670245
+        ],
+        [
+          -0.00719409386323614,
+          0.999526463543498,
+          0.029918116413226288
+        ],
+        [
+          -0.45452411262670245,
+          -0.029918116413226288,
+          0.8902318447186628
+        ]
+      ]
+    },
+    "source_manifest": "docs/viewer/data/manifest.json",
+    "source_manifest_sha256": "7fc243771c7c3528dc1059041e3a377df73440e43c8e0ed46e626c4f2fcb1704",
+    "verified_input_tiles": 324,
+    "voxel_size_m": 0.1,
+    "statistical_filter": {
+      "neighbors": 24,
+      "std_ratio": 2.0,
+      "std_ddof": 1,
+      "mean_neighbor_distance_m": 0.24404476040025763,
+      "std_neighbor_distance_m": 0.5712887382856524,
+      "threshold_m": 1.3866222369715624,
+      "input_points": 1852691,
+      "retained_points": 1839867,
+      "removed_points": 12824
+    },
+    "point_count": 1839867,
+    "point_format": "little-endian float32 XYZI, 16 bytes per point",
+    "point_file_sha256": "809e0212925a47217e031ad412603e847f3cafcfbcc4fa32f0a3d2e979dc7b13",
+    "point_file_bytes": 29437872,
+    "bounds": {
+      "min": [
+        -45.57091522216797,
+        -65.0489273071289,
+        -4.300601482391357
+      ],
+      "max": [
+        185.56320190429688,
+        87.40314483642578,
+        24.994953155517578
+      ]
+    },
+    "color_ranges": {
+      "height": [
+        -2,
+        20
+      ],
+      "intensity": [
+        0,
+        106
+      ]
+    },
+    "trajectory_count": 4109,
+    "trajectory_sha256": "f017dd937ff0f89f98af38ce70d2b901e7f591b89728fedb8e396cceca97c841",
+    "python_version": "3.11.16",
+    "numpy_version": "1.26.4",
+    "workers": 4,
+    "preparation_seconds": 1.9230075079976814,
+    "source_sha256": {
+      "scripts/prepare_map_rotation.py": "37c12a8e39f58717c8df4dfbc819f3a80a568471af5353eb69ccdd589fd360b9",
+      "scripts/process_map.py": "2402bd0ca0f4dbe3d6362e6f1c017808af7b8bc833f8f43a0a1e266412e98363"
+    },
+    "scope": "Offline display filter only; unchanged estimated poses; no surface smoothing or accuracy claim."
+  },
+  "rendering": {
+    "schema_version": 1,
+    "scope": "Static views of the published point cloud. Crops and display shading only; unchanged coordinates and poses.",
+    "preparation_sha256": "19d49da3710b522daa02dbbf36d14fa96074b151ebf7bde5c6085c2e0e6e5d3b",
+    "point_file_sha256": "809e0212925a47217e031ad412603e847f3cafcfbcc4fa32f0a3d2e979dc7b13",
+    "trajectory_sha256": "f017dd937ff0f89f98af38ce70d2b901e7f591b89728fedb8e396cceca97c841",
+    "source_manifest_sha256": "7fc243771c7c3528dc1059041e3a377df73440e43c8e0ed46e626c4f2fcb1704",
+    "config": {
+      "schema_version": 1,
+      "sequence": "M3DGR Outdoor01",
+      "device_pixel_ratio": 1.5,
+      "field_of_view_degrees": 28,
+      "frame_margin": 0.92,
+      "views": [
+        {
+          "id": "overview",
+          "width": 1800,
+          "height": 1050,
+          "azimuth_degrees": 110,
+          "elevation_degrees": 48,
+          "color_mode": "height",
+          "point_size_css_px": 1.65,
+          "edl_strength": 0.45,
+          "show_trajectory": true
+        },
+        {
+          "id": "facade_structure",
+          "width": 1600,
+          "height": 900,
+          "azimuth_degrees": 105,
+          "elevation_degrees": 20,
+          "color_mode": "monochrome",
+          "point_size_css_px": 1.75,
+          "edl_strength": 0.5,
+          "show_trajectory": false,
+          "crop_bounds_m": {
+            "min": [
+              88,
+              -61,
+              -3
+            ],
+            "max": [
+              185,
+              -23,
+              26
+            ]
+          }
+        },
+        {
+          "id": "facade_intensity",
+          "width": 1600,
+          "height": 900,
+          "azimuth_degrees": 105,
+          "elevation_degrees": 20,
+          "color_mode": "intensity",
+          "palette": [
+            [
+              0,
+              "#446478"
+            ],
+            [
+              0.25,
+              "#729aab"
+            ],
+            [
+              0.5,
+              "#aac5c2"
+            ],
+            [
+              0.75,
+              "#dcdbb4"
+            ],
+            [
+              1,
+              "#f8db9e"
+            ]
+          ],
+          "point_size_css_px": 1.75,
+          "edl_strength": 0.5,
+          "show_trajectory": false,
+          "crop_bounds_m": {
+            "min": [
+              88,
+              -61,
+              -3
+            ],
+            "max": [
+              185,
+              -23,
+              26
+            ]
+          }
+        }
+      ]
+    },
+    "config_sha256": "fccabccc75cd53e6fb9bae7332eb9139f708321c19556b89b923631cfffe9ccf",
+    "color_ranges": {
+      "height": [
+        -2,
+        20
+      ],
+      "intensity": [
+        0,
+        106
+      ]
+    },
+    "browser_version": "145.0.7632.6",
+    "graphics": {
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "edl": true,
+      "color_maps": {
+        "height": [
+          [
+            0,
+            "#394baf"
+          ],
+          [
+            0.2,
+            "#1b99bf"
+          ],
+          [
+            0.42,
+            "#42c8a4"
+          ],
+          [
+            0.66,
+            "#dce570"
+          ],
+          [
+            0.82,
+            "#f5ae65"
+          ],
+          [
+            1,
+            "#e26979"
+          ]
+        ],
+        "intensity": [
+          [
+            0,
+            "#18364d"
+          ],
+          [
+            0.25,
+            "#316575"
+          ],
+          [
+            0.5,
+            "#68a08d"
+          ],
+          [
+            0.75,
+            "#c1c98c"
+          ],
+          [
+            1,
+            "#ffe0a4"
+          ]
+        ]
+      }
+    },
+    "views": [
+      {
+        "id": "overview",
+        "selected_points": 1839867,
+        "selected_xyzi_sha256": "809e0212925a47217e031ad412603e847f3cafcfbcc4fa32f0a3d2e979dc7b13",
+        "bounds_m": {
+          "min": [
+            -45.57091522216797,
+            -65.0489273071289,
+            -4.300601482391357
+          ],
+          "max": [
+            185.56320190429688,
+            87.40314483642578,
+            24.994953155517578
+          ]
+        },
+        "center_m": [
+          67.88234189911188,
+          3.990009410929142,
+          5.7705354518951
+        ],
+        "camera_position_m": [
+          -10.292036318196935,
+          218.77234834289044,
+          259.6194519014247
+        ],
+        "near_m": 284.0680598739749,
+        "far_m": 399.106760825228,
+        "max_abs_ndc_xy": [
+          0.7930899908061638,
+          0.9167878897008797
+        ],
+        "viewport_css_pixels": [
+          1800,
+          1050
+        ],
+        "drawing_buffer_pixels": [
+          2700,
+          1575
+        ]
+      },
+      {
+        "id": "facade_structure",
+        "selected_points": 221308,
+        "selected_xyzi_sha256": "6dcf77abc3d0403d6a9514a031b1eaea351b6d813cdd0ff4d05d1df52a76adf9",
+        "bounds_m": {
+          "min": [
+            88.0025863647461,
+            -57.534912109375,
+            -1.208812952041626
+          ],
+          "max": [
+            183.48785400390625,
+            -23.000812530517578,
+            24.994953155517578
+          ]
+        },
+        "center_m": [
+          135.5763114970991,
+          -37.12062787413901,
+          9.143635358475557
+        ],
+        "camera_position_m": [
+          104.92892187296663,
+          77.25698732248264,
+          52.24223181888895
+        ],
+        "near_m": 103.6578395781001,
+        "far_m": 148.36589236551978,
+        "max_abs_ndc_xy": [
+          0.911236303256015,
+          0.6548267203000633
+        ],
+        "viewport_css_pixels": [
+          1600,
+          900
+        ],
+        "drawing_buffer_pixels": [
+          2400,
+          1350
+        ]
+      },
+      {
+        "id": "facade_intensity",
+        "selected_points": 221308,
+        "selected_xyzi_sha256": "6dcf77abc3d0403d6a9514a031b1eaea351b6d813cdd0ff4d05d1df52a76adf9",
+        "bounds_m": {
+          "min": [
+            88.0025863647461,
+            -57.534912109375,
+            -1.208812952041626
+          ],
+          "max": [
+            183.48785400390625,
+            -23.000812530517578,
+            24.994953155517578
+          ]
+        },
+        "center_m": [
+          135.5763114970991,
+          -37.12062787413901,
+          9.143635358475557
+        ],
+        "camera_position_m": [
+          104.92892187296663,
+          77.25698732248264,
+          52.24223181888895
+        ],
+        "near_m": 103.6578395781001,
+        "far_m": 148.36589236551978,
+        "max_abs_ndc_xy": [
+          0.911236303256015,
+          0.6548267203000633
+        ],
+        "viewport_css_pixels": [
+          1600,
+          900
+        ],
+        "drawing_buffer_pixels": [
+          2400,
+          1350
+        ]
+      }
+    ],
+    "source_sha256": {
+      "scripts/render_map_gallery.mjs": "3555bb5d78617c3f335c8451fff4ea7599dcd19fe5cb000aa6d5f2358fbe4317",
+      "docs/viewer/point-cloud-renderer.mjs": "5dd65744ef6a8cf09f356c7f2ed313578919a78da2ff9c6cf4b0c20d1705bfa6",
+      "docs/viewer/vendor/three.module.min.js": "3e690ac7d180b0aadf0891bea39eec643e29e2d3e75c99b18689518665f69ba6",
+      "docs/viewer/vendor/OrbitControls.js": "61df642830c10a3a115387513f5a53db6ab4da9c9b15c896f42332b5ddc67450"
+    },
+    "outputs": {
+      "overview.png": {
+        "size_bytes": 778792,
+        "sha256": "c9433b42f74d5d26681ecac14262c2d2fbed1590190ee70afc2a34ae73bd2b55"
+      },
+      "facade_structure.png": {
+        "size_bytes": 567700,
+        "sha256": "0a8dac1539ec5e9c928c9f995efff5189e7918883584141999ea40e275200ca0"
+      },
+      "facade_intensity.png": {
+        "size_bytes": 745409,
+        "sha256": "8c9e84fc6d26b8a50bc0faf320c0123ca05a8ff6d47d1e00658ffab0d14b3efc"
+      }
+    }
+  },
+  "input_sha256": {
+    "preparation.json": "19d49da3710b522daa02dbbf36d14fa96074b151ebf7bde5c6085c2e0e6e5d3b",
+    "points.bin": "809e0212925a47217e031ad412603e847f3cafcfbcc4fa32f0a3d2e979dc7b13",
+    "trajectory.json": "f017dd937ff0f89f98af38ce70d2b901e7f591b89728fedb8e396cceca97c841"
+  },
+  "plot_sources_sha256": {
+    "scripts/plot_map_gallery.py": "379ae908530667e465b5227b2e94bbce573bf8ccfcd8df95eee3a9d76058ceff",
+    "scripts/plot_engineering.py": "8e9ec52ddb0f1de29cfbe186211c4eabafdc732e9a3d868726f03b7aa51b1bb6",
+    "requirements.txt": "7758bbfd03f9470d53f5e413813e10edd89b562258f0ffa9a24d7ef008f9ad27"
+  },
+  "plot_environment": {
+    "python": "3.11.16",
+    "numpy": "1.26.4",
+    "matplotlib": "3.10.9",
+    "pillow": "12.3.0"
+  },
+  "point_count": 1839867,
+  "trajectory_count": 4109,
+  "estimated_path_length_m": 347.45210930671414,
+  "intensity_description": "Per-voxel mean of recorded intensity; device scale, not calibrated reflectance.",
+  "trajectory_duration_s": 410.80150985717773,
+  "plan_view": {
+    "limits_m": {
+      "x": [
+        -50.57091522216797,
+        190.56320190429688
+      ],
+      "y": [
+        -70.0489273071289,
+        92.40314483642578
+      ]
+    },
+    "scale_bar_m": 20.0,
+    "scale_bar_pixels_at_export": 135.1783311239916,
+    "aspect": "equal",
+    "projected_points": 1839867,
+    "trajectory_positions": 4109,
+    "point_color": "#86aebe",
+    "point_alpha": 0.64,
+    "trajectory_color": "#ffd38b"
+  },
+  "fonts": [
+    {
+      "file": "NotoSansCJK-Regular.ttc",
+      "index": 2,
+      "sha256": "b76b0433203017ca80401b2ee0dd69350349871c4b19d504c34dbdd80541690a"
+    },
+    {
+      "file": "NotoSansCJK-Bold.ttc",
+      "index": 2,
+      "sha256": "faa5f3656a78b2e2d450d27fe8382c778bc2b6bb5ea29c986664a6a435056ceb"
+    }
+  ],
+  "outputs": {
+    "outdoor01_map_overview.png": {
+      "size_bytes": 815197,
+      "sha256": "85b95d38214164c2afeabea151854cd6cc6d5f8d0f8279794c84faa4411e9c89",
+      "pixels": [
+        1920,
+        1440
+      ]
+    },
+    "outdoor01_map_route.png": {
+      "size_bytes": 1160533,
+      "sha256": "244e65e2704a49b658ee8d2ea3eb7bf8da78e39c39abcbcf047850d29a32aaa5",
+      "pixels": [
+        1920,
+        1520
+      ]
+    },
+    "outdoor01_map_facade.png": {
+      "size_bytes": 645250,
+      "sha256": "e693aabaae9ada28f783332e31290abfe1a7256999799c39987bfa7fe5374c5a",
+      "pixels": [
+        1920,
+        1080
+      ]
+    },
+    "outdoor01_gallery.png": {
+      "size_bytes": 1024650,
+      "sha256": "060c2486e4e86b3a2e1dedb8b79cd06504003e4cc3952e63ad364ca8905a7feb",
+      "pixels": [
+        1920,
+        1456
+      ]
+    },
+    "outdoor01_gallery_mobile.png": {
+      "size_bytes": 1012324,
+      "sha256": "2d98bd0447d3dba2236a79364950f81a447348a6399dbb121e6b752321d2f2c0",
+      "pixels": [
+        960,
+        2708
+      ]
+    }
+  }
+}

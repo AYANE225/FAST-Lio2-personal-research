@@ -55,6 +55,8 @@ node docs/viewer/tests/browser-check.mjs
 
 地图动画使用固定的 1,839,867 点、0.10 m 体素与 SOR，高清原件为 1400×1050、320 帧、20 fps、16 秒循环，并提供 MP4 和 PNG。README 嵌入从相同帧缩小得到的 840×630、12.5 fps 预览。可直接从仓库内公开点块重新生成，无需完整 PCD 或 ROS；命令、相机设置和校验方法见 [动画说明](map_rotation.md)。[animation_checksums.json](../data/animation_checksums.json) 独立记录动画、来源记录和导出代码的哈希，由同一个 `verify_artifacts.py` 检查。
 
+静态地图图集同样复用公开点块，提供三维全景、等比例轨迹俯视图与同视角立面对照。高清图片、导出命令和来源记录见 [地图图集](map_gallery.md)；[gallery_checksums.json](../data/gallery_checksums.json) 将本轮图片、配置与脚本加入统一校验。
+
 ## 从完整 PCD 重新处理地图
 
 需要原 TCP 基线的 `map.pcd`，源 SHA256 为 `a1647137abfbc2e47f209a88c42900b1d856013373dbb5550da5cfab410ae557`。使用新的输出目录，避免覆盖发布数据：

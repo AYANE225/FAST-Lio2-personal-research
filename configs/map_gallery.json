@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "sequence": "M3DGR Outdoor01",
+  "device_pixel_ratio": 1.5,
+  "field_of_view_degrees": 28,
+  "frame_margin": 0.92,
+  "views": [
+    {
+      "id": "overview",
+      "width": 1800,
+      "height": 1050,
+      "azimuth_degrees": 110,
+      "elevation_degrees": 48,
+      "color_mode": "height",
+      "point_size_css_px": 1.65,
+      "edl_strength": 0.45,
+      "show_trajectory": true
+    },
+    {
+      "id": "facade_structure",
+      "width": 1600,
+      "height": 900,
+      "azimuth_degrees": 105,
+      "elevation_degrees": 20,
+      "color_mode": "monochrome",
+      "point_size_css_px": 1.75,
+      "edl_strength": 0.5,
+      "show_trajectory": false,
+      "crop_bounds_m": {"min": [88, -61, -3], "max": [185, -23, 26]}
+    },
+    {
+      "id": "facade_intensity",
+      "width": 1600,
+      "height": 900,
+      "azimuth_degrees": 105,
+      "elevation_degrees": 20,
+      "color_mode": "intensity",
+      "palette": [[0, "#446478"], [0.25, "#729aab"], [0.5, "#aac5c2"], [0.75, "#dcdbb4"], [1, "#f8db9e"]],
+      "point_size_css_px": 1.75,
+      "edl_strength": 0.5,
+      "show_trajectory": false,
+      "crop_bounds_m": {"min": [88, -61, -3], "max": [185, -23, 26]}
+    }
+  ]
+}

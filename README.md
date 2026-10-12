@@ -8,6 +8,17 @@
 
 **183.99 万点 · 0.10 m 体素 · 16 秒循环**　[高清 GIF](figures/outdoor01_rotation.gif) · [MP4](figures/outdoor01_rotation.mp4)
 
+## 多视角地图
+
+<a href="docs/map_gallery.md">
+  <picture>
+    <source media="(max-width: 640px)" srcset="figures/outdoor01_gallery_mobile.png">
+    <img src="figures/outdoor01_gallery.png" alt="Outdoor01 地图图集：三维全景、带比例尺和起终点的轨迹俯视图、建筑立面的几何轮廓与回波强度。" width="100%">
+  </picture>
+</a>
+
+[高清全景](figures/outdoor01_map_overview.png) · [轨迹俯视](figures/outdoor01_map_route.png) · [立面对照](figures/outdoor01_map_facade.png)
+
 ## 实测结果
 
 <a href="docs/engineering_results.md">

@@ -1,0 +1,42 @@
+{
+  "configs/map_gallery.json": {
+    "size_bytes": 1214,
+    "sha256": "fccabccc75cd53e6fb9bae7332eb9139f708321c19556b89b923631cfffe9ccf"
+  },
+  "data/map_gallery.json": {
+    "size_bytes": 13504,
+    "sha256": "19489ac512288e93dd03c1f5304e7181ea630fc0bca88b77274ae3fe0a6bda92"
+  },
+  "figures/outdoor01_gallery.png": {
+    "size_bytes": 1024650,
+    "sha256": "060c2486e4e86b3a2e1dedb8b79cd06504003e4cc3952e63ad364ca8905a7feb"
+  },
+  "figures/outdoor01_gallery_mobile.png": {
+    "size_bytes": 1012324,
+    "sha256": "2d98bd0447d3dba2236a79364950f81a447348a6399dbb121e6b752321d2f2c0"
+  },
+  "figures/outdoor01_map_facade.png": {
+    "size_bytes": 645250,
+    "sha256": "e693aabaae9ada28f783332e31290abfe1a7256999799c39987bfa7fe5374c5a"
+  },
+  "figures/outdoor01_map_overview.png": {
+    "size_bytes": 815197,
+    "sha256": "85b95d38214164c2afeabea151854cd6cc6d5f8d0f8279794c84faa4411e9c89"
+  },
+  "figures/outdoor01_map_route.png": {
+    "size_bytes": 1160533,
+    "sha256": "244e65e2704a49b658ee8d2ea3eb7bf8da78e39c39abcbcf047850d29a32aaa5"
+  },
+  "requirements.txt": {
+    "size_bytes": 62,
+    "sha256": "7758bbfd03f9470d53f5e413813e10edd89b562258f0ffa9a24d7ef008f9ad27"
+  },
+  "scripts/plot_map_gallery.py": {
+    "size_bytes": 15873,
+    "sha256": "379ae908530667e465b5227b2e94bbce573bf8ccfcd8df95eee3a9d76058ceff"
+  },
+  "scripts/render_map_gallery.mjs": {
+    "size_bytes": 14876,
+    "sha256": "3555bb5d78617c3f335c8451fff4ea7599dcd19fe5cb000aa6d5f2358fbe4317"
+  }
+}

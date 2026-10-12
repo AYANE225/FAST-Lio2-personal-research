@@ -24,7 +24,7 @@ jobs:
       - run: python -m pytest -q
         env:
           PYTEST_DISABLE_PLUGIN_AUTOLOAD: '1'
-      - run: node --test docs/viewer/tests/*.test.mjs
+      - run: node --test docs/viewer/tests/*.test.mjs tests/*.test.mjs
       - name: Check C++ memory and undefined behavior
         run: |
           cmake -S . -B output/native-asan -DCMAKE_BUILD_TYPE=Debug -DFASTLIO_ENABLE_SANITIZERS=ON

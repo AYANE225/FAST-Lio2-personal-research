@@ -4,7 +4,7 @@
 
 动画展示 M3DGR Outdoor01 回放得到的真实点云，适合在项目首页、作品集和面试演示中展示地图结构。分辨率 **1400×1050**，一圈 **16 秒、320 帧、20 fps**，GIF 无限循环；MP4 保留更细的色彩变化。
 
-README 使用较小的 [首页预览 GIF](../figures/outdoor01_rotation_preview.gif)：从同一组帧缩放到 **840×630、200 帧、12.5 fps**，仍为 16 秒循环，未重新采样地图点。点击预览可打开高清 GIF。
+保留较小的 [旋转预览 GIF](../figures/outdoor01_rotation_preview.gif)：从同一组帧缩放到 **840×630、200 帧、12.5 fps**，仍为 16 秒循环，未重新采样地图点。README 现以[建图过程回放](homepage_showcase.md#建图回放)为主图，并提供高清旋转 GIF 链接。
 
 ## 点云与渲染
 
@@ -46,7 +46,7 @@ node scripts/render_map_rotation.mjs \
 
 无头 Chromium 显式使用 ANGLE / SwiftShader，因此无独立显卡的机器也可导出。字体、Chromium、FFmpeg 版本可能影响输出像素和压缩结果；重新生成不要求文件哈希与发布版逐位一致。
 
-首页预览从完整导出的 PNG 编码，使用较小尺寸、帧率和 128 色调色板：
+旋转预览从完整导出的 PNG 编码，使用较小尺寸、帧率和 128 色调色板：
 
 ```bash
 mkdir output/rotation-preview-small

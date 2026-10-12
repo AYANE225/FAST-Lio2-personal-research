@@ -1,0 +1,225 @@
+{
+  "schema_version": 1,
+  "scope": "Existing Outdoor01 position and performance measurements, plus separate SIGKILL/corruption recorder experiments.",
+  "position_statistics": {
+    "matched_poses": 4107,
+    "unmatched_poses": 2,
+    "rmse_m": 0.22451737554309667,
+    "p95_m": 0.33128468044943277,
+    "maximum_m": 0.38762116833931226
+  },
+  "recovery_results": {
+    "normal_frames": 60,
+    "normal_points": 112497,
+    "normal_blocks": 6,
+    "frames_per_block": 10,
+    "indexed_frames_before": 20,
+    "verified_frames_after": 30,
+    "indexed_points_before": 37017,
+    "verified_points_after": 56352,
+    "indexed_blocks_before": 2,
+    "verified_blocks_after": 3,
+    "adopted_blocks": 1,
+    "quarantined_blocks": 1,
+    "temporary_case_frames": 20,
+    "temporary_case_points": 37017,
+    "corruption_rejected": true,
+    "interrupted_received_counts_verified": false
+  },
+  "system_results": {
+    "udp": {
+      "processed_frames": 3780,
+      "expected_frames_after_initialization": 4109,
+      "missing_frames_after_initialization": 329
+    },
+    "tcp": {
+      "processed_frames": 4109,
+      "expected_frames_after_initialization": 4109,
+      "missing_frames_after_initialization": 0,
+      "combined_peak_rss_mib": 679.03515625,
+      "core_p95_ms": 6.5953599999999994,
+      "position_reference_rmse_m": 0.222644067329117
+    },
+    "recording": {
+      "processed_frames": 4109,
+      "expected_frames_after_initialization": 4109,
+      "missing_frames_after_initialization": 0,
+      "combined_peak_rss_mib": 272.95703125,
+      "core_p95_ms": 11.454423999999998,
+      "position_reference_rmse_m": 0.22451737554309667
+    },
+    "surf03": {
+      "processed_frames": 4109,
+      "expected_frames_after_initialization": 4109,
+      "missing_frames_after_initialization": 0,
+      "combined_peak_rss_mib": 263.078125,
+      "core_p95_ms": 13.970539999999998,
+      "position_reference_rmse_m": 0.22858803714107934
+    }
+  },
+  "voxel_summary": [
+    {
+      "voxel_size_m": 0.5,
+      "output_points": 138599,
+      "numpy": {
+        "seconds": [
+          1.4689277700017556,
+          1.4168260639999062,
+          1.4490944130011485
+        ],
+        "median_seconds": 1.4490944130011485,
+        "minimum_seconds": 1.4168260639999062,
+        "maximum_seconds": 1.4689277700017556,
+        "peak_process_rss_mib": [
+          1384.09765625,
+          1384.79296875,
+          1384.65234375
+        ],
+        "median_peak_process_rss_mib": 1384.65234375
+      },
+      "cpp": {
+        "seconds": [
+          0.18121910600166302,
+          0.17708790900360327,
+          0.18110189599974547
+        ],
+        "median_seconds": 0.18110189599974547,
+        "minimum_seconds": 0.17708790900360327,
+        "maximum_seconds": 0.18121910600166302,
+        "peak_process_rss_mib": [
+          418.0546875,
+          417.95703125,
+          418.1015625
+        ],
+        "median_peak_process_rss_mib": 418.0546875
+      },
+      "median_speedup_numpy_over_cpp": 8.001541922030375
+    },
+    {
+      "voxel_size_m": 0.2,
+      "output_points": 642203,
+      "numpy": {
+        "seconds": [
+          1.5892103260048316,
+          1.6057969679968664,
+          1.5866212390028522
+        ],
+        "median_seconds": 1.5892103260048316,
+        "minimum_seconds": 1.5866212390028522,
+        "maximum_seconds": 1.6057969679968664,
+        "peak_process_rss_mib": [
+          1384.65625,
+          1384.83984375,
+          1384.68359375
+        ],
+        "median_peak_process_rss_mib": 1384.68359375
+      },
+      "cpp": {
+        "seconds": [
+          0.3603238069990766,
+          0.36302977799641667,
+          0.36348646400438156
+        ],
+        "median_seconds": 0.36302977799641667,
+        "minimum_seconds": 0.3603238069990766,
+        "maximum_seconds": 0.36348646400438156,
+        "peak_process_rss_mib": [
+          471.984375,
+          471.9140625,
+          471.859375
+        ],
+        "median_peak_process_rss_mib": 471.9140625
+      },
+      "median_speedup_numpy_over_cpp": 4.377630768406326
+    },
+    {
+      "voxel_size_m": 0.1,
+      "output_points": 1852691,
+      "numpy": {
+        "seconds": [
+          1.778848365000158,
+          1.7854161799987196,
+          1.7669156499978271
+        ],
+        "median_seconds": 1.778848365000158,
+        "minimum_seconds": 1.7669156499978271,
+        "maximum_seconds": 1.7854161799987196,
+        "peak_process_rss_mib": [
+          1393.33203125,
+          1393.09765625,
+          1393.09765625
+        ],
+        "median_peak_process_rss_mib": 1393.09765625
+      },
+      "cpp": {
+        "seconds": [
+          0.8028308779976214,
+          0.797981878000428,
+          0.8073406009934843
+        ],
+        "median_seconds": 0.8028308779976214,
+        "minimum_seconds": 0.797981878000428,
+        "maximum_seconds": 0.8073406009934843,
+        "peak_process_rss_mib": [
+          601.1171875,
+          601.1875,
+          600.98828125
+        ],
+        "median_peak_process_rss_mib": 601.1171875
+      },
+      "median_speedup_numpy_over_cpp": 2.2157199153037914
+    }
+  ],
+  "inputs_sha256": {
+    "data/career/voxel_benchmark.json": "f52bff11815061f935c18133e21c54a4bf45c1324da565ed3efceeeb2a24d30a",
+    "data/outdoor01/recording/algorithm_logs/fast_lio_time_log.csv": "fa922ce06aca0daa6482274d4d3ae7f93a258be6d10c122a79f60d596358ba32",
+    "data/outdoor01/recording/metrics.json": "84447429b7de17621ec9a1e43e6dd00129f20e6656ecf6f484e6271a79cfc026",
+    "data/outdoor01/recording/position_comparison.npz": "6b7438e6b31d495c5e99884b206dfb00c062f3bbe365c0cbcdc700f068e8846e",
+    "data/outdoor01/recording/resources.jsonl": "a93748883a98e7c207b3fbcd89dc00b8a4319d89283eee7cf6bf5ae3aaf8019a",
+    "data/outdoor01/recovery/evidence.json": "13d5c7986efb13437330154b65e641b26699e1e1a71741d45652a29ae4b5f70d",
+    "data/outdoor01/surf03/algorithm_logs/fast_lio_time_log.csv": "e36ad59e6685da61d4bcd051566fa88589d580ec51a5a66c1722b18ce8407178",
+    "data/outdoor01/surf03/metrics.json": "591c2e015e95ea2e190b5dc9a8e68ec1d773abd41251215793597b3cf3efe120",
+    "data/outdoor01/surf03/position_comparison.npz": "3d39714e10f9c6ed6feb4712c08a8db1b9b855ea9b4d393b8df6e9f1c485e85c",
+    "data/outdoor01/surf03/resources.jsonl": "a3f287886dfd4185d01b97d62f486bf9a7a3622b5f012d266ef395222862fcab",
+    "data/outdoor01/tcp/algorithm_logs/fast_lio_time_log.csv": "e1d3815124c2d936218d6e9472da62f1ff49c6eb7d8c530cc77a308a29eed4ec",
+    "data/outdoor01/tcp/metrics.json": "9e181b2b8c2a30909e5ade970fb46ab7f475c3e3b5748ae56e168e12234907eb",
+    "data/outdoor01/tcp/position_comparison.npz": "b66a2c1fa9dba423abf4312e454121e39ab5ec730d0a47fb5b6875e41e1870aa",
+    "data/outdoor01/tcp/resources.jsonl": "eff2dbc7d157cb52186358b2dd4078cc2dcd0221a6c6bc43557061a4399393fd",
+    "data/outdoor01/udp/metrics.json": "5bbf99cc86be3ae36a7229fa9db9ca6705e3102ae91840423686a4ad7186abf9"
+  },
+  "source_sha256": {
+    "scripts/plot_homepage_showcase.py": "56379fd17392d375a53320cc1f31a8eff0a43a88a730b3beb1c25ef3c1a4d3a9",
+    "scripts/plot_engineering.py": "8e9ec52ddb0f1de29cfbe186211c4eabafdc732e9a3d868726f03b7aa51b1bb6",
+    "scripts/plot_readme.py": "b8ee219043032ce314b413d2503532566f688e08b6a8802ae274cc7b413ceecf",
+    "scripts/benchmark_voxel.py": "c4e4159d887f8c9a4887d9d3b37964c701940ef845567ce95abc81679f193e41"
+  },
+  "outputs": {
+    "outdoor01_position_error.png": {
+      "size_bytes": 196179,
+      "sha256": "8ea8418e50a4c06d232dd9c3658ca69b9ac68994567ebea59edc6797a92f7e39"
+    },
+    "outdoor01_recovery.png": {
+      "size_bytes": 159802,
+      "sha256": "aa811b3d61e7117f10ad80fc5b791049471f77a8c911c08e34db51e3c3047632"
+    },
+    "outdoor01_performance.png": {
+      "size_bytes": 198644,
+      "sha256": "5dd028ea6a4bb8b70ac2d681dff2a6e943dcc0297e76a027671ec3defaa12280"
+    },
+    "outdoor01_position_error_mobile.png": {
+      "size_bytes": 172547,
+      "sha256": "4d94889af48f8251f00fbe7af4b89a15f8e399d9f15692487be1cc7e8f7c86c9"
+    },
+    "outdoor01_recovery_mobile.png": {
+      "size_bytes": 158058,
+      "sha256": "7bd0cd0ac6e38ef4418094b9a8fb2d7b84027af3e9bfe65b85e916bb741c504c"
+    },
+    "outdoor01_performance_mobile.png": {
+      "size_bytes": 226197,
+      "sha256": "783a0b52002bf35257af842530d9823040b8f82b170b80d94b167fa326993c7c"
+    }
+  },
+  "python_version": "3.11.16",
+  "numpy_version": "1.26.4",
+  "matplotlib_version": "3.10.9"
+}

@@ -1,14 +1,50 @@
 # FAST-Lio2-个人研究版
 
-**MID-360 · FAST-LIO2 · ROS 2** — 移动机器人定位与建图工程研究，使用 Outdoor01 公开序列做桌面回放验证。
+**MID-360 · FAST-LIO2 · ROS 2** — 移动机器人定位、建图与工程验证。
 
-**[打开交互地图](https://AYANE225.github.io/FAST-Lio2-personal-research/viewer/)** · [复现](docs/reproduction.md) · [代码与实测](docs/career_evidence.md) · [![自动化验证](https://github.com/AYANE225/FAST-Lio2-personal-research/actions/workflows/verify.yml/badge.svg)](https://github.com/AYANE225/FAST-Lio2-personal-research/actions/workflows/verify.yml)
+**[打开交互地图](https://AYANE225.github.io/FAST-Lio2-personal-research/viewer/)** · [实验与数据](docs/homepage_showcase.md) · [代码与实测](docs/career_evidence.md) · [复现](docs/reproduction.md)
 
-[![Outdoor01 真实点云地图：183.99 万点，0.10 m 体素，360° 旋转](figures/outdoor01_rotation_preview.gif)](figures/outdoor01_rotation.gif)
+[![自动化验证](https://github.com/AYANE225/FAST-Lio2-personal-research/actions/workflows/verify.yml/badge.svg)](https://github.com/AYANE225/FAST-Lio2-personal-research/actions/workflows/verify.yml)
 
-**183.99 万点 · 0.10 m 体素 · 16 秒循环**　[高清 GIF](figures/outdoor01_rotation.gif) · [MP4](figures/outdoor01_rotation.mp4)
+## 建图过程
 
-## 多视角地图
+<a href="docs/homepage_showcase.md#建图回放">
+  <picture>
+    <source media="(prefers-reduced-motion: reduce) and (max-width: 640px)" srcset="figures/outdoor01_mapping_poster_mobile.png">
+    <source media="(prefers-reduced-motion: reduce)" srcset="figures/outdoor01_mapping_poster.png">
+    <source media="(max-width: 640px)" srcset="figures/outdoor01_mapping_mobile.gif">
+    <img src="figures/outdoor01_mapping.gif" alt="Outdoor01 建图回放：4,109 帧、890.91 万记录点。首次体素观测点经全程离线 SOR 后，按采集时间依次显示；14 秒缩时回放。" width="100%">
+  </picture>
+</a>
+
+**410.8 秒记录 → 14 秒回放** · 0.10 m 体素保留首次观测点，再做全程离线 SOR；仅用于显示。
+
+[回放 MP4](figures/outdoor01_mapping.mp4) · [360° 高清旋转](figures/outdoor01_rotation.gif) · [静态全景](figures/outdoor01_map_overview.png)
+
+## 实测结果
+
+<a href="docs/homepage_showcase.md#位置误差">
+  <picture>
+    <source media="(max-width: 640px)" srcset="figures/outdoor01_position_error_mobile.png">
+    <img src="figures/outdoor01_position_error.png" alt="三维位置参考误差：RMSE 0.225 m、p95 0.331 m；参考坐标轨迹、未平滑误差曲线与累计分布。全程 SE(3) 对齐，RTK 杆臂未补偿。" width="100%">
+  </picture>
+</a>
+
+<a href="docs/homepage_showcase.md#中断恢复">
+  <picture>
+    <source media="(max-width: 640px)" srcset="figures/outdoor01_recovery_mobile.png">
+    <img src="figures/outdoor01_recovery.png" alt="实际 SIGKILL 恢复实验：索引从 20 帧恢复到 30 帧，半写入临时块被隔离，损坏块被拒绝。中断记录仍未完成，接收总数未知；不代表掉电验证。" width="100%">
+  </picture>
+</a>
+
+<a href="docs/engineering_results.md">
+  <picture>
+    <source media="(max-width: 640px)" srcset="figures/outdoor01_performance_mobile.png">
+    <img src="figures/outdoor01_performance.png" alt="三配置实测：分块记录的采样峰值内存降低 59.8%，核心耗时增加。C++ 离线体素处理的耗时中位数比为 8.00、4.38、2.22；每档各三次，不代表在线 SLAM 提速。" width="100%">
+  </picture>
+</a>
+
+## 高清图集
 
 <a href="docs/map_gallery.md">
   <picture>
@@ -17,25 +53,10 @@
   </picture>
 </a>
 
-[高清全景](figures/outdoor01_map_overview.png) · [轨迹俯视](figures/outdoor01_map_route.png) · [立面对照](figures/outdoor01_map_facade.png)
+[全景](figures/outdoor01_map_overview.png) · [轨迹俯视](figures/outdoor01_map_route.png) · [立面对照](figures/outdoor01_map_facade.png) · [旋转 MP4](figures/outdoor01_rotation.mp4)
 
-## 实测结果
-
-<a href="docs/engineering_results.md">
-  <picture>
-    <source media="(max-width: 640px)" srcset="figures/readme_results_mobile.svg">
-    <img src="figures/readme_results.svg" alt="Outdoor01 回放：缺帧 329→0；三组配置的内存、核心耗时和位置参考误差。分块记录降低内存，但核心耗时增加。" width="100%">
-  </picture>
-</a>
-
-<a href="docs/career_evidence.md">
-  <picture>
-    <source media="(max-width: 640px)" srcset="figures/readme_voxel_mobile.svg">
-    <img src="figures/readme_voxel.svg" alt="890 万点离线体素处理：0.50、0.20、0.10 m 下，NumPy/C++ 耗时中位数比值为 8.00、4.38、2.22；每档各测三次。" width="100%">
-  </picture>
-</a>
-
-## 工程流程
+<details>
+<summary>工程流程与能力对应</summary>
 
 ```mermaid
 flowchart TB
@@ -54,8 +75,12 @@ flowchart TB
     class F,G display
 ```
 
+[岗位能力对应](docs/job_requirements.md) · [代码与实测](docs/career_evidence.md) · [记录器设计](docs/map_recording.md)
+
+</details>
+
 <details>
-<summary>展开：点云处理对照、回归检查与详细资料</summary>
+<summary>处理对照、回归结果与复现资料</summary>
 
 **同一区域、视角、点大小与色标。显示处理不参与定位估计。**
 
@@ -65,8 +90,8 @@ flowchart TB
 
 [![0.3 m 配置自动回归检查：核心 p95 超过示例 +20% 容差](figures/regression_check.png)](docs/career_evidence.md)
 
-[全量曲线与实验口径](docs/engineering_results.md) · [岗位能力对应](docs/job_requirements.md) · [记录器](docs/map_recording.md) · [动画生成](docs/map_rotation.md) · [复现步骤](docs/reproduction.md)
+[全量曲线](docs/engineering_results.md) · [首页图表与实验口径](docs/homepage_showcase.md) · [配置对比原图](figures/readme_results.svg) · [体素计时原图](figures/readme_voxel.svg) · [旋转动画生成](docs/map_rotation.md) · [复现步骤](docs/reproduction.md)
 
 </details>
 
-算法：[FAST_LIO](https://github.com/hku-mars/FAST_LIO) · 数据：[M3DGR](https://github.com/sjtuyinjie/M3DGR) · 渲染：[Three.js](https://threejs.org/) · [来源与许可](NOTICE.md)
+Outdoor01 单序列桌面回放；实际移动机器人部署仍需现场验证。算法：[FAST_LIO](https://github.com/hku-mars/FAST_LIO) · 数据：[M3DGR](https://github.com/sjtuyinjie/M3DGR) · [来源与许可](NOTICE.md)

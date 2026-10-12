@@ -1,0 +1,102 @@
+{
+  "data/outdoor01/mapping/points.bin.gz": {
+    "size_bytes": 23205987,
+    "sha256": "ed214a24d8549d974043a19257f0cdca3b5a28dfb84b27d9604fb3a89f70db3a"
+  },
+  "data/outdoor01/mapping/preparation.json": {
+    "size_bytes": 50764,
+    "sha256": "27da02ff44d5783bbebf798321fb9df54c4ebc4e5312d4a4053d8afa31bb433f"
+  },
+  "data/outdoor01/mapping/rendering_desktop.json": {
+    "size_bytes": 90909,
+    "sha256": "eb0a66dcef73f0e2caba94f3ac4812385fe2622fbaaaf5d4486963136d1829c2"
+  },
+  "data/outdoor01/mapping/rendering_mobile.json": {
+    "size_bytes": 90898,
+    "sha256": "e53ff60a6a08de7d75b136a820ae03bce6fcebaec866bd1ae1de3ce2129cd5a5"
+  },
+  "data/outdoor01/mapping/selected_indices.npz": {
+    "size_bytes": 2820439,
+    "sha256": "02e3dbac6e4788aa1a44d56fa97d052c08c1d065261ce7d4c5c888aebe536459"
+  },
+  "data/outdoor01/mapping/timeline.json": {
+    "size_bytes": 451848,
+    "sha256": "7fc0585bb526373691fac986528612153fa9c23a8a19f7e078ba0b9742cd7aa3"
+  },
+  "data/outdoor01/recovery/evidence.json": {
+    "size_bytes": 91739,
+    "sha256": "13d5c7986efb13437330154b65e641b26699e1e1a71741d45652a29ae4b5f70d"
+  },
+  "data/showcase_figure_manifest.json": {
+    "size_bytes": 8361,
+    "sha256": "3a1e0f177d3fd7523ee1568cdfb2cbf12f5ea40ed8c46f34bcd9ae1aad481c5f"
+  },
+  "figures/outdoor01_mapping.gif": {
+    "size_bytes": 1941924,
+    "sha256": "2d8156d99f3cda24d4131b645e9f21a40cf29d00f40b677ba4992cac4aec69cc"
+  },
+  "figures/outdoor01_mapping.mp4": {
+    "size_bytes": 1421584,
+    "sha256": "45e24ab2071ed1ed947359351f1b898e87939a29aa565f891461b2c9caef831a"
+  },
+  "figures/outdoor01_mapping_mobile.gif": {
+    "size_bytes": 1661898,
+    "sha256": "bff3893f68774952ef09401de9680576af973397926599dfcb43d2d06defe426"
+  },
+  "figures/outdoor01_mapping_mobile.mp4": {
+    "size_bytes": 1184893,
+    "sha256": "ba4b5a6f4fa0dfb9054f1a9aba595f8ff720b5666103ab777b82ed2b839869e9"
+  },
+  "figures/outdoor01_mapping_poster.png": {
+    "size_bytes": 324116,
+    "sha256": "6a20b14dcf4550d8d9b248637343db4f213cc9d3f17186228b7e8ae62e677dad"
+  },
+  "figures/outdoor01_mapping_poster_mobile.png": {
+    "size_bytes": 251114,
+    "sha256": "f6fafab58582592113aad0a44d635db87c8cc126c60897327976421172bf3e0a"
+  },
+  "figures/outdoor01_performance.png": {
+    "size_bytes": 198644,
+    "sha256": "5dd028ea6a4bb8b70ac2d681dff2a6e943dcc0297e76a027671ec3defaa12280"
+  },
+  "figures/outdoor01_performance_mobile.png": {
+    "size_bytes": 226197,
+    "sha256": "783a0b52002bf35257af842530d9823040b8f82b170b80d94b167fa326993c7c"
+  },
+  "figures/outdoor01_position_error.png": {
+    "size_bytes": 196179,
+    "sha256": "8ea8418e50a4c06d232dd9c3658ca69b9ac68994567ebea59edc6797a92f7e39"
+  },
+  "figures/outdoor01_position_error_mobile.png": {
+    "size_bytes": 172547,
+    "sha256": "4d94889af48f8251f00fbe7af4b89a15f8e399d9f15692487be1cc7e8f7c86c9"
+  },
+  "figures/outdoor01_recovery.png": {
+    "size_bytes": 159802,
+    "sha256": "aa811b3d61e7117f10ad80fc5b791049471f77a8c911c08e34db51e3c3047632"
+  },
+  "figures/outdoor01_recovery_mobile.png": {
+    "size_bytes": 158058,
+    "sha256": "7bd0cd0ac6e38ef4418094b9a8fb2d7b84027af3e9bfe65b85e916bb741c504c"
+  },
+  "scripts/benchmark_recording_recovery.py": {
+    "size_bytes": 22852,
+    "sha256": "7fe08a327e2b5667c7c2bf996fdab4e823702c954eaf211706346ff7b8189d2b"
+  },
+  "scripts/mapping_progress.mjs": {
+    "size_bytes": 3049,
+    "sha256": "ffb45065ee04ef0d89603cbe8baf0b7d92ab19decce4c8e7a433bd255b58f4ce"
+  },
+  "scripts/plot_homepage_showcase.py": {
+    "size_bytes": 26554,
+    "sha256": "56379fd17392d375a53320cc1f31a8eff0a43a88a730b3beb1c25ef3c1a4d3a9"
+  },
+  "scripts/prepare_mapping_progress.py": {
+    "size_bytes": 15506,
+    "sha256": "fd128c60901b1d76c73020b96dfd475a188a30a29c09a94cdf0763591a007801"
+  },
+  "scripts/render_mapping_progress.mjs": {
+    "size_bytes": 19768,
+    "sha256": "04b8dc0e8ff6eecc7018786de26e2c7c266f58b57ef0cf27a3f90d60fde723dc"
+  }
+}

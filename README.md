@@ -2,7 +2,7 @@
 
 **MID-360 · FAST-LIO2 · ROS 2** — 移动机器人定位、建图与工程验证。
 
-**[打开交互地图](https://AYANE225.github.io/FAST-Lio2-personal-research/viewer/)** · [实验与数据](docs/homepage_showcase.md) · [代码与实测](docs/career_evidence.md) · [复现](docs/reproduction.md)
+**[交互地图](https://AYANE225.github.io/FAST-Lio2-personal-research/viewer/)** · [实验数据](docs/homepage_showcase.md) · [工程成果](docs/career_evidence.md) · [复现](docs/reproduction.md)
 
 [![自动化验证](https://github.com/AYANE225/FAST-Lio2-personal-research/actions/workflows/verify.yml/badge.svg)](https://github.com/AYANE225/FAST-Lio2-personal-research/actions/workflows/verify.yml)
 

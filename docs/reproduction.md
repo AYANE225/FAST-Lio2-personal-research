@@ -11,9 +11,12 @@ python3.11 -m venv .venv
 .venv/bin/python scripts/verify_artifacts.py
 .venv/bin/python scripts/plot_evaluation.py --output-dir output/baseline-figures
 .venv/bin/python scripts/plot_engineering.py --output-dir output/engineering-figures
+.venv/bin/python scripts/plot_readme.py --output-dir output/readme-figures
 ```
 
 第一份绘图脚本重绘原 UDP / TCP 基线的五张 PNG / SVG；第二份重绘内存、耗时、位置误差对照和固定视角点云处理图。原始五张图和 [原实验报告](report.md) 保留。
+
+`plot_readme.py` 从已发布逐帧计时、资源记录、位置误差与 C++ 基准结果生成首页简图，输出桌面双列和手机单列的 PNG / SVG。它会核对原始记录与已有摘要，并在 `readme_figure_manifest.json` 中记录所用数值及输入 SHA256；这一步只重绘，不重新运行实验。首页图与绘图脚本的独立校验清单为 [readme_checksums.json](../data/readme_checksums.json)。
 
 [data/checksums.json](../data/checksums.json) 的原 27 项不变；[engineering_checksums.json](../data/engineering_checksums.json) 单独记录新增数据、配置、网页点块及展示图的大小与 SHA256。校验清单不包含自身。绘图另输出实际读取文件的 SHA256，便于核对图与数据的对应关系。新运行的耗时、处理时间与渲染环境可能变化，不要求 PNG 或运行时间逐位相同。
 

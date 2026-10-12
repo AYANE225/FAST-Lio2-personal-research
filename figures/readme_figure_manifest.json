@@ -1,0 +1,163 @@
+{
+  "scope": "Presentation of existing single-sequence replay and offline voxel measurements; no new benchmark run.",
+  "system_results": {
+    "udp": {
+      "processed_frames": 3780,
+      "expected_frames_after_initialization": 4109,
+      "missing_frames_after_initialization": 329
+    },
+    "tcp": {
+      "processed_frames": 4109,
+      "expected_frames_after_initialization": 4109,
+      "missing_frames_after_initialization": 0,
+      "combined_peak_rss_mib": 679.03515625,
+      "core_p95_ms": 6.5953599999999994,
+      "position_reference_rmse_m": 0.222644067329117
+    },
+    "recording": {
+      "processed_frames": 4109,
+      "expected_frames_after_initialization": 4109,
+      "missing_frames_after_initialization": 0,
+      "combined_peak_rss_mib": 272.95703125,
+      "core_p95_ms": 11.454423999999998,
+      "position_reference_rmse_m": 0.22451737554309667
+    },
+    "surf03": {
+      "processed_frames": 4109,
+      "expected_frames_after_initialization": 4109,
+      "missing_frames_after_initialization": 0,
+      "combined_peak_rss_mib": 263.078125,
+      "core_p95_ms": 13.970539999999998,
+      "position_reference_rmse_m": 0.22858803714107934
+    }
+  },
+  "voxel_summary": [
+    {
+      "voxel_size_m": 0.5,
+      "output_points": 138599,
+      "numpy": {
+        "seconds": [
+          1.4689277700017556,
+          1.4168260639999062,
+          1.4490944130011485
+        ],
+        "median_seconds": 1.4490944130011485,
+        "minimum_seconds": 1.4168260639999062,
+        "maximum_seconds": 1.4689277700017556,
+        "peak_process_rss_mib": [
+          1384.09765625,
+          1384.79296875,
+          1384.65234375
+        ],
+        "median_peak_process_rss_mib": 1384.65234375
+      },
+      "cpp": {
+        "seconds": [
+          0.18121910600166302,
+          0.17708790900360327,
+          0.18110189599974547
+        ],
+        "median_seconds": 0.18110189599974547,
+        "minimum_seconds": 0.17708790900360327,
+        "maximum_seconds": 0.18121910600166302,
+        "peak_process_rss_mib": [
+          418.0546875,
+          417.95703125,
+          418.1015625
+        ],
+        "median_peak_process_rss_mib": 418.0546875
+      },
+      "median_speedup_numpy_over_cpp": 8.001541922030375
+    },
+    {
+      "voxel_size_m": 0.2,
+      "output_points": 642203,
+      "numpy": {
+        "seconds": [
+          1.5892103260048316,
+          1.6057969679968664,
+          1.5866212390028522
+        ],
+        "median_seconds": 1.5892103260048316,
+        "minimum_seconds": 1.5866212390028522,
+        "maximum_seconds": 1.6057969679968664,
+        "peak_process_rss_mib": [
+          1384.65625,
+          1384.83984375,
+          1384.68359375
+        ],
+        "median_peak_process_rss_mib": 1384.68359375
+      },
+      "cpp": {
+        "seconds": [
+          0.3603238069990766,
+          0.36302977799641667,
+          0.36348646400438156
+        ],
+        "median_seconds": 0.36302977799641667,
+        "minimum_seconds": 0.3603238069990766,
+        "maximum_seconds": 0.36348646400438156,
+        "peak_process_rss_mib": [
+          471.984375,
+          471.9140625,
+          471.859375
+        ],
+        "median_peak_process_rss_mib": 471.9140625
+      },
+      "median_speedup_numpy_over_cpp": 4.377630768406326
+    },
+    {
+      "voxel_size_m": 0.1,
+      "output_points": 1852691,
+      "numpy": {
+        "seconds": [
+          1.778848365000158,
+          1.7854161799987196,
+          1.7669156499978271
+        ],
+        "median_seconds": 1.778848365000158,
+        "minimum_seconds": 1.7669156499978271,
+        "maximum_seconds": 1.7854161799987196,
+        "peak_process_rss_mib": [
+          1393.33203125,
+          1393.09765625,
+          1393.09765625
+        ],
+        "median_peak_process_rss_mib": 1393.09765625
+      },
+      "cpp": {
+        "seconds": [
+          0.8028308779976214,
+          0.797981878000428,
+          0.8073406009934843
+        ],
+        "median_seconds": 0.8028308779976214,
+        "minimum_seconds": 0.797981878000428,
+        "maximum_seconds": 0.8073406009934843,
+        "peak_process_rss_mib": [
+          601.1171875,
+          601.1875,
+          600.98828125
+        ],
+        "median_peak_process_rss_mib": 601.1171875
+      },
+      "median_speedup_numpy_over_cpp": 2.2157199153037914
+    }
+  ],
+  "inputs_sha256": {
+    "data/career/voxel_benchmark.json": "f52bff11815061f935c18133e21c54a4bf45c1324da565ed3efceeeb2a24d30a",
+    "data/outdoor01/recording/algorithm_logs/fast_lio_time_log.csv": "fa922ce06aca0daa6482274d4d3ae7f93a258be6d10c122a79f60d596358ba32",
+    "data/outdoor01/recording/metrics.json": "84447429b7de17621ec9a1e43e6dd00129f20e6656ecf6f484e6271a79cfc026",
+    "data/outdoor01/recording/position_comparison.npz": "6b7438e6b31d495c5e99884b206dfb00c062f3bbe365c0cbcdc700f068e8846e",
+    "data/outdoor01/recording/resources.jsonl": "a93748883a98e7c207b3fbcd89dc00b8a4319d89283eee7cf6bf5ae3aaf8019a",
+    "data/outdoor01/surf03/algorithm_logs/fast_lio_time_log.csv": "e36ad59e6685da61d4bcd051566fa88589d580ec51a5a66c1722b18ce8407178",
+    "data/outdoor01/surf03/metrics.json": "591c2e015e95ea2e190b5dc9a8e68ec1d773abd41251215793597b3cf3efe120",
+    "data/outdoor01/surf03/position_comparison.npz": "3d39714e10f9c6ed6feb4712c08a8db1b9b855ea9b4d393b8df6e9f1c485e85c",
+    "data/outdoor01/surf03/resources.jsonl": "a3f287886dfd4185d01b97d62f486bf9a7a3622b5f012d266ef395222862fcab",
+    "data/outdoor01/tcp/algorithm_logs/fast_lio_time_log.csv": "e1d3815124c2d936218d6e9472da62f1ff49c6eb7d8c530cc77a308a29eed4ec",
+    "data/outdoor01/tcp/metrics.json": "9e181b2b8c2a30909e5ade970fb46ab7f475c3e3b5748ae56e168e12234907eb",
+    "data/outdoor01/tcp/position_comparison.npz": "b66a2c1fa9dba423abf4312e454121e39ab5ec730d0a47fb5b6875e41e1870aa",
+    "data/outdoor01/tcp/resources.jsonl": "eff2dbc7d157cb52186358b2dd4078cc2dcd0221a6c6bc43557061a4399393fd",
+    "data/outdoor01/udp/metrics.json": "5bbf99cc86be3ae36a7229fa9db9ca6705e3102ae91840423686a4ad7186abf9"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "figures/readme_figure_manifest.json": {
+    "size_bytes": 5991,
+    "sha256": "9b59c9baad266deb1ff4715ac92c9ff08c7d23ea5aecd2cfac9ddf3d80182591"
+  },
+  "figures/readme_results.png": {
+    "size_bytes": 182065,
+    "sha256": "ed713f11a1e2814d969f77f9ee3d1aa8ca88d89fa3098926a7d933a5514f0eee"
+  },
+  "figures/readme_results.svg": {
+    "size_bytes": 174852,
+    "sha256": "db3f374d4fc1c86e2c553c9d8c429445fef29fefe4aca8914e89dd6cc6065699"
+  },
+  "figures/readme_results_mobile.png": {
+    "size_bytes": 188398,
+    "sha256": "e43ce438221ccfe18570cea014cb38528a5ea624eef4b7d3684fcf4d450e012d"
+  },
+  "figures/readme_results_mobile.svg": {
+    "size_bytes": 174651,
+    "sha256": "0ff0a086cd104bc6277a10de79931b041eb31650dbb85dc21cb9b7a06b284ec7"
+  },
+  "figures/readme_voxel.png": {
+    "size_bytes": 96849,
+    "sha256": "2c8784302b196cf5130eea5e74fc288735ad5e1a68833fde932ea93a2232fecb"
+  },
+  "figures/readme_voxel.svg": {
+    "size_bytes": 103923,
+    "sha256": "94e31fcc39b1646764ec6fe655241c79e999d523627a85949393b337977cfd20"
+  },
+  "figures/readme_voxel_mobile.png": {
+    "size_bytes": 111498,
+    "sha256": "4bebbaca194e5e505daec37b81dda880fbf3e3c77f4e095bea5906ff73bee181"
+  },
+  "figures/readme_voxel_mobile.svg": {
+    "size_bytes": 103973,
+    "sha256": "251141f57bf780331cb15e3f8d211bf401b7ad96fd6b0545fec88e6507472eb5"
+  },
+  "scripts/plot_readme.py": {
+    "size_bytes": 12501,
+    "sha256": "b8ee219043032ce314b413d2503532566f688e08b6a8802ae274cc7b413ceecf"
+  }
+}
